@@ -7,14 +7,14 @@ if (keystorePropsFile.exists()) { keystorePropsFile.withInputStream { keystorePr
 def signingValue = { String key, String env -> keystoreProps.getProperty(key) ?: System.getenv(env) }
 
 android {
-    namespace = "com.rcwanjeon.toeic"
+    namespace = "com.eohakwanjeon.app"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.rcwanjeon.toeic"
+        applicationId "com.eohakwanjeon.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode((System.getenv("VERSION_CODE") ?: "1").toInteger())
-        versionName "1.0.0"
+        versionName "2.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.

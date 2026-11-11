@@ -2,42 +2,47 @@
 
 ## 공통
 
-- **앱 이름**: RC 완전정복
+- **앱 이름**: 어학 완전정복
 - **카테고리**: 교육
 - **가격**: 무료, 광고 없음, 인앱 결제 없음
 - **연령 등급**: 전체이용가(Play) / 4+(App Store)
 
 ## 짧은 설명 (Play, 80자 이내) / 부제 (App Store, 30자 이내)
 
-- Play 간단한 설명: `토익 RC 고득점용 Part 5 문법·어휘와 독해 159문항, 즉시 채점과 한국어 해설`
-- App Store 부제: `토익 RC 고난도 문제와 해설`
+- Play 간단한 설명: `토익 RC·JLPT·HSK 단어, 문장, 독해 퀴즈와 단어장. 즉시 채점과 한국어 해설`
+- App Store 부제: `토익·일본어·중국어 시험 연습`
 
 ## 프로모션 텍스트 (App Store, 170자 이내)
 
-중상부터 최상 난이도까지 159문항. 도치, 혼합 가정법, 복합관계사 같은 900점대 함정과 고급 어휘를 한국어 해설로 정리하세요.
+토익 RC Part 5·6·7, JLPT N3·N2, HSK 3·4급을 한 앱에서. 문항마다 한국어 해석과 해설, 오답노트, 단어장 카드로 시험 준비를 끝내세요.
 
 ## 자세한 설명 (Play 4000자 / App Store 4000자)
 
 ```
-토익 RC 900점을 목표로 하는 분을 위한 고난도 연습 앱입니다.
+토익, 일본어, 중국어 시험을 한 앱에서 준비하는 어학 시험 연습 앱입니다.
 
-■ Part 5 문법 55문항
-도치, 혼합 가정법, 수 일치, 관계사와 복합관계사, 준동사, 접속사와 전치사 등 고득점자도 자주 틀리는 함정 유형을 담았습니다.
+■ TOEIC RC
+· Part 5 문법 105문항, 어휘 106문항: 도치, 가정법, 수 일치, 관계사, 콜로케이션, 혼동 어휘
+· Part 6 장문 빈칸 12지문 48문항: 문맥 시제, 연결어, 어휘, 문장 넣기
+· Part 7 독해 30지문 90문항: 주제, 사실 확인(NOT 포함), 빈칸 추론
+· 빈출 단어 310개 퀴즈와 단어 카드
 
-■ Part 5 형식 어휘 56문항
-mitigate, obviate, contingent on처럼 전치사와 의미로 골라야 하는 고급 어휘와, 철자가 비슷한 혼동 어휘를 실제 시험 형식으로 연습합니다.
+■ JLPT 일본어 (N3·N2)
+· 단어 200문항(뜻, 한자 읽기, 한자 표기), 문법 120문항, 1문단 독해 30지문
+· 단어장 620개, 후리가나 켜고 끄기
 
-■ 1문단 독해 16지문 48문항
-공지, 기사, 광고, 이메일 지문마다 주제 확인, 사실 확인(NOT 포함), 빈칸 추론 3문항. 패러프레이즈 선택지와 숫자 바꿔치기 함정까지 연습합니다.
+■ HSK 중국어 (3급·4급)
+· 단어 200문항(뜻, 병음, 한자), 어법 120문항, 1문단 독해 30지문
+· 단어장 620개, 병음 켜고 끄기
 
 ■ 이렇게 공부해요
 · 고르는 즉시 채점하고, 해석과 함께 오답 선택지가 왜 틀렸는지까지 한국어로 설명합니다.
-· 중상 이상, 상 이상, 최상만 중에서 난이도를 고를 수 있습니다.
-· 문항당 목표 시간(Part 5는 20초, 독해는 60초)을 보여 줍니다.
-· 아직 풀지 않은 문제부터 나오고, 선택지 순서는 매번 섞입니다.
+· 난이도·급수를 고를 수 있고, 아직 풀지 않은 문제부터 나옵니다.
 · 틀린 문제는 오답노트에 모이고, 다시 풀어 맞히면 빠집니다.
-· 결과 화면에서 유형별 정답률로 약점을 확인합니다.
-· 실전 믹스 모드: 문법 5 + 어휘 5 + 지문 1개를 섞어 13문항.
+· 결과 화면에서 유형별 정답률을 보고, 가장 약한 유형만 골라 집중 연습합니다.
+· 실전 믹스: 여러 유형을 실제 시험 순서로 섞어 풉니다.
+· 단어장 카드: 앞면은 단어와 예문, 누르면 뜻과 해석. 외운 단어와 다시 볼 단어를 표시합니다.
+· 가진 문제가 있으면 CSV 파일로 직접 추가할 수 있습니다.
 
 ■ 편하게
 · 회원가입 없이 바로 시작
@@ -45,12 +50,12 @@ mitigate, obviate, contingent on처럼 전치사와 의미로 골라야 하는 �
 · 라이트 모드와 다크 모드
 · 학습 기록은 기기 안에만 저장되며 어떤 개인정보도 수집하지 않습니다
 
-※ TOEIC은 ETS(Educational Testing Service)의 등록상표입니다. 이 앱은 ETS와 관련이 없으며 ETS의 승인이나 후원을 받지 않았습니다.
+※ TOEIC은 ETS의 등록상표입니다. JLPT는 일본국제교류기금과 일본국제교육지원협회, HSK는 중국 교육부 산하 기관이 주관하는 시험입니다. 이 앱은 해당 기관과 관련이 없으며 승인이나 후원을 받지 않았습니다. 모든 문제는 출제 경향을 참고해 새로 만든 것입니다.
 ```
 
 ## 키워드 (App Store, 100자 이내, 쉼표로 구분)
 
-`토익,RC,파트5,파트7,토익문법,토익어휘,독해,영어,문법,어휘,영단어,토익공부,고득점,900점`
+`토익,RC,JLPT,일본어,HSK,중국어,단어장,문법,독해,어학시험,일본어능력시험,중국어능력시험,영단어`
 
 ## 지원 URL / 마케팅 URL
 
@@ -82,5 +87,5 @@ mitigate, obviate, contingent on처럼 전치사와 의미로 골라야 하는 �
 ## App Store 심사 메모 (App Review Information → Notes)
 
 ```
-This app is an offline TOEIC reading practice tool for Korean learners. All 159 questions, explanations, scoring, and the wrong-answer notebook are bundled in the app and work without an internet connection. No account or login is required. No personal data is collected; progress is stored only on the device.
+This app is an offline practice tool for Korean learners preparing for the TOEIC reading section, the JLPT (Japanese) and the HSK (Chinese). All questions, vocabulary cards, explanations, scoring, and the wrong-answer notebook are bundled in the app and work without an internet connection. No account or login is required. No personal data is collected; progress is stored only on the device.
 ```

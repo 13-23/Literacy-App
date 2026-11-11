@@ -1,11 +1,11 @@
-<title>RC 완전정복</title>
+<title>어학 완전정복</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="theme-color" content="#F3F4F8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Sans+JP:wght@400;600&family=Noto+Sans+SC:wght@400;600&display=swap">
 <style>
 /* Layout: phone-first app shell. Sticky top bar, one reading column, bottom tab bar on phones;
-   answer choices drawn as OMR bubbles, the TOEIC answer-sheet mark. */
+   answer choices drawn as OMR bubbles, the answer-sheet mark. */
 :root{
   --bg:#F3F4F8; --surface:#FFFFFF; --surface-2:#F7F8FB; --ink:#141A2E; --muted:#636A84; --line:#E4E7EF;
   --brand:#C42F5C; --brand-soft:#FCEBF0; --on-brand:#FFFFFF;
@@ -27,6 +27,9 @@
   --brand:#F06A93; --brand-soft:#3B1D29; --on-brand:#1A0B11;
   --teal:#4CC5B9; --teal-soft:#14302D; --indigo:#A3A6FF; --indigo-soft:#23254A; --amber:#F0B35A; --amber-soft:#382A14;
   --ok:#52C890; --ok-soft:#15301F; --bad:#F28275; --bad-soft:#3A1D1A; --shadow:none; color-scheme:dark}
+/* 일본어·중국어 문제는 해당 언어 글꼴로 */
+#app[lang="ja"]{--f-item:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif}
+#app[lang="zh-CN"]{--f-item:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:15px;line-height:1.6;-webkit-tap-highlight-color:transparent}
@@ -39,22 +42,22 @@ button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 /* top bar */
 .topbar{position:sticky;top:var(--safe-area-inset-top,env(safe-area-inset-top,0px));z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
 .topbar .col{display:flex;align-items:center;gap:12px;height:56px}
-.logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:17px;letter-spacing:-.01em;background:none;border:0;padding:0;cursor:pointer}
-.logo i{width:22px;height:22px;border-radius:50%;border:2px solid var(--brand);display:grid;place-items:center}
+.logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:17px;letter-spacing:-.01em;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.logo i{width:22px;height:22px;border-radius:50%;border:2px solid var(--brand);display:grid;place-items:center;flex:none}
 .logo i::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--brand)}
 .spacer{flex:1}
 .tabs{display:flex;gap:4px}
-.tab{display:flex;align-items:center;gap:6px;background:none;border:0;padding:8px 12px;border-radius:10px;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;position:relative}
+.tab{display:flex;align-items:center;gap:6px;background:none;border:0;padding:8px 12px;border-radius:10px;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;position:relative;white-space:nowrap}
 .tab[aria-current="true"]{color:var(--ink);background:var(--surface)}
 .tab svg{width:20px;height:20px}
 .tab .dot{min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--brand);color:var(--on-brand);font-family:var(--f-num);font-size:11px;display:grid;place-items:center}
-.iconbtn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.iconbtn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;color:var(--ink);flex:none}
 .iconbtn svg{width:18px;height:18px}
 
 main{padding-block:20px 40px}
 @media (max-width:639px){
   .tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);justify-content:space-around;padding:6px max(16px,var(--safe-area-inset-right,env(safe-area-inset-right,0px))) calc(6px + var(--safe-area-inset-bottom,env(safe-area-inset-bottom,0px))) max(16px,var(--safe-area-inset-left,env(safe-area-inset-left,0px)))}
-  .tab{flex-direction:column;gap:2px;font-size:11px;padding:6px 18px;flex:1;max-width:160px}
+  .tab{flex-direction:column;gap:2px;font-size:11px;padding:6px 10px;flex:1;max-width:160px}
   .tab[aria-current="true"]{background:none;color:var(--brand)}
   .tab .dot{position:absolute;top:2px;left:calc(50% + 6px)}
   body.has-tabs main{padding-bottom:calc(96px + var(--safe-area-inset-bottom,env(safe-area-inset-bottom,0px)))}
@@ -72,6 +75,7 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 .stack{display:grid;gap:12px}
 .section{margin-top:32px;display:grid;gap:12px}
 .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.back{background:none;border:0;padding:0;color:var(--muted);font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;margin-bottom:10px}
 
 /* home */
 .hero{display:grid;gap:6px;margin-bottom:18px}
@@ -80,7 +84,7 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 .stat b{display:block;font-family:var(--f-num);font-size:22px;font-weight:600;line-height:1.2}
 .stat b small{font-size:13px;color:var(--muted);font-weight:500}
 .stat span{font-size:12.5px;color:var(--muted)}
-.seg{display:flex;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:3px;gap:3px}
+.seg{display:flex;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:3px;gap:3px;overflow-x:auto}
 .seg button{flex:1;border:0;background:none;padding:8px 6px;border-radius:9px;font-size:13.5px;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap}
 .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(20,26,46,.12)}
 .lvhint{font-size:12.5px;color:var(--muted)}
@@ -92,22 +96,23 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 .b-m{background:var(--amber-soft);color:var(--amber)}
 .b-6{background:var(--indigo-soft);color:var(--brand)}
 .b-w{background:var(--teal-soft);color:var(--indigo)}
-.gap.num{min-width:3.2em;text-align:center;font-family:var(--f-num);font-size:12px;font-weight:600;line-height:1.1em;color:var(--muted)}
-.gap.num.on{color:var(--brand)}
-.passage .ptext{white-space:pre-line}
-.stem p.word,.word{font-family:var(--f-item);font-size:30px;font-weight:600;line-height:1.2;margin:0}
-.ex{font-family:var(--f-item);font-size:16px}
 .weak{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.foot{margin-top:28px;text-align:center}
+.foot a{color:inherit}
 .mode .desc{font-size:13.5px;color:var(--muted);min-width:0}
 .mode .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
 .mode .meta b{font-family:var(--f-num);color:var(--ink);font-weight:600}
 .mode .go{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding-top:12px;border-top:1px solid var(--line);flex-wrap:wrap}
+.exam{cursor:pointer;text-align:left;font:inherit;width:100%}
+@media (hover:hover){.exam:hover{border-color:var(--brand)}}
+.exam .badge{width:54px;height:54px;font-size:15px}
 .chips{display:flex;gap:6px}
 .chips button{font-family:var(--f-num);font-size:12px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer}
 .chips button[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);background:var(--surface-2)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:14.5px;font-weight:600;padding:10px 18px;min-height:44px;border-radius:12px;border:1px solid var(--brand);background:var(--brand);color:var(--on-brand);cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:14.5px;font-weight:600;padding:10px 18px;min-height:44px;border-radius:12px;border:1px solid var(--brand);background:var(--brand);color:var(--on-brand);cursor:pointer;text-decoration:none}
 .btn.soft{background:var(--brand-soft);border-color:transparent;color:var(--brand)}
 .btn.plain{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.btn.sm{min-height:36px;padding:6px 12px;font-size:13px}
 .btn.block{width:100%}
 .btn:disabled{opacity:.4;cursor:default}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
@@ -120,31 +125,47 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 
 /* quiz */
 .qhead{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.qhead .title{font-weight:600;font-size:14px}
-.timer{font-family:var(--f-num);font-size:12.5px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.qhead .title{flex:1;font-weight:600;font-size:14px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.timer{font-family:var(--f-num);font-size:12.5px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap}
 .timer.over{color:var(--bad);border-color:var(--bad)}
+.timer:empty{display:none}
 .count{font-family:var(--f-num);font-size:13px;color:var(--muted)}
+.rdbtn{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;white-space:nowrap}
+.rdbtn[aria-pressed="true"]{border-color:var(--brand);color:var(--brand);background:var(--brand-soft)}
 .progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:20px}
 .progress i{display:block;height:100%;background:var(--brand);border-radius:3px;transition:width .3s}
 .passage{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px 18px 20px;margin-bottom:22px}
 .ptype{display:flex;justify-content:space-between;gap:10px;font-family:var(--f-num);font-size:11.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
-.passage h3{font-family:var(--f-item);font-size:19px;line-height:1.35;margin:0 0 10px;font-weight:600}
-.passage p{font-family:var(--f-item);font-size:16.5px;line-height:1.78;margin:0}
+.passage h3{font-family:var(--f-item);font-size:19px;line-height:1.5;margin:0 0 10px;font-weight:600}
+.passage p{font-family:var(--f-item);font-size:16.5px;line-height:1.78;margin:0;white-space:pre-line}
+#app[lang="ja"] .passage p,#app[lang="zh-CN"] .passage p{line-height:2.1}
+ruby rt{font-family:var(--f-ui);font-size:.55em;color:var(--muted);font-weight:400}
+body.rd-off ruby rt{display:none}
 .tags{display:flex;gap:6px;flex-wrap:wrap}
 .tag{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
 .tag.tcat{background:var(--brand-soft);border-color:transparent;color:var(--brand)}
+.tag.tu{background:var(--amber-soft);border-color:transparent;color:var(--amber)}
 .lv2{color:var(--teal)!important}.lv3{color:var(--amber)!important}.lv4{color:var(--bad)!important}
 .stem{display:flex;gap:10px;margin:12px 0 18px}
 .stem .qn{font-family:var(--f-num);color:var(--muted);padding-top:3px;flex:none;font-size:15px}
 .stem p{font-family:var(--f-item);font-size:19px;line-height:1.6;margin:0;min-width:0}
+#app[lang="ja"] .stem p,#app[lang="zh-CN"] .stem p{line-height:2}
+.word{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:26px 18px;margin:12px 0 18px;text-align:center}
+.word .w{font-family:var(--f-item);font-size:34px;font-weight:600;line-height:1.3;word-break:keep-all}
+.word .wr{font-size:15px;color:var(--muted);margin-top:4px;min-height:1.5em}
+.word .ask{font-size:13.5px;color:var(--muted);margin-top:12px}
 .gap{display:inline-block;min-width:5.5em;border-bottom:2px solid currentColor;margin:0 .15em;height:1.1em;vertical-align:-.15em}
 .gap.on{border-color:var(--brand);background:var(--brand-soft)}
+.gap.num{min-width:3.2em;text-align:center;font-family:var(--f-num);font-size:12px;font-weight:600;line-height:1.1em;color:var(--muted)}
+.gap.num.on{color:var(--brand)}
+.ex{font-family:var(--f-item);font-size:16px}
 .choices{display:grid;gap:10px}
-.choice{display:flex;align-items:center;gap:14px;width:100%;min-height:56px;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:12px 14px;cursor:pointer;font-family:var(--f-item);font-size:17px;line-height:1.4;transition:border-color .15s,background .15s}
+.choice{display:flex;align-items:center;gap:14px;width:100%;min-height:56px;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:12px 14px;cursor:pointer;font-family:var(--f-item);font-size:17px;line-height:1.5;transition:border-color .15s,background .15s}
 @media (hover:hover){.choice:hover:not(:disabled){border-color:var(--brand)}}
 .choice:active:not(:disabled){transform:scale(.99)}
 .choice:disabled{cursor:default}
 .choice span:last-child{min-width:0}
+.choice.ko{font-family:var(--f-ui);font-size:16px}
 .bub{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--brand);color:var(--brand);display:grid;place-items:center;font-family:var(--f-num);font-size:13px;font-weight:600}
 .choice.right{border-color:var(--ok);background:var(--ok-soft)}
 .choice.right .bub{border-color:var(--ok);background:var(--ok);color:var(--surface)}
@@ -157,7 +178,7 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 .fb .verdict.no{background:var(--bad-soft);color:var(--bad)}
 .fb dl{margin:0;padding:14px 16px 16px;display:grid;gap:12px}
 .fb dt{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.04em;margin-bottom:2px}
-.fb dd{margin:0;font-size:14.5px;line-height:1.7}
+.fb dd{margin:0;font-size:14.5px;line-height:1.7;white-space:pre-line}
 .actionbar{position:sticky;bottom:0;z-index:10;margin-top:18px;padding:12px 0 calc(12px + var(--safe-area-inset-bottom,env(safe-area-inset-bottom,0px)));background:linear-gradient(to top,var(--bg) 70%,transparent)}
 .actionbar .inner{display:flex;align-items:center;gap:12px}
 .kbd{font-family:var(--f-num);font-size:12px;color:var(--muted)}
@@ -183,13 +204,48 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 .review summary::-webkit-details-marker{display:none}
 .mark{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;align-self:flex-start;margin-top:2px}
 .mark.ok{background:var(--ok-soft);color:var(--ok)}.mark.no{background:var(--bad-soft);color:var(--bad)}
-.review .s{font-family:var(--f-item);font-size:15.5px;min-width:0}
+.review .s{font-family:var(--f-item);font-size:15.5px;min-width:0;line-height:1.9}
 .review .body{padding:10px 0 2px 32px;font-size:14px;display:grid;gap:6px;line-height:1.7}
 .confirm{display:inline-flex;gap:8px;align-items:center;font-size:13px;flex-wrap:wrap}
+
+/* 단어장 카드 */
+.vcard{display:grid;gap:10px;justify-items:center;width:100%;min-height:340px;align-content:center;text-align:center;background:var(--surface);border:1.5px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:24px 18px;cursor:pointer;font:inherit;color:inherit;touch-action:pan-y}
+.vcard.flipped{border-color:var(--brand)}
+@media (hover:hover){.vcard:hover{border-color:var(--brand)}}
+.vw{font-family:var(--f-item);font-size:40px;font-weight:600;line-height:1.25;word-break:keep-all}
+.vcard.flipped .vw{font-size:26px}
+.vr{font-size:16px;color:var(--muted);min-height:1.4em}
+.vko{font-size:24px;font-weight:700;color:var(--brand);line-height:1.4}
+.vex{font-family:var(--f-item);font-size:17px;line-height:2;max-width:32em;padding-top:12px;border-top:1px solid var(--line);width:100%}
+.vexko{font-family:var(--f-ui);font-size:14.5px;color:var(--muted);line-height:1.6;margin-top:6px}
+.vhint{font-size:12.5px;color:var(--muted)}
+.vbtns{display:flex;gap:8px;align-items:center;margin-top:14px}
+.vbtns .btn{flex:1}
+.iconbtn:disabled{opacity:.35;cursor:default}
+@media (max-width:420px){.vw{font-size:34px}}
+
+/* CSV 문제 추가 */
+.drop{display:grid;place-items:center;gap:8px;text-align:center;border:1.5px dashed var(--line);border-radius:var(--r);padding:26px 16px;background:var(--surface);cursor:pointer;color:var(--muted);font-size:14px}
+.drop.over{border-color:var(--brand);background:var(--brand-soft)}
+.drop b{color:var(--ink);font-size:15px}
+.drop input{position:absolute;width:1px;height:1px;opacity:0}
+.sum{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.sum div{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:13px}
+.sum b{font-family:var(--f-num);font-size:17px;display:block}
+.errs{list-style:none;margin:0;padding:0;font-size:13.5px;display:grid;gap:6px;max-height:260px;overflow:auto}
+.errs li{display:grid;grid-template-columns:auto 1fr;gap:8px}
+.errs .ln{font-family:var(--f-num);font-size:12px;color:var(--muted);padding-top:2px}
+.errs .e{color:var(--bad)}.errs .w{color:var(--amber)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th,.tbl td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-weight:600;white-space:nowrap}
+.tbl td{color:var(--muted)}
+.scroll{overflow-x:auto}
 @media (max-width:420px){
   h1{font-size:23px}
   .stat b{font-size:19px}
   .stem p{font-size:18px}
+  .word .w{font-size:30px}
   .cat{grid-template-columns:6em 1fr 3em}
   .ring{width:92px;height:92px}
 }
@@ -198,11 +254,12 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 
 <header class="topbar gut">
   <div class="col">
-    <button class="logo" data-act="home" aria-label="홈으로"><i></i>RC 완전정복</button>
+    <button class="logo" data-act="exams" aria-label="시험 고르기로"><i></i>어학 완전정복</button>
     <span class="spacer"></span>
     <nav class="tabs" id="tabs">
-      <button class="tab" id="tab-home" data-act="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>학습</button>
+      <button class="tab" id="tab-home" data-act="study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg>학습</button>
       <button class="tab" id="tab-wrong" data-act="wrong"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12l6 6M15 12l-6 6"/></svg>오답노트<span class="dot" id="wrong-dot" hidden></span></button>
+      <button class="tab" id="tab-add" data-act="add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M12 11v6M9 14h6"/></svg>문제 추가</button>
     </nav>
     <button class="iconbtn" id="theme-btn" data-act="theme" aria-label="다크 모드로 바꾸기"></button>
   </div>
@@ -213,32 +270,95 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 /*DATA*/
 </script>
 <script>
-const KIND_LABEL={main:"주제 확인",fact:"사실 확인",blank:"빈칸 추론"};
-const KIND_NAME={G:"Part 5 문법",V:"Part 5 어휘",P6:"Part 6 장문 빈칸",R:"Part 7 독해",W:"단어 퀴즈"};
-const LV_LABEL={2:"중상",3:"상",4:"최상"};
-const MODE_LABEL={G:"Part 5 문법",V:"Part 5 어휘",P6:"Part 6 장문 빈칸",R:"Part 7 독해",W:"단어 퀴즈",MIX:"실전 믹스",WRONG:"오답 다시 풀기",CAT:"약한 유형 집중"};
+/* ---------- 시험 설정 ---------- */
+const KIND_LABEL={main:"주제·목적",fact:"사실 확인",blank:"빈칸 추론",detail:"세부 사항",infer:"추론",syn:"동의어",insert:"문장 위치",intent:"의도 파악"};
+const EXAMS={
+  toeic:{name:"TOEIC",full:"TOEIC RC",lang:"en",eyebrow:"TOEIC Reading · Part 5 · 6 · 7",badge:"TOE<br>IC",bc:"b-g",
+    levels:["2","3","4"],lvName:{2:"중상",3:"상",4:"최상"},minLv:true,
+    filters:[["2","중상 이상"],["3","상 이상"],["4","최상만"]],
+    modes:{W:["Part 5 어휘","P5<br>어휘","콜로케이션, 전치사로 고르는 어휘, 철자가 비슷한 혼동 어휘"],
+           S:["Part 5 문법","P5<br>문법","도치, 가정법, 수 일치, 관계사, 준동사, 접속사와 전치사"],
+           P6:["Part 6 장문 빈칸","P6<br>장문","이메일·공지·기사 속 빈칸 4개: 문맥 시제, 연결어, 어휘, 문장 넣기"],
+           P:["Part 7 독해","P7<br>독해","1문단 지문마다 주제 확인, 사실 확인, 빈칸 추론 3문항"],
+           Q:["빈출 단어 퀴즈","단어","토익 빈출 동사·명사·형용사·부사. 뜻을 고르고 예문으로 확인"]},
+    time:{W:20,S:20,P6:30,P:60,Q:10},pko:"지문 요지",desc:"Part 5 문법·어휘, Part 6 장문 빈칸, Part 7 독해, 빈출 단어"},
+  jlpt:{name:"JLPT",full:"JLPT 일본어",lang:"ja",eyebrow:"日本語能力試験",badge:"日本<br>語",bc:"b-v",
+    levels:["N5","N4","N3","N2","N1"],lvName:{},rd:"후리가나",
+    modes:{W:["단어","単語","뜻, 한자 읽기, 한자 표기"],
+           S:["문장","文法","조사, 문형, 경어, 접속 표현 빈칸"],
+           P:["1문단 독해","読解","지문마다 주제, 내용 일치, 빈칸 3문항"],
+           Q:["단어장 퀴즈","単語<br>帳","단어장 단어의 뜻 고르기. 예문과 해석으로 확인"]},
+    time:{W:15,S:30,P:90,Q:10},pko:"지문 해석",desc:"단어·문법·1문단 독해·단어장"},
+  hsk:{name:"HSK",full:"HSK 중국어",lang:"zh-CN",eyebrow:"汉语水平考试",badge:"汉<br>语",bc:"b-r",
+    levels:["HSK1","HSK2","HSK3","HSK4","HSK5","HSK6"],lvName:{HSK1:"1급",HSK2:"2급",HSK3:"3급",HSK4:"4급",HSK5:"5급",HSK6:"6급"},rd:"병음",
+    modes:{W:["단어","词语","뜻, 병음, 한자 고르기"],
+           S:["문장","语法","양사, 개사, 보어, 把·被 구문 빈칸"],
+           P:["1문단 독해","阅读","지문마다 주제, 내용 일치, 빈칸 3문항"],
+           Q:["단어장 퀴즈","词汇","단어장 단어의 뜻 고르기. 예문과 해석으로 확인"]},
+    time:{W:15,S:30,P:90,Q:10},pko:"지문 해석",desc:"단어·어법·1문단 독해·단어장"}
+};
+const EXAM_KEYS=Object.keys(EXAMS);
+const ASK={"뜻":"뜻으로 알맞은 것을 고르세요","읽기":"읽는 법으로 알맞은 것을 고르세요","표기":"한자로 알맞은 것을 고르세요","병음":"병음으로 알맞은 것을 고르세요","한자":"이 뜻의 중국어 단어를 고르세요"};
+const HIDE_RD=new Set(["읽기","표기","병음"]); /* 읽기 자체를 묻는 문제는 답이 보이지 않게 */
+const modeLabel=(e,m)=>m==="MIX"?"실전 믹스":m==="WRONG"?"오답 다시 풀기":m==="CAT"?"약한 유형 집중":(EXAMS[e].modes[m]||[m])[0];
+const isSet=k=>k==="P"||k==="P6"; /* 지문 하나에 문항 여러 개 */
+const lvName=(e,lv)=>EXAMS[e].lvName[lv]||lv;
 
-/* 정답은 데이터에서 항상 첫 번째 선택지이고, 출제할 때 섞는다. */
-const BANK={};
-G.forEach(r=>BANK[r[0]]={id:r[0],kind:"G",cat:r[1],lv:r[2],q:r[3],c:r[4],ko:r[5],ex:r[6]});
-V.forEach(r=>BANK[r[0]]={id:r[0],kind:"V",cat:r[1],lv:r[2],q:r[3],c:r[4],ko:r[5],ex:r[6]});
-R.forEach(p=>p.qs.forEach((r,i)=>BANK[p.id+"-"+i]={id:p.id+"-"+i,kind:"R",cat:KIND_LABEL[r[0]],qk:r[0],lv:p.lv,q:r[1],c:r[2],ex:r[3],p}));
-P6.forEach(p=>p.qs.forEach((r,i)=>BANK[p.id+"-"+i]={id:p.id+"-"+i,kind:"P6",cat:r[0],lv:p.lv,q:"빈칸 ("+(i+1)+")",bi:i+1,c:r[1],ex:r[2],p}));
-/* 단어 퀴즈 오답 선택지: 같은 품사의 다른 뜻 3개를 고정으로 고른다(다시 풀 때도 같은 문제). */
-(()=>{const by={};W.forEach(r=>(by[r[1]]=by[r[1]]||[]).push(r));
-  W.forEach(r=>{const g=by[r[1]].length>=4?by[r[1]]:W,i=g.indexOf(r),d=[];
-    for(const step of [7,19,37,53,71,89,3,11]){if(d.length===3)break;const o=g[((i<0?0:i)+step)%g.length];if(o!==r&&o[3]!==r[3]&&!d.includes(o[3]))d.push(o[3])}
-    BANK[r[0]]={id:r[0],kind:"W",cat:r[1],lv:3,q:r[2],c:[r[3],...d],wex:r[4],wko:r[5]}});})();
-const ALL=Object.keys(BANK);
+/* ---------- 문제 은행: 정답은 항상 첫 번째 선택지, 출제할 때 섞는다 ---------- */
+const BANK={},PASS={};
+function putItem(o){BANK[o.id]=o}
+function putPassage(p){PASS[p.id]=p;p.qs.forEach((r,i)=>putItem({id:p.id+"-"+i,exam:p.exam,kind:"P",cat:r.cat||KIND_LABEL[r[0]]||"독해",qk:r[0],lv:p.lv,q:r[1],c:r[2],ex:r[3],p,u:p.u}))}
+V.forEach(r=>putItem({id:r[0],exam:"toeic",kind:"W",cat:r[1],lv:String(r[2]),q:r[3],c:r[4],ko:r[5],ex:r[6]}));
+G.forEach(r=>putItem({id:r[0],exam:"toeic",kind:"S",cat:r[1],lv:String(r[2]),q:r[3],c:r[4],ko:r[5],ex:r[6]}));
+R.forEach(p=>putPassage(Object.assign({},p,{exam:"toeic",lv:String(p.lv)})));
+/* Part 6: 지문마다 빈칸 {1}~{4} */
+const P6PASS={};
+P6.forEach(p=>{p.exam="toeic";p.lv=String(p.lv);P6PASS[p.id]=p;p.qs.forEach((r,i)=>putItem({id:p.id+"-"+i,exam:"toeic",kind:"P6",cat:r[0],lv:String(p.lv),q:"빈칸 ("+(i+1)+")",bi:i+1,c:r[1],ex:r[2],p}))});
+function loadPack(exam,d){
+  (d.words||[]).forEach(r=>putItem({id:r[0],exam,kind:"W",lv:r[1],cat:r[2],q:r[3],rd:r[4],c:r[5],ko:r[6],ex:r[7]}));
+  (d.sentences||[]).forEach(r=>putItem({id:r[0],exam,kind:"S",lv:r[1],cat:r[2],q:r[3],c:r[4],ko:r[5],ex:r[6]}));
+  (d.passages||[]).forEach(p=>putPassage(Object.assign({},p,{exam})));
+}
+PACKS.forEach(([exam,d])=>loadPack(exam,d));
+/* 단어장 퀴즈: 단어장의 단어마다 뜻 고르기 1문항. 오답 보기는 같은 시험·급수·품사의 다른 뜻에서 고정으로 고른다(다시 풀어도 같은 문제). */
+/* 뜻 비교: 괄호 설명과 흔한 어미를 빼고 두 글자씩 잘라, 하나라도 같으면 뜻이 겹친다고 본다 */
+const STOP=new Set(["하다","되다","이다","있다","없다","스럽","롭다","하게","해서","하는","적인","적이"]);
+const senses=ko=>{const b=new Set();String(ko).replace(/\([^)]*\)/g,"").split(/[,;]/).forEach(x=>{x=x.replace(/[^가-힣]/g,"");if(x.length===1)b.add(x);for(let i=0;i<x.length-1;i++){const t=x.slice(i,i+2);if(!STOP.has(t))b.add(t)}});return [...b]};
+(()=>{const grp={};VOCAB.forEach(([e,list])=>list.forEach(v=>{const k=e+"|"+v.lv+"|"+v.pos;(grp[k]=grp[k]||[]).push(v);(grp[e+"|"+v.lv]=grp[e+"|"+v.lv]||[]).push(v)}));
+  VOCAB.forEach(([e,list])=>list.forEach(v=>{
+    if(BANK[v.id])return;
+    const d=[],mine=new Set(senses(v.ko));
+    /* 뜻이 일부라도 겹치는 단어(예: 简单 '간단하다, 쉽다'와 '쉽다')는 오답 보기로 쓰지 않는다 */
+    const clash=ko=>senses(ko).some(x=>mine.has(x))||d.some(x=>senses(x).some(y=>senses(ko).includes(y)));
+    const tryFrom=g=>{const i=Math.max(0,g.indexOf(v)),n=g.length;
+      for(const step of [7,1])for(let k=1;k<=n&&d.length<3;k++){const o=g[(i+k*step)%n];if(o!==v&&o.w!==v.w&&!clash(o.ko))d.push(o.ko)}};
+    /* 같은 품사에서 먼저 고르고, 모자라면 같은 급수 전체에서 */
+    tryFrom(grp[e+"|"+v.lv+"|"+v.pos]);if(d.length<3)tryFrom(grp[e+"|"+v.lv]);
+    if(d.length===3)putItem({id:v.id,exam:e,kind:"Q",cat:v.pos,lv:String(v.lv),q:v.w,rd:v.rd,c:[v.ko,...d],wex:v.ex,wko:v.exko});
+  }))})();
 
 /* ---------- 저장 (이 브라우저에만) ---------- */
-const KEY="toeic-rc-v1";
-function load(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.h)return s}catch(e){}return {h:{},s:[]}}
+const KEY="lang-quiz-v1",CKEY="lang-quiz-custom-v1";
+function load(){
+  try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.h)return s}catch(e){}
+  const s={h:{},s:[],lv:{}};
+  /* 예전 TOEIC 앱 기록이 있으면 가져온다 */
+  try{const o=JSON.parse(localStorage.getItem("toeic-rc-v1"));if(o&&o.h){s.h=o.h;s.s=(o.s||[]).map(r=>({e:"toeic",m:{G:"S",V:"W",R:"P",W:"Q"}[r.m]||r.m,lab:r.lab,ok:r.ok,n:r.n,d:r.d}));if(o.lv)s.lv.toeic=String(o.lv);s.cur="toeic"}}catch(e){}
+  return s;
+}
 let store=load();
-if(!store.lv)store.lv=2;
+store.lv=store.lv||{};store.rd=store.rd||{};
 function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+let custom={sets:[]};
+try{const c=JSON.parse(localStorage.getItem(CKEY));if(c&&c.sets)custom=c}catch(e){}
+function saveCustom(){try{localStorage.setItem(CKEY,JSON.stringify(custom));return true}catch(e){return false}}
+function ingestSet(set){set.items.forEach(o=>putItem(Object.assign({u:set.id},o)));set.passages.forEach(p=>putPassage(Object.assign({u:set.id},p)))}
+custom.sets.forEach(ingestSet);
+function dropSet(id){Object.keys(BANK).forEach(k=>{if(BANK[k].u===id)delete BANK[k]});Object.keys(PASS).forEach(k=>{if(PASS[k].u===id)delete PASS[k]})}
+
+const idsOf=e=>Object.keys(BANK).filter(id=>BANK[id].exam===e);
 function stat(ids){let seen=0,n=0,c=0;ids.forEach(id=>{const h=store.h[id];if(h){seen++;n+=h.n;c+=h.c}});return {seen,total:ids.length,acc:n?Math.round(c/n*100):null}}
-function wrongIds(){return Object.keys(store.h).filter(id=>BANK[id]&&store.h[id].last===0)}
+function wrongIds(e){return Object.keys(store.h).filter(id=>BANK[id]&&store.h[id].last===0&&(!e||BANK[id].exam===e))}
 
 /* ---------- 테마: 기본은 라이트 ---------- */
 const THEME_KEY="toeic-rc-theme";
@@ -253,54 +373,74 @@ function applyTheme(){
   const m=document.querySelector('meta[name="theme-color"]');if(m)m.content=theme==="dark"?"#0F121A":"#F3F4F8";
 }
 
+/* ---------- 난이도·급수 필터 ---------- */
+const presentLv=e=>{const s=new Set(Object.values(BANK).filter(q=>q.exam===e).map(q=>q.lv));return EXAMS[e].levels.filter(l=>s.has(l))};
+function filters(e){const X=EXAMS[e];return X.filters||[["all","전체"],...presentLv(e).map(l=>[l,lvName(e,l)])]}
+function curLv(e){const f=filters(e),v=store.lv[e];return f.some(x=>x[0]===v)?v:f[0][0]}
+function lvOk(e,lv){const v=curLv(e);if(EXAMS[e].minLv)return +lv>=+v;return v==="all"||lv===v}
+
 /* ---------- 출제 ---------- */
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const tries=id=>(store.h[id]?store.h[id].n:0);
-const poolG=()=>G.filter(r=>r[2]>=store.lv).map(r=>r[0]);
-const poolV=()=>V.filter(r=>r[2]>=store.lv).map(r=>r[0]);
-const poolR=()=>R.filter(p=>p.lv>=store.lv);
-const poolP6=()=>P6.filter(p=>p.lv>=store.lv);
-const poolW=()=>W.map(r=>r[0]);
+/* 단어장(TOEIC은 난이도 구분 없음)은 TOEIC 난이도 필터를 적용하지 않는다 */
+const vlvOk=(e,lv)=>!!EXAMS[e].minLv||lvOk(e,lv);
+const pool=(e,k)=>Object.values(BANK).filter(q=>q.exam===e&&q.kind===k&&!isSet(k)&&(k==="Q"?vlvOk(e,q.lv):lvOk(e,q.lv))).map(q=>q.id);
+const poolP=(e,k="P")=>Object.values(k==="P6"?P6PASS:PASS).filter(p=>p.exam===e&&lvOk(e,p.lv));
 const pIds=p=>p.qs.map((_,i)=>p.id+"-"+i);
-const isSet=k=>k==="R"||k==="P6";
 function pickLeast(ids,n){return ids.map(id=>[id,tries(id)+Math.random()*.9]).sort((a,b)=>a[1]-b[1]).slice(0,n).map(x=>x[0])}
-function pickPassages(n,pool=poolR()){return pool.map(p=>[p,pIds(p).reduce((s,id)=>s+tries(id),0)/p.qs.length+Math.random()*.9]).sort((a,b)=>a[1]-b[1]).slice(0,n).map(x=>x[0])}
-const size={G:10,V:10,P6:1,R:2,W:10};
+function pickPassages(e,n,k="P"){return poolP(e,k).map(p=>[p,pIds(p).reduce((s,id)=>s+tries(id),0)/p.qs.length+Math.random()*.9]).sort((a,b)=>a[1]-b[1]).slice(0,n).map(x=>x[0])}
+const size={W:10,S:10,P:2,P6:1,Q:10};
 
-function build(mode,opt){
+function build(e,mode,opt){
   let ids=[];
-  if(mode==="CAT"){const pool=opt.k==="G"?poolG():opt.k==="V"?poolV():poolW();ids=pickLeast(pool.filter(id=>BANK[id].cat===opt.c),10)}
-  if(mode==="P6")pickPassages(size.P6,poolP6()).forEach(p=>ids.push(...pIds(p)));
-  if(mode==="W")ids=pickLeast(poolW(),size.W);
-  if(mode==="G")ids=pickLeast(poolG(),size.G);
-  if(mode==="V")ids=pickLeast(poolV(),size.V);
-  if(mode==="R")pickPassages(size.R).forEach(p=>ids.push(...pIds(p)));
-  if(mode==="MIX"){ids=shuffle([...pickLeast(poolG(),4),...pickLeast(poolV(),4)]);const q=pickPassages(1,poolP6())[0];if(q)ids.push(...pIds(q));const p=pickPassages(1)[0];if(p)ids.push(...pIds(p))}
-  if(mode==="WRONG"){
-    const w=wrongIds();
-    ids=shuffle(w.filter(id=>!isSet(BANK[id].kind)));
-    [...new Set(w.filter(id=>isSet(BANK[id].kind)).map(id=>BANK[id].p.id))].forEach(pid=>ids.push(...w.filter(id=>BANK[id].p&&BANK[id].p.id===pid).sort()));
+  if(mode==="W"||mode==="S"||mode==="Q")ids=pickLeast(pool(e,mode),size[mode]);
+  if(mode==="P"||mode==="P6")pickPassages(e,size[mode],mode).forEach(p=>ids.push(...pIds(p)));
+  if(mode==="CAT")ids=pickLeast(pool(e,opt.k).filter(id=>BANK[id].cat===opt.c),10);
+  if(mode==="MIX"){
+    if(e==="toeic"){ /* 실제 시험 순서: Part 5 → Part 6 → Part 7 */
+      ids=shuffle([...pickLeast(pool(e,"S"),4),...pickLeast(pool(e,"W"),4)]);
+      const q=pickPassages(e,1,"P6")[0];if(q)ids.push(...pIds(q));
+    }else ids=shuffle([...pickLeast(pool(e,"W"),5),...pickLeast(pool(e,"S"),5)]);
+    const p=pickPassages(e,1)[0];if(p)ids.push(...pIds(p));
   }
-  return ids.map(id=>({id,order:shuffle([0,1,2,3])}));
+  if(mode==="WRONG"){
+    const w=wrongIds(e);
+    ids=shuffle(w.filter(id=>!isSet(BANK[id].kind)));
+    [...new Set(w.filter(id=>isSet(BANK[id].kind)).map(id=>BANK[id].p.id))].forEach(pid=>ids.push(...w.filter(id=>BANK[id].p&&BANK[id].p.id===pid).sort((a,b)=>+a.split("-").pop()-+b.split("-").pop())));
+  }
+  return ids.map(id=>({id,order:shuffle(BANK[id].c.map((_,i)=>i))}));
 }
 
 /* ---------- 상태 ---------- */
-let view="home",sess=null,timer=null,confirmReset=false;
+let view="exams",cur=store.cur&&EXAMS[store.cur]?store.cur:"toeic",sess=null,timer=null,confirmReset=false,csv=null,confirmDel=null;
 const app=document.getElementById("app");
-const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-const blankify=(s,on)=>esc(s).replace("-------",`<span class="gap${on?" on":""}" aria-label="빈칸"></span>`);
-const L="ABCD";
-const lvTag=lv=>`<span class="tag lv${lv}">${LV_LABEL[lv]}</span>`;
+const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+/* 한자{읽기} 또는 [기준]{읽기} 를 루비로 */
+const RUBY=/\[([^\]{}]+)\]\{([^}]+)\}|([㐀-䶿一-鿿豈-﫿々〆ヶ]+)\{([^}]+)\}/g;
+const rb=s=>esc(s).replace(RUBY,(m,a,b,c,d)=>`<ruby>${a||c}<rt>${b||d}</rt></ruby>`);
+const plain=s=>String(s==null?"":s).replace(RUBY,(m,a,b,c)=>a||c);
+const BLANK="-------";
+const blankify=(s,on)=>rb(s).replace(BLANK,`<span class="gap${on?" on":""}" aria-label="빈칸"></span>`);
+const isWordCard=q=>q.kind==="Q"||q.kind==="W"&&!String(q.q).includes(BLANK);
+/* Part 6 지문: {1}~{4} 자리에 문항 번호를 넣은 빈칸 */
+const p6text=(p,base,on)=>esc(p.text).replace(/\{(\d)\}/g,(m,d)=>`<span class="gap num${+d===on?" on":""}" aria-label="빈칸 ${base+ +d-1}">${base+ +d-1}</span>`);
+const p6sentence=q=>q.p.text.split(/(\{\d\})/).map(t=>t==="{"+q.bi+"}"?"[ ? ]":/^\{\d\}$/.test(t)?"___":t).join("").split(/(?<=[.!?])\s+/).find(x=>x.includes("[ ? ]"))||"";
+const isKo=s=>/[가-힣]/.test(s)&&!/[぀-ヿ一-鿿]/.test(s);
+const L="ABCDEF";
+const lvTag=q=>q.kind==="Q"&&EXAMS[q.exam].minLv?"":`<span class="tag ${q.exam==="toeic"?"lv"+q.lv:""}">${esc(lvName(q.exam,q.lv))}</span>`;
+const rdOn=e=>store.rd[e]!==false;
 
-function start(mode,opt){
-  const items=build(mode,opt);if(!items.length)return;
-  const label=mode==="CAT"?opt.c+" 집중":MODE_LABEL[mode];
-  sess={mode,opt,label,items,i:0,res:[],picked:null,t0:Date.now()};
+function goExam(e){cur=e;store.cur=e;save();view="home";confirmReset=false;render();window.scrollTo(0,0)}
+function start(e,mode,opt){
+  const items=build(e,mode,opt);if(!items.length)return;
+  const label=mode==="CAT"?opt.c+" 집중":modeLabel(e,mode);
+  cur=e;sess={exam:e,mode,opt,label,items,i:0,res:[],picked:null,t0:Date.now()};
   view="quiz";render();window.scrollTo(0,0);
 }
 function choose(k){
   if(!sess||sess.picked!==null)return;
-  const it=sess.items[sess.i],real=it.order[k],ok=real===0;
+  const it=sess.items[sess.i];if(k>=it.order.length)return;
+  const real=it.order[k],ok=real===0;
   sess.picked=k;
   sess.res.push({id:it.id,ok,pick:real,ms:Date.now()-sess.t0});
   const h=store.h[it.id]||{n:0,c:0,last:0};h.n++;if(ok)h.c++;h.last=ok?1:0;store.h[it.id]=h;save();
@@ -318,7 +458,7 @@ function next(){
     else{const st=document.getElementById("stem");if(st)st.scrollIntoView({block:"start"})}
   }else{
     const ok=sess.res.filter(r=>r.ok).length;
-    store.s.unshift({m:sess.mode,lab:sess.label,ok,n:sess.res.length,d:Date.now()});store.s=store.s.slice(0,30);save();
+    store.s.unshift({e:sess.exam,m:sess.mode,lab:sess.label,ok,n:sess.res.length,d:Date.now()});store.s=store.s.slice(0,60);save();
     view="result";render();window.scrollTo(0,0);
   }
 }
@@ -331,28 +471,57 @@ function startTimer(limit){
 
 /* ---------- 화면 ---------- */
 function render(){
-  document.getElementById("tab-home").setAttribute("aria-current",view!=="wrong");
+  const inExam=view==="home"||view==="quiz"||view==="result"||view==="vocab";
+  document.getElementById("tab-home").setAttribute("aria-current",view==="exams"||inExam);
   document.getElementById("tab-wrong").setAttribute("aria-current",view==="wrong");
+  document.getElementById("tab-add").setAttribute("aria-current",view==="add");
   document.body.classList.toggle("in-quiz",view==="quiz");
   document.body.classList.toggle("has-tabs",view!=="quiz");
+  document.body.classList.toggle("rd-off",inExam&&!rdOn(cur));
+  if(inExam)app.setAttribute("lang",EXAMS[cur].lang);else app.removeAttribute("lang");
   const w=wrongIds().length,dot=document.getElementById("wrong-dot");dot.hidden=!w;dot.textContent=w;
   if(view!=="quiz")stopTimer();
+  if(view==="exams")app.innerHTML=examsView();
   if(view==="home")app.innerHTML=homeView();
-  if(view==="quiz"){app.innerHTML=quizView();if(sess.picked===null)startTimer({R:60,P6:30,W:10}[BANK[sess.items[sess.i].id].kind]||20)}
+  if(view==="quiz"){app.innerHTML=quizView();const q=BANK[sess.items[sess.i].id];if(sess.picked===null)startTimer(EXAMS[q.exam].time[q.kind])}
   if(view==="result")app.innerHTML=resultView();
   if(view==="wrong")app.innerHTML=wrongView();
+  if(view==="add")app.innerHTML=addView();
+  if(view==="vocab")app.innerHTML=vocabView();
+}
+function counts(e){const ids=idsOf(e),k=m=>ids.filter(id=>BANK[id].kind===m).length;
+  return {W:k("W"),S:k("S"),P:[...Object.values(PASS),...Object.values(P6PASS)].filter(p=>p.exam===e).length,Q:k("Q"),ids}}
+const foot=()=>document.querySelector('link[rel="manifest"]')?`<p class="small muted foot"><a href="privacy.html">개인정보처리방침</a> · 버전 2.0</p>`:"";
+function examsView(){
+  const all=stat(Object.keys(BANK)),w=wrongIds().length;
+  return `<div class="hero"><span class="eyebrow">TOEIC · JLPT · HSK</span><h1>어떤 시험을 공부할까요?</h1>
+    <p class="muted" style="margin:0">시험을 고르면 단어, 문장, 1문단 독해 퀴즈를 풀 수 있어요.</p></div>
+  <div class="stats">
+    <div class="stat"><b>${all.seen}<small>/${all.total}</small></b><span>푼 문항</span></div>
+    <div class="stat"><b>${all.acc===null?"–":all.acc+"<small>%</small>"}</b><span>평균 정답률</span></div>
+    <div class="stat"><b>${w}</b><span>남은 오답</span></div>
+  </div>
+  <div class="section" style="margin-top:20px">${EXAM_KEYS.map(e=>{const X=EXAMS[e],c=counts(e),s=stat(c.ids),lv=presentLv(e).map(l=>lvName(e,l));
+    return `<button class="mode exam" data-act="exam" data-e="${e}"><div class="badge ${X.bc}">${X.badge}</div><h2>${X.full}</h2>
+      <div class="desc">${X.desc}${e==="toeic"?"":" · "+lv.join("·")}</div>
+      <div class="meta"><span>단어 <b>${c.W}</b></span><span>문장 <b>${c.S}</b></span><span>지문 <b>${c.P}</b></span>${c.Q?`<span>단어장 <b>${c.Q}</b></span>`:""}<span>정답률 <b>${s.acc===null?"–":s.acc+"%"}</b></span></div></button>`}).join("")}</div>
+  <p class="small muted" style="margin-top:18px">가진 문제가 있으면 <b>문제 추가</b> 탭에서 CSV 파일로 넣을 수 있어요.</p>${foot()}`;
 }
 function chips(m,opts){return `<div class="chips" role="group" aria-label="문항 수">${opts.map(([v,l])=>`<button data-act="size" data-m="${m}" data-v="${v}" aria-pressed="${size[m]===v}">${l}</button>`).join("")}</div>`}
 function meta(ids){const s=stat(ids);return `<div class="meta"><span>푼 문항 <b>${s.seen}/${s.total}</b></span><span>정답률 <b>${s.acc===null?"–":s.acc+"%"}</b></span></div>`}
 function homeView(){
-  const g=poolG(),v=poolV(),rp=poolR(),rIds=rp.flatMap(pIds),sp=poolP6(),sIds=sp.flatMap(pIds),wd=poolW();
-  const all=stat(ALL),w=wrongIds().length,recent=store.s.slice(0,5);
-  const lvBtn=(lv,l)=>`<button data-act="lv" data-v="${lv}" aria-pressed="${store.lv===lv}">${l}</button>`;
-  return `
+  const e=cur,X=EXAMS[e],wd=pool(e,"W"),st=pool(e,"S"),rp=poolP(e),rIds=rp.flatMap(pIds),sp=poolP(e,"P6"),sIds=sp.flatMap(pIds),qz=pool(e,"Q"),toeic=e==="toeic";
+  const all=stat(idsOf(e)),w=wrongIds(e).length,recent=store.s.filter(r=>(r.e||"toeic")===e).slice(0,5),v=curLv(e);
+  const lvBtn=([k,l])=>`<button data-act="lv" data-v="${k}" aria-pressed="${v===k}">${esc(l)}</button>`;
+  const mode=(m,cls,ids,opts,ok)=>`<div class="mode"><div class="badge ${cls}">${X.modes[m][1]}</div><h2>${X.modes[m][0]}</h2>
+      <div class="desc">${X.modes[m][2]}</div>${meta(ids)}
+      <div class="go">${chips(m,opts)}<button class="btn" data-act="start" data-m="${m}" ${ok?"":"disabled"}>시작하기</button></div></div>`;
+  const hasRd=!!X.rd;
+  return `<button class="back" data-act="exams">‹ 시험 바꾸기</button>
   <div class="hero">
-    <span class="eyebrow">TOEIC Reading · Part 5 · 6 · 7</span>
-    <h1>오늘 풀 세트를 고르세요</h1>
-    <p class="muted" style="margin:0">Part 5는 문항당 20초, Part 6은 30초, 독해는 60초가 목표예요. 안 푼 문제부터 나와요.</p>
+    <span class="eyebrow">${esc(X.eyebrow)}</span>
+    <h1>${X.full} · 오늘 풀 세트를 고르세요</h1>
+    <p class="muted" style="margin:0">${toeic?"Part 5는 문항당 20초, Part 6은 30초, 독해는 60초":`단어는 문항당 ${X.time.W}초, 문장은 ${X.time.S}초, 독해는 ${X.time.P}초`}가 목표예요. 안 푼 문제부터 나와요.</p>
   </div>
   <div class="stats">
     <div class="stat"><b>${all.seen}<small>/${all.total}</small></b><span>푼 문항</span></div>
@@ -360,63 +529,56 @@ function homeView(){
     <div class="stat"><b>${w}</b><span>남은 오답</span></div>
   </div>
   <div class="section" style="margin-top:20px">
-    <div class="section-head"><h2>난이도</h2><span class="lvhint">${store.lv===2?"중상부터 최상까지 모두":store.lv===3?"상, 최상만":"최상 문항만"}</span></div>
-    <div class="seg" role="group" aria-label="난이도">${lvBtn(2,"중상 이상")}${lvBtn(3,"상 이상")}${lvBtn(4,"최상만")}</div>
+    <div class="section-head"><h2>${X.minLv?"난이도":"급수"}</h2>${hasRd?`<button class="rdbtn" data-act="rd" aria-pressed="${rdOn(e)}">${X.rd} ${rdOn(e)?"켜짐":"꺼짐"}</button>`:""}</div>
+    <div class="seg" role="group" aria-label="급수">${filters(e).map(lvBtn).join("")}</div>
   </div>
+  ${vocabCard(e)}
   <div class="section">
     <h2>문제 유형</h2>
-    <div class="mode"><div class="badge b-g">P5<br>문법</div><h2>Part 5 문법</h2>
-      <div class="desc">도치, 가정법, 수 일치, 관계사, 준동사, 접속사와 전치사</div>${meta(g)}
-      <div class="go">${chips("G",[[10,"10"],[20,"20"],[999,"전체"]])}<button class="btn" data-act="start" data-m="G" ${g.length?"":"disabled"}>시작하기</button></div></div>
-    <div class="mode"><div class="badge b-v">P5<br>어휘</div><h2>Part 5 어휘</h2>
-      <div class="desc">콜로케이션, 전치사로 고르는 어휘, 철자가 비슷한 혼동 어휘</div>${meta(v)}
-      <div class="go">${chips("V",[[10,"10"],[20,"20"],[999,"전체"]])}<button class="btn" data-act="start" data-m="V" ${v.length?"":"disabled"}>시작하기</button></div></div>
-    <div class="mode"><div class="badge b-6">P6<br>장문</div><h2>Part 6 장문 빈칸</h2>
-      <div class="desc">이메일·공지·기사 속 빈칸 4개: 문맥 시제, 연결어, 어휘, 문장 넣기</div>${meta(sIds)}
-      <div class="go">${chips("P6",[[1,"1지문"],[2,"2지문"],[999,"전체"]])}<button class="btn" data-act="start" data-m="P6" ${sp.length?"":"disabled"}>시작하기</button></div></div>
-    <div class="mode"><div class="badge b-r">P7<br>독해</div><h2>Part 7 독해</h2>
-      <div class="desc">1문단 지문마다 주제 확인, 사실 확인, 빈칸 추론 3문항</div>${meta(rIds)}
-      <div class="go">${chips("R",[[1,"1지문"],[2,"2지문"],[999,"전체"]])}<button class="btn" data-act="start" data-m="R" ${rp.length?"":"disabled"}>시작하기</button></div></div>
-    <div class="mode"><div class="badge b-w">단어</div><h2>빈출 단어 퀴즈</h2>
-      <div class="desc">토익 빈출 동사·명사·형용사·부사 ${wd.length}개. 뜻을 고르고 예문으로 확인</div>${meta(wd)}
-      <div class="go">${chips("W",[[10,"10"],[20,"20"],[30,"30"]])}<button class="btn" data-act="start" data-m="W">시작하기</button></div></div>
+    ${toeic?mode("S","b-g",st,[[10,"10"],[20,"20"],[999,"전체"]],st.length)+mode("W","b-v",wd,[[10,"10"],[20,"20"],[999,"전체"]],wd.length)
+      +mode("P6","b-6",sIds,[[1,"1지문"],[2,"2지문"],[999,"전체"]],sp.length)
+      :mode("W","b-v",wd,[[10,"10"],[20,"20"],[999,"전체"]],wd.length)+mode("S","b-g",st,[[10,"10"],[20,"20"],[999,"전체"]],st.length)}
+    ${mode("P","b-r",rIds,[[1,"1지문"],[2,"2지문"],[999,"전체"]],rp.length)}
+    ${qz.length?mode("Q","b-w",qz,[[10,"10"],[20,"20"],[30,"30"]],qz.length):""}
     <div class="mode"><div class="badge b-m">MIX</div><h2>실전 믹스</h2>
-      <div class="desc">문법 4 + 어휘 4 + Part 6 지문 1개 + Part 7 지문 1개를 실제 시험 순서로</div>
-      <div class="go"><span class="small muted">15문항 · 약 7분</span><button class="btn soft" data-act="start" data-m="MIX">시작하기</button></div></div>
+      <div class="desc">${toeic?"문법·어휘 8 + Part 6 지문 1개 + Part 7 지문 1개를 실제 시험 순서로":"단어 5 + 문장 5 + 지문 1개를 섞어서 실제 시험처럼"}</div>
+      <div class="go"><span class="small muted">${toeic?"15문항 · 약 7분":"약 13문항"}</span><button class="btn soft" data-act="start" data-m="MIX" ${wd.length+st.length+rp.length?"":"disabled"}>시작하기</button></div></div>
   </div>
   <div class="section">
-    <div class="section-head"><h2>최근 기록</h2>${w?`<button class="btn plain" data-act="start" data-m="WRONG" style="min-height:36px;padding:6px 12px;font-size:13px">오답 ${w}개 다시 풀기</button>`:""}</div>
-    ${recent.length?`<div class="panel" style="padding:4px 16px"><ul class="recent">${recent.map(r=>`<li><span>${esc(r.lab||MODE_LABEL[r.m])}</span><span class="small muted num">${new Date(r.d).toLocaleDateString("ko-KR",{month:"numeric",day:"numeric"})}</span><span class="pct">${r.ok}/${r.n}</span></li>`).join("")}</ul></div>`
+    <div class="section-head"><h2>최근 기록</h2>${w?`<button class="btn plain sm" data-act="start" data-m="WRONG">오답 ${w}개 다시 풀기</button>`:""}</div>
+    ${recent.length?`<div class="panel" style="padding:4px 16px"><ul class="recent">${recent.map(r=>`<li><span>${esc(r.lab||modeLabel(e,r.m))}</span><span class="small muted num">${new Date(r.d).toLocaleDateString("ko-KR",{month:"numeric",day:"numeric"})}</span><span class="pct">${r.ok}/${r.n}</span></li>`).join("")}</ul></div>`
       :`<div class="empty">아직 푼 세트가 없어요. 위에서 하나를 골라 시작해 보세요.<br>기록은 이 기기의 브라우저에 저장돼요.</div>`}
-    ${store.s.length||Object.keys(store.h).length?`<div>${confirmReset?`<span class="confirm">기록을 모두 지울까요? <button class="btn plain" data-act="reset-yes">지우기</button><button class="btn plain" data-act="reset-no">취소</button></span>`:`<button class="btn plain" data-act="reset" style="min-height:36px;padding:6px 12px;font-size:13px">기록 초기화</button>`}</div>`:""}
-  </div>
-  ${document.querySelector('link[rel="manifest"]')?`<p class="small muted" style="margin-top:28px;text-align:center"><a href="privacy.html" style="color:inherit">개인정보처리방침</a> · 버전 1.1</p>`:""}`;
+    ${recent.length||all.seen?`<div>${confirmReset?`<span class="confirm">${X.name} 기록을 모두 지울까요? <button class="btn plain sm" data-act="reset-yes">지우기</button><button class="btn plain sm" data-act="reset-no">취소</button></span>`:`<button class="btn plain sm" data-act="reset">${X.name} 기록 초기화</button>`}</div>`:""}
+  </div>${foot()}`;
 }
 function quizView(){
-  const it=sess.items[sess.i],q=BANK[it.id],done=sess.picked!==null,r=done?sess.res[sess.res.length-1]:null,n=sess.items.length;
-  const isR=q.kind==="R",isP6=q.kind==="P6",isW=q.kind==="W",qi=q.p?+it.id.slice(-1):0;
-  const qnum=isP6?131+sess.items.slice(0,sess.i).filter(x=>BANK[x.id].kind==="P6").length:isR?147+sess.items.slice(0,sess.i).filter(x=>BANK[x.id].kind==="R").length:101+sess.i;
+  const it=sess.items[sess.i],q=BANK[it.id],X=EXAMS[q.exam],done=sess.picked!==null,r=done?sess.res[sess.res.length-1]:null,n=sess.items.length;
+  const isP=q.kind==="P",isP6=q.kind==="P6",qi=isSet(q.kind)?+it.id.split("-").pop():0,card=isWordCard(q);
   let h=`<div class="qhead"><button class="iconbtn" data-act="quit" aria-label="그만두고 홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    <span class="title">${esc(sess.label)}</span><span class="spacer"></span>
+    <span class="title">${X.name} · ${esc(sess.label)}</span>
+    ${X.rd?`<button class="rdbtn" data-act="rd" aria-pressed="${rdOn(q.exam)}">${X.rd}</button>`:""}
     <span id="timer" class="timer">${done?Math.round(r.ms/1000)+"s":""}</span><span class="count">${sess.i+1}/${n}</span></div>
   <div class="progress"><i style="width:${(sess.i+(done?1:0))/n*100}%"></i></div>`;
-  if(isR)h+=`<article class="passage"><div class="ptype"><span>${esc(q.p.type)}</span><span>Questions ${qnum-qi}–${qnum-qi+2}</span></div><h3>${esc(q.p.title)}</h3><p>${blankify(q.p.text,q.qk==="blank")}</p></article>`;
-  if(isP6){const base=qnum-qi;h+=`<article class="passage"><div class="ptype"><span>${esc(q.p.type)}</span><span>Questions ${base}–${base+3}</span></div><h3>${esc(q.p.title)}</h3><p class="ptext">${esc(q.p.text).replace(/\{(\d)\}/g,(m,d)=>`<span class="gap num${+d===q.bi?" on":""}" aria-label="빈칸 ${base+ +d-1}">${base+ +d-1}</span>`)}</p></article>`}
-  h+=`<div id="stem" class="tags"><span class="tag tcat">${esc(q.cat)}</span>${isW?"":lvTag(q.lv)}</div>
-  ${isW?`<div class="stem" style="flex-direction:column;gap:4px"><p class="word" lang="en">${esc(q.q)}</p><p class="muted small" style="margin:0">알맞은 뜻을 고르세요</p></div>`
-   :`<div class="stem"><span class="qn">${qnum}.</span><p>${isR?esc(q.q):isP6?`빈칸 ${qnum}에 들어갈 가장 알맞은 ${q.cat==="문장 삽입"?"문장":"말"}을 고르세요.`:blankify(q.q,false)}</p></div>`}
-  <div class="choices">${it.order.map((real,k)=>{
+  if(isP){const s=sess.i+1-qi;h+=`<article class="passage"><div class="ptype"><span>${esc(q.p.type||"")}</span><span>문항 ${s}–${s+q.p.qs.length-1}</span></div>${q.p.title?`<h3>${rb(q.p.title)}</h3>`:""}<p>${blankify(q.p.text,q.qk==="blank")}</p></article>`}
+  if(isP6){const base=sess.i+1-qi;h+=`<article class="passage"><div class="ptype"><span>${esc(q.p.type||"")}</span><span>문항 ${base}–${base+q.p.qs.length-1}</span></div><h3>${esc(q.p.title)}</h3><p>${p6text(q.p,base,q.bi)}</p></article>`}
+  h+=`<div id="stem" class="tags"><span class="tag tcat">${esc(q.cat)}</span>${lvTag(q)}${q.u?`<span class="tag tu">추가한 문제</span>`:""}</div>`;
+  if(card){
+    const showRd=q.rd&&(done||(rdOn(q.exam)&&!HIDE_RD.has(q.cat)));
+    h+=`<div class="word"><div class="w">${esc(q.q)}</div><div class="wr">${showRd?esc(q.rd):""}</div><div class="ask">${q.kind==="Q"?ASK["뜻"]:ASK[q.cat]||"알맞은 것을 고르세요"}</div></div>`;
+  }else h+=`<div class="stem"><span class="qn">${sess.i+1}.</span><p>${isP?rb(q.q):isP6?`빈칸 ${sess.i+1}에 들어갈 가장 알맞은 ${q.cat==="문장 삽입"?"문장":"말"}을 고르세요.`:blankify(q.q,false)}</p></div>`;
+  h+=`<div class="choices">${it.order.map((real,k)=>{
     let cls="";if(done){cls=real===0?"right":k===sess.picked?"wrong":"dim"}
-    return `<button class="choice ${cls}" data-act="pick" data-k="${k}" ${done?"disabled":""}><span class="bub">${L[k]}</span><span${isW?' style="font-family:var(--f-ui);font-size:16px"':""}>${esc(q.c[real])}</span></button>`}).join("")}</div>`;
+    return `<button class="choice ${cls} ${isKo(q.c[real])?"ko":""}" data-act="pick" data-k="${k}" ${done?"disabled":""}><span class="bub">${L[k]}</span><span>${rb(q.c[real])}</span></button>`}).join("")}</div>`;
   if(done){
     const right=L[it.order.indexOf(0)];
     h+=`<div class="fb" id="fb"><div class="verdict ${r.ok?"ok":"no"}">${r.ok?"정답이에요":"오답이에요 · 정답 ("+right+")"}</div><dl>
-      ${q.ko?`<div><dt>해석</dt><dd>${esc(q.ko)}</dd></div>`:""}
-      ${q.p&&qi===0?`<div><dt>지문 요지</dt><dd>${esc(q.p.ko)}</dd></div>`:""}
-      ${isW?`<div><dt>예문</dt><dd><span class="ex" lang="en">${esc(q.wex)}</span><br><span class="muted">${esc(q.wko)}</span></dd></div>`:""}
+      ${card&&q.rd?`<div><dt>${X.rd?X.rd.replace("후리가나","읽기"):"읽기"}</dt><dd>${esc(q.q)} · ${esc(q.rd)}</dd></div>`:""}
+      ${q.ko?`<div><dt>${card?"뜻":"해석"}</dt><dd>${esc(q.ko)}</dd></div>`:""}
+      ${isSet(q.kind)&&qi===0&&q.p.ko?`<div><dt>${X.pko}</dt><dd>${esc(q.p.ko)}</dd></div>`:""}
+      ${q.wex?`<div><dt>예문</dt><dd><span class="ex">${rb(q.wex)}</span><br><span class="muted">${esc(q.wko)}</span></dd></div>`:""}
       ${q.ex?`<div><dt>해설</dt><dd>${esc(q.ex)}</dd></div>`:""}</dl></div>
     <div class="actionbar"><div class="inner"><span class="kbd">Enter 다음</span><span class="spacer"></span><button class="btn" data-act="next">${sess.i<n-1?"다음 문제":"결과 보기"}</button></div></div>`;
-  }else h+=`<p class="kbd" style="margin-top:14px">키보드 1–4 또는 A–D로도 고를 수 있어요</p>`;
+  }else h+=`<p class="kbd" style="margin-top:14px">키보드 1–${it.order.length} 또는 A–${L[it.order.length-1]}로도 고를 수 있어요</p>`;
   return h;
 }
 function ring(p){const R=44,C=2*Math.PI*R;return `<svg class="ring" viewBox="0 0 108 108" role="img" aria-label="정답률 ${p}%"><circle class="bg" cx="54" cy="54" r="${R}"/><circle class="fg" cx="54" cy="54" r="${R}" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-p/100)}"/><text x="54" y="61" text-anchor="middle" font-size="22">${p}%</text></svg>`}
@@ -425,58 +587,298 @@ function catBreakdown(res){
   return Object.entries(m).sort((a,b)=>a[1].c/a[1].n-b[1].c/b[1].n).map(([c,v])=>{const p=v.c/v.n;return `<div class="cat"><span>${esc(c)}</span><div class="bar"><i class="${p<.5?"low":p<.8?"mid":""}" style="width:${Math.max(p*100,2)}%"></i></div><span class="num">${v.c}/${v.n}</span></div>`}).join("");
 }
 function reviewList(list){
-  return `<ul class="review">${list.map(({id,ok,pick})=>{const q=BANK[id];
-    return `<li><details><summary><span class="mark ${ok?"ok":"no"}">${ok?"O":"X"}</span><span class="s">${q.p?`${esc(q.p.title)} <span class="muted small">· ${q.kind==="P6"?"빈칸 "+q.bi+" · ":""}${esc(q.cat)}</span>`:q.kind==="W"?`<b lang="en">${esc(q.q)}</b> <span class="muted small">· ${esc(q.cat)}</span>`:blankify(q.q,false)}</span></summary>
-    <div class="body"><div class="tags"><span class="tag tcat">${esc(q.cat)}</span>${q.kind==="W"?"":lvTag(q.lv)}</div>${q.kind==="R"?`<div class="muted">${esc(q.q)}</div>`:""}${q.kind==="P6"?`<div class="muted">${esc(q.p.text.split(/(\{\d\})/).map(t=>t==="{"+q.bi+"}"?"[ ? ]":/^\{\d\}$/.test(t)?"___":t).join("").split(/(?<=[.!?])\s+/).find(x=>x.includes("[ ? ]"))||"")}</div>`:""}<div>정답: <b>${esc(q.c[0])}</b>${!ok&&pick!=null?` <span class="muted">· 고른 답: ${esc(q.c[pick])}</span>`:""}</div>${q.ko?`<div class="muted">${esc(q.ko)}</div>`:""}${q.wex?`<div><span class="ex" lang="en">${esc(q.wex)}</span><br><span class="muted">${esc(q.wko)}</span></div>`:""}${q.ex?`<div>${esc(q.ex)}</div>`:""}</div></details></li>`}).join("")}</ul>`;
+  return `<ul class="review" lang="${list.length?EXAMS[BANK[list[0].id].exam].lang:""}">${list.map(({id,ok,pick})=>{const q=BANK[id],card=isWordCard(q);
+    const sum=q.kind==="P6"?`${esc(q.p.title)} <span class="muted small">· 빈칸 ${q.bi} · ${esc(q.cat)}</span>`:q.kind==="P"?`${rb(q.p.title||q.p.type||"지문")} <span class="muted small">· ${esc(q.cat)}</span>`:card?`${esc(q.q)} <span class="muted small">· ${esc(q.cat)}</span>`:blankify(q.q,false);
+    return `<li><details><summary><span class="mark ${ok?"ok":"no"}">${ok?"O":"X"}</span><span class="s">${sum}</span></summary>
+    <div class="body"><div class="tags"><span class="tag tcat">${esc(q.cat)}</span>${lvTag(q)}</div>${q.kind==="P"?`<div class="muted">${rb(q.q)}</div>`:""}${q.kind==="P6"?`<div class="muted">${esc(p6sentence(q))}</div>`:""}<div>정답: <b>${rb(q.c[0])}</b>${!ok&&pick!=null?` <span class="muted">· 고른 답: ${rb(q.c[pick])}</span>`:""}</div>${card&&q.rd?`<div class="muted">${esc(q.rd)}</div>`:""}${q.ko?`<div class="muted">${esc(q.ko)}</div>`:""}${q.wex?`<div><span class="ex">${rb(q.wex)}</span><br><span class="muted">${esc(q.wko)}</span></div>`:""}${q.ex?`<div>${esc(q.ex)}</div>`:""}</div></details></li>`}).join("")}</ul>`;
 }
 function resultView(){
   const res=sess.res,ok=res.filter(r=>r.ok).length,n=res.length,pct=Math.round(ok/n*100);
   const avg=Math.round(res.reduce((s,r)=>s+r.ms,0)/n/1000),hasWrong=res.some(r=>!r.ok);
-  const msg=pct>=90?"이 난이도는 거의 완성됐어요.":pct>=70?"좋아요. 틀린 유형만 다시 보면 돼요.":"해설을 읽고 오답을 한 번 더 풀어 보세요.";
-  /* 이번 세트에서 가장 약한 Part 5 문법·어휘 유형(정답률 80% 미만)을 골라 바로 집중 연습 */
-  const cm={};res.forEach(r=>{const q=BANK[r.id];if(q.kind!=="G"&&q.kind!=="V")return;const k=q.kind+"|"+q.cat;(cm[k]=cm[k]||{n:0,c:0}).n++;if(r.ok)cm[k].c++});
+  const msg=pct>=90?"이 급수는 거의 완성됐어요.":pct>=70?"좋아요. 틀린 유형만 다시 보면 돼요.":"해설을 읽고 오답을 한 번 더 풀어 보세요.";
+  /* 이번 세트에서 가장 약한 단어·문장 유형(정답률 80% 미만)을 골라 바로 집중 연습 */
+  const cm={};res.forEach(r=>{const q=BANK[r.id];if(q.kind!=="W"&&q.kind!=="S")return;const k=q.kind+"|"+q.cat;(cm[k]=cm[k]||{n:0,c:0}).n++;if(r.ok)cm[k].c++});
   const weak=Object.entries(cm).filter(([k,v])=>v.c/v.n<.8).sort((a,b)=>a[1].c/a[1].n-b[1].c/b[1].n)[0];
-  const wk=weak&&weak[0].split("|"),wn=wk?(wk[0]==="G"?poolG():poolV()).filter(id=>BANK[id].cat===wk[1]).length:0;
-  return `<span class="eyebrow">${esc(sess.label)} 결과</span>
+  const wk=weak&&weak[0].split("|"),wn=wk?pool(sess.exam,wk[0]).filter(id=>BANK[id].cat===wk[1]).length:0;
+  const again=sess.opt?` data-k="${sess.opt.k}" data-c="${esc(sess.opt.c)}"`:"";
+  return `<span class="eyebrow">${EXAMS[sess.exam].name} · ${esc(sess.label)} 결과</span>
   <div class="panel" style="margin-top:10px"><div class="scorecard">${ring(pct)}<div><div class="num" style="font-size:28px;font-weight:600">${ok} / ${n}</div><div class="muted small">문항당 평균 ${avg}초</div><div style="margin-top:6px">${msg}</div></div></div></div>
   <div class="row" style="margin-top:14px">
-    <button class="btn" data-act="start" data-m="${sess.mode}"${sess.opt?` data-k="${sess.opt.k}" data-c="${esc(sess.opt.c)}"`:""}>${sess.mode==="WRONG"?"남은 오답 다시 풀기":"새 세트 풀기"}</button>
+    <button class="btn" data-act="start" data-m="${sess.mode}"${again}>${sess.mode==="WRONG"?"남은 오답 다시 풀기":"새 세트 풀기"}</button>
     ${hasWrong&&sess.mode!=="WRONG"?`<button class="btn soft" data-act="start" data-m="WRONG">오답만 다시 풀기</button>`:""}
     <button class="btn plain" data-act="home">홈으로</button>
   </div>
-  <div class="section"><h2>유형별 정답</h2><div class="panel cats">${catBreakdown(res)}${wk&&wn>1?`<div class="weak"><span class="small">가장 약한 유형: <b>${esc(wk[1])}</b> <span class="muted">(${KIND_NAME[wk[0]]} ${wn}문항)</span></span><button class="btn soft" data-act="start" data-m="CAT" data-k="${wk[0]}" data-c="${esc(wk[1])}" style="min-height:38px;padding:6px 14px;font-size:13.5px">이 유형만 풀기</button></div>`:""}</div></div>
+  <div class="section"><h2>유형별 정답</h2><div class="panel cats">${catBreakdown(res)}${wk&&wn>1?`<div class="weak"><span class="small">가장 약한 유형: <b>${esc(wk[1])}</b> <span class="muted">(${esc(modeLabel(sess.exam,wk[0]))} ${wn}문항)</span></span><button class="btn soft sm" data-act="start" data-m="CAT" data-k="${wk[0]}" data-c="${esc(wk[1])}">이 유형만 풀기</button></div>`:""}</div></div>
   <div class="section"><h2>문항 다시 보기</h2><div class="panel" style="padding:4px 16px">${reviewList(res)}</div></div>`;
 }
 function wrongView(){
   const w=wrongIds();
-  if(!w.length)return `<div class="hero"><span class="eyebrow">오답노트</span><h1>틀린 문제가 없어요</h1></div><div class="empty">세트를 풀다가 틀린 문제는 여기에 모여요.<br>다시 풀어서 맞히면 자동으로 빠져요.<div style="margin-top:14px"><button class="btn" data-act="home">세트 고르러 가기</button></div></div>`;
-  const gr={G:[],V:[],P6:[],R:[],W:[]};w.forEach(id=>gr[BANK[id].kind].push(id));
-  const block=(k,t)=>gr[k].length?`<div class="section"><div class="section-head"><h2>${t}</h2><span class="num muted small">${gr[k].length}</span></div><div class="panel" style="padding:4px 16px">${reviewList(gr[k].map(id=>({id,ok:false,pick:null})))}</div></div>`:"";
+  if(!w.length)return `<div class="hero"><span class="eyebrow">오답노트</span><h1>틀린 문제가 없어요</h1></div><div class="empty">세트를 풀다가 틀린 문제는 여기에 모여요.<br>다시 풀어서 맞히면 자동으로 빠져요.<div style="margin-top:14px"><button class="btn" data-act="exams">시험 고르러 가기</button></div></div>`;
+  const block=e=>{const ids=wrongIds(e);if(!ids.length)return "";const X=EXAMS[e];
+    const part=k=>{const g=ids.filter(id=>BANK[id].kind===k);return g.length?`<div class="section-head" style="margin-top:6px"><span class="small muted">${X.modes[k][0]}</span><span class="num muted small">${g.length}</span></div><div class="panel" style="padding:4px 16px">${reviewList(g.map(id=>({id,ok:false,pick:null})))}</div>`:""};
+    return `<div class="section"><div class="section-head"><h2>${X.full} <span class="num muted small">${ids.length}</span></h2><button class="btn soft sm" data-act="start" data-e="${e}" data-m="WRONG">다시 풀기</button></div>${(e==="toeic"?["S","W","P6","P","Q"]:["W","S","P","Q"]).map(part).join("")}</div>`};
   return `<div class="hero"><span class="eyebrow">오답노트</span><h1>다시 볼 문제 ${w.length}개</h1><p class="muted" style="margin:0">마지막으로 풀었을 때 틀린 문제예요. 눌러서 정답과 해설을 확인하세요.</p></div>
-  <button class="btn" data-act="start" data-m="WRONG">오답 다시 풀기</button>
-  ${Object.keys(gr).map(k=>block(k,KIND_NAME[k])).join("")}`;
+  ${EXAM_KEYS.map(block).join("")}`;
 }
+
+/* ---------- CSV로 문제 추가 ---------- */
+const COLS={exam:["시험","exam"],level:["급수","난이도","level"],kind:["종류","kind","type"],cat:["유형","category","cat"],q:["문제","question","단어","word"],rd:["읽기","reading","발음","병음","후리가나"],
+  c1:["보기1","선택지1","정답","choice1","answer"],c2:["보기2","선택지2","choice2"],c3:["보기3","선택지3","choice3"],c4:["보기4","선택지4","choice4"],
+  ko:["해석","뜻","translation","meaning"],ex:["해설","explanation"],pid:["지문번호","passage_id"],ptitle:["지문제목","passage_title"],ptext:["지문","passage","passage_text"],pko:["지문해석","passage_translation"],ptype:["글종류","passage_type"]};
+const TEMPLATE=[
+ ["시험","급수","종류","유형","문제","읽기","보기1","보기2","보기3","보기4","해석","해설","지문번호","지문제목","지문","지문해석","글종류"],
+ ["JLPT","N3","단어","뜻","経験","けいけん","경험","실험","시험","경제","경험","経験(けいけん)은 '경험'. 例: 留学の経験がある。— 유학 경험이 있다.","","","","",""],
+ ["JLPT","N3","단어","뜻","準備","じゅんび","준비","","","","준비","보기2~4를 비워 두면 같은 시험의 다른 단어 뜻으로 오답을 자동으로 채워요.","","","","",""],
+ ["JLPT","N3","문장","조사","駅{えき}の前{まえ}で友達{ともだち}___会{あ}いました。","","に","を","で","へ","역 앞에서 친구를 만났습니다.","会う는 만나는 대상에 に를 쓴다.","","","","",""],
+ ["JLPT","N3","문단","주제","この文章{ぶんしょう}で一番{いちばん}言{い}いたいことは何{なん}ですか。","","図書館{としょかん}の利用{りよう}時間{じかん}が変{か}わること","図書館{としょかん}が閉{し}まること","本{ほん}が増{ふ}えること","駐車場{ちゅうしゃじょう}ができること","","안내문의 핵심은 이용 시간 변경이다.","jp-lib","図書館{としょかん}からのお知{し}らせ","来月{らいげつ}から図書館{としょかん}の利用{りよう}時間{じかん}が変{か}わります。平日{へいじつ}は夜{よる}9時{じ}まで開{あ}いていますが、土曜日{どようび}は午後{ごご}5時{じ}に閉{し}まります。","다음 달부터 도서관 이용 시간이 바뀝니다. 평일은 밤 9시까지 열지만 토요일은 오후 5시에 닫습니다.","お知らせ"],
+ ["JLPT","N3","문단","내용","土曜日{どようび}は何時{なんじ}に閉{し}まりますか。","","午後{ごご}5時{じ}","午後{ごご}9時{じ}","午前{ごぜん}9時{じ}","午後{ごご}6時{じ}","","토요일은 오후 5시에 닫는다고 했다.","jp-lib","","","",""],
+ ["HSK","HSK3","단어","병음","认识","","rènshi","rènzhī","rěnshì","rénshí","알다, 인식하다","认识는 rènshi(뒤 글자 경성).","","","","",""],
+ ["HSK","HSK3","문장","양사","我{wǒ}买{mǎi}了{le}一{yì}___书{shū}。","","本","个","张","条","나는 책 한 권을 샀다.","책은 양사 本을 쓴다.","","","","",""],
+ ["TOEIC","상","문장","시제","By the time the manager arrived, the meeting ------- already.","","had ended","has ended","ends","will end","매니저가 도착했을 때 회의는 이미 끝나 있었다.","과거 시점보다 먼저 끝난 일은 과거완료.","","","","",""]
+];
+function parseCSV(text){
+  text=text.replace(/^﻿/,"");
+  const first=text.split(/\r?\n/,1)[0]||"",delim=(first.match(/\t/g)||[]).length>(first.match(/,/g)||[]).length?"\t":",";
+  const rows=[];let row=[],f="",q=false;
+  for(let i=0;i<text.length;i++){const ch=text[i];
+    if(q){if(ch==='"'){if(text[i+1]==='"'){f+='"';i++}else q=false}else f+=ch}
+    else if(ch==='"'&&f==="")q=true;
+    else if(ch===delim){row.push(f);f=""}
+    else if(ch==="\n"||ch==="\r"){if(ch==="\r"&&text[i+1]==="\n")i++;row.push(f);rows.push(row);row=[];f=""}
+    else f+=ch}
+  if(f!==""||row.length){row.push(f);rows.push(row)}
+  return rows.filter(r=>r.some(c=>c.trim()!==""));
+}
+function decode(buf){
+  const b=new Uint8Array(buf);
+  if(b[0]===0xFF&&b[1]===0xFE)return new TextDecoder("utf-16le").decode(buf);
+  try{return new TextDecoder("utf-8",{fatal:true}).decode(buf)}catch(e){}
+  try{return new TextDecoder("euc-kr").decode(buf)}catch(e){return new TextDecoder("utf-8").decode(buf)}
+}
+const hash=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(36)};
+function normExam(v){v=v.trim().toLowerCase();if(/toeic|토익/.test(v))return "toeic";if(/jlpt|일본|jp|japan/.test(v))return "jlpt";if(/hsk|중국|cn|china/.test(v))return "hsk";return null}
+function normKind(v){v=v.trim().toLowerCase();if(/^(단어|어휘|word|w|vocab)/.test(v))return "W";if(/^(문장|문법|sentence|s|grammar)/.test(v))return "S";if(/^(문단|독해|지문|reading|passage|p)/.test(v))return "P";return null}
+function normLevel(e,v){v=v.trim().toUpperCase().replace(/\s/g,"");
+  if(e==="toeic"){if(!v)return "2";const m={"중상":"2","상":"3","최상":"4","2":"2","3":"3","4":"4"};return m[v]||null}
+  if(e==="jlpt"){const m=v.match(/^N?([1-5])(급)?$/);return m?"N"+m[1]:null}
+  if(e==="hsk"){const m=v.match(/^(HSK)?([1-6])(급)?$/);return m?"HSK"+m[2]:null}
+}
+function normQK(v){v=v.trim().toLowerCase();if(/주제|목적|main/.test(v))return "main";if(/빈칸|blank/.test(v))return "blank";return "fact"}
+const normBlank=s=>s.replace(/_{3,}|-{3,}|（\s*）|\(\s{0,3}\)|\[\s*\]/,BLANK);
+function analyze(name,text){
+  const rows=parseCSV(text),msgs=[];
+  if(rows.length<2)return {name,items:[],passages:[],msgs:[{ln:1,t:"e",m:"제목 줄과 문제 줄이 있어야 해요."}],rows:0};
+  const head=rows[0].map(h=>h.trim().toLowerCase()),col={};
+  Object.entries(COLS).forEach(([k,names])=>{const i=head.findIndex(h=>names.some(n=>n.toLowerCase()===h));if(i>=0)col[k]=i});
+  const miss=["exam","kind","q","c1"].filter(k=>col[k]==null).map(k=>COLS[k][0]);
+  if(miss.length)return {name,items:[],passages:[],msgs:[{ln:1,t:"e",m:`필요한 칸이 없어요: ${miss.join(", ")}. 양식 파일의 제목 줄을 그대로 써 주세요.`}],rows:rows.length-1};
+  const get=(r,k)=>col[k]==null?"":String(r[col[k]]||"").trim();
+  const items=[],pass={},seen=new Set();
+  const wordPool=e=>[...Object.values(BANK).filter(q=>q.exam===e&&q.kind==="W"&&isWordCard(q)).map(q=>({cat:q.cat,a:q.c[0]})),...items.filter(q=>q.exam===e&&isWordCard(q)).map(q=>({cat:q.cat,a:q.c[0]}))];
+  const pend=[];
+  rows.slice(1).forEach((r,ri)=>{
+    const ln=ri+2,err=m=>msgs.push({ln,t:"e",m}),warn=m=>msgs.push({ln,t:"w",m});
+    const e=normExam(get(r,"exam"));if(!e)return err(`시험 칸 "${get(r,"exam")}"을 모르겠어요. TOEIC, JLPT, HSK 중 하나로 써 주세요.`);
+    const k=normKind(get(r,"kind"));if(!k)return err(`종류 칸 "${get(r,"kind")}"을 모르겠어요. 단어, 문장, 문단 중 하나로 써 주세요.`);
+    const lv=normLevel(e,get(r,"level"));if(!lv)return err(`급수 칸 "${get(r,"level")}"이 ${e==="jlpt"?"N1~N5":e==="hsk"?"HSK1~HSK6(또는 1~6)":"중상·상·최상"} 형식이 아니에요.`);
+    let q=get(r,"q");if(!q)return err("문제 칸이 비어 있어요.");
+    const c=["c1","c2","c3","c4"].map(x=>get(r,x)).filter(Boolean);
+    if(new Set(c).size!==c.length)return err("보기 중에 똑같은 것이 있어요.");
+    const cat=get(r,"cat")||(k==="W"?"뜻":k==="S"?"문장":"독해"),ko=get(r,"ko"),ex=get(r,"ex");
+    if(k==="S"){q=normBlank(q);if(!q.includes(BLANK))warn("빈칸 표시(___)가 없어요. 문장 그대로 보여 줄게요.")}
+    const id="u-"+hash([e,k,q,c[0]].join("|"));
+    if(BANK[id]||seen.has(id))return warn("이미 있는 문제라 건너뛰었어요.");
+    if(k==="P"){
+      const pid=get(r,"pid");if(!pid)return err("문단 문제는 지문번호 칸이 필요해요.");
+      if(c.length<2)return err("보기가 2개 이상 있어야 해요.");
+      const key=e+"|"+pid,P=pass[key]=pass[key]||{exam:e,lv,pid,qs:[],ln};
+      if(get(r,"ptext")){P.text=normBlank(get(r,"ptext"));P.title=get(r,"ptitle");P.ko=get(r,"pko");P.type=get(r,"ptype")}
+      const qk=normQK(cat);P.qs.push(Object.assign([qk,q,c,ex],{cat:get(r,"cat")||KIND_LABEL[qk]}));seen.add(id);return;
+    }
+    if(!ex)warn("해설이 비어 있어요.");
+    seen.add(id);
+    const o={id,exam:e,kind:k,lv,cat,q,rd:get(r,"rd"),c,ko,ex};
+    if(c.length<2){if(k==="W"&&!q.includes(BLANK)){pend.push([o,ln]);items.push(o)}else err("보기가 2개 이상 있어야 해요.");return}
+    items.push(o);
+  });
+  /* 보기1만 있는 단어는 같은 시험의 다른 단어 뜻으로 오답을 채운다 */
+  pend.forEach(([o,ln])=>{
+    const others=shuffle([...new Set(wordPool(o.exam).filter(x=>x.cat===o.cat&&x.a!==o.c[0]).map(x=>x.a))]).slice(0,3);
+    if(others.length<3){items.splice(items.indexOf(o),1);msgs.push({ln,t:"e",m:"보기가 1개뿐인데 오답으로 쓸 같은 유형 단어가 부족해요. 보기2~4를 채워 주세요."})}
+    else{o.c=[o.c[0],...others];msgs.push({ln,t:"w",m:"보기2~4를 다른 단어 뜻으로 자동으로 채웠어요."})}
+  });
+  const passages=[];
+  Object.values(pass).forEach(P=>{
+    if(!P.text){msgs.push({ln:P.ln,t:"e",m:`지문번호 ${P.pid}: 지문 칸이 채워진 줄이 없어요. 첫 문항 줄에 지문을 넣어 주세요.`});return}
+    passages.push({id:"u-"+hash(P.exam+"|"+P.text),exam:P.exam,lv:P.lv,type:P.type,title:P.title,text:P.text,ko:P.ko,qs:P.qs});
+  });
+  msgs.sort((a,b)=>a.ln-b.ln);
+  return {name,items,passages,msgs,rows:rows.length-1};
+}
+function handleFile(file){
+  if(!file)return;
+  const fr=new FileReader();
+  fr.onload=()=>{csv=analyze(file.name,decode(fr.result));render()};
+  fr.onerror=()=>{csv={name:file.name,items:[],passages:[],msgs:[{ln:0,t:"e",m:"파일을 읽지 못했어요."}],rows:0};render()};
+  fr.readAsArrayBuffer(file);
+}
+async function downloadTemplate(){
+  const body="﻿"+TEMPLATE.map(r=>r.map(c=>/[",\n]/.test(c)?`"${c.replace(/"/g,'""')}"`:c).join(",")).join("\r\n");
+  /* claude.ai 안에서 열었을 때는 저장 확인창을 거친다 */
+  if(window.claude&&window.claude.use){const d=await window.claude.use("downloads").catch(()=>null);if(d){try{await d.save({filename:"문제추가_양식.csv",data:new Blob([body],{type:"text/csv"})})}catch(e){}return}}
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([body],{type:"text/csv;charset=utf-8"}));a.download="문제추가_양식.csv";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);
+}
+function commitCSV(){
+  if(!csv)return;
+  const set={id:"s"+Date.now().toString(36),name:csv.name,d:Date.now(),items:csv.items,passages:csv.passages};
+  custom.sets.unshift(set);
+  if(!saveCustom()){custom.sets.shift();csv.msgs.unshift({ln:0,t:"e",m:"저장 공간이 부족해서 추가하지 못했어요."});render();return}
+  ingestSet(set);csv=null;render();window.scrollTo(0,0);
+}
+function setSummary(items,passages){const by={};items.forEach(o=>{const k=o.exam+"|"+o.kind;by[k]=(by[k]||0)+1});passages.forEach(p=>{const k=p.exam+"|P";by[k]=(by[k]||0)+p.qs.length});return by}
+const sumLabel=k=>{const [e,m]=k.split("|");return EXAMS[e].name+" "+EXAMS[e].modes[m][0]};
+function addView(){
+  let h=`<div class="hero"><span class="eyebrow">문제 추가</span><h1>CSV 파일로 문제 넣기</h1>
+    <p class="muted" style="margin:0">엑셀이나 구글 시트에서 양식대로 채운 뒤 CSV로 저장해서 올리세요. 추가한 문제는 이 기기에만 저장돼요.</p></div>
+  <div class="row"><button class="btn plain" data-act="tpl">양식 파일 내려받기</button></div>`;
+  if(csv){
+    const errs=csv.msgs.filter(m=>m.t==="e").length,by=setSummary(csv.items,csv.passages),n=csv.items.length+csv.passages.reduce((s,p)=>s+p.qs.length,0);
+    h+=`<div class="section"><div class="section-head"><h2>${esc(csv.name)}</h2><span class="small muted">${csv.rows}줄</span></div>
+      <div class="panel stack">
+        ${n?`<div class="sum">${Object.entries(by).map(([k,v])=>`<div><b>${v}</b>${esc(sumLabel(k))}</div>`).join("")}</div>`:`<div class="muted">추가할 수 있는 문제가 없어요.</div>`}
+        ${csv.msgs.length?`<div><div class="small" style="font-weight:600;margin-bottom:6px">${errs?`고칠 줄 ${errs}개는 빼고 추가돼요`:"확인할 점"}</div><ul class="errs">${csv.msgs.map(m=>`<li><span class="ln">${m.ln?m.ln+"줄":""}</span><span class="${m.t}">${esc(m.m)}</span></li>`).join("")}</ul></div>`:""}
+        <div class="row"><button class="btn" data-act="csv-add" ${n?"":"disabled"}>${n}문항 추가하기</button><button class="btn plain" data-act="csv-cancel">취소</button></div>
+      </div></div>`;
+  }else{
+    h+=`<div class="section"><label class="drop" id="drop"><input type="file" id="csvfile" accept=".csv,.tsv,.txt,text/csv"><b>CSV 파일 고르기</b><span>또는 여기로 끌어다 놓기</span></label></div>`;
+  }
+  if(custom.sets.length){
+    h+=`<div class="section"><h2>추가한 문제</h2><div class="panel" style="padding:4px 16px"><ul class="recent">${custom.sets.map(s=>{const by=setSummary(s.items,s.passages);
+      return `<li><span>${esc(s.name)}<br><span class="small muted">${Object.entries(by).map(([k,v])=>esc(sumLabel(k))+" "+v).join(" · ")}</span></span><span class="small muted num">${new Date(s.d).toLocaleDateString("ko-KR",{month:"numeric",day:"numeric"})}</span>
+      <span>${confirmDel===s.id?`<button class="btn plain sm" data-act="set-del-yes" data-id="${s.id}">지우기</button>`:`<button class="btn plain sm" data-act="set-del" data-id="${s.id}">삭제</button>`}</span></li>`}).join("")}</ul></div></div>`;
+  }
+  h+=`<div class="section"><h2>칸 쓰는 법</h2><div class="panel scroll"><table class="tbl"><tbody>
+    <tr><th>시험</th><td>TOEIC, JLPT, HSK</td></tr>
+    <tr><th>급수</th><td>JLPT는 N1~N5, HSK는 HSK1~HSK6(또는 1~6), TOEIC은 중상·상·최상</td></tr>
+    <tr><th>종류</th><td>단어, 문장, 문단</td></tr>
+    <tr><th>유형</th><td>단어: 뜻, 읽기, 표기, 병음, 한자 · 문장: 자유(조사, 양사 등) · 문단: 주제, 내용, 빈칸</td></tr>
+    <tr><th>문제</th><td>단어는 단어만, 문장은 빈칸을 ___ 로 표시. 한자 위 읽기는 <b>漢字{かんじ}</b>, <b>学习{xuéxí}</b>처럼 중괄호로</td></tr>
+    <tr><th>읽기</th><td>단어의 후리가나 또는 병음(단어 문제만)</td></tr>
+    <tr><th>보기1~4</th><td><b>보기1이 정답</b>, 앱에서 섞어서 보여 줘요. 단어 문제는 보기1만 써도 돼요.</td></tr>
+    <tr><th>해석·해설</th><td>한국어 해석과 해설(선택)</td></tr>
+    <tr><th>지문번호 등</th><td>문단 문제만. 같은 지문의 문항은 지문번호를 똑같이 쓰고, 지문·지문제목·지문해석·글종류는 첫 줄에만</td></tr>
+  </tbody></table></div>
+  <p class="small muted" style="margin:0">엑셀에서는 "CSV UTF-8(쉼표로 분리)" 형식으로 저장해야 일본어·중국어가 깨지지 않아요.</p></div>`;
+  return h;
+}
+
+/* ---------- 단어장: 앞면은 단어와 예문, 누르면 한국어 뜻과 예문 해석 ---------- */
+const VOC={};
+VOCAB.forEach(([e,list])=>list.forEach(v=>VOC[v.id]=Object.assign({exam:e},v)));
+store.vk=store.vk||{}; /* 1 외웠어요, 2 다시 볼래요 */
+let vs=null;
+const vocIds=e=>{const L=EXAMS[e].levels;return Object.values(VOC).filter(v=>v.exam===e&&vlvOk(e,v.lv)).sort((x,y)=>L.indexOf(x.lv)-L.indexOf(y.lv)).map(v=>v.id)};
+function vocabCard(e){
+  const ids=vocIds(e);if(!Object.values(VOC).some(v=>v.exam===e))return "";
+  const known=ids.filter(id=>store.vk[id]===1).length,rev=ids.filter(id=>store.vk[id]===2).length;
+  return `<div class="section"><h2>단어장</h2><div class="mode"><div class="badge b-m">単<br>語</div><h2>단어 카드</h2>
+    <div class="desc">앞면에 단어와 예문, 누르면 한국어 뜻이 나와요</div>
+    <div class="meta"><span>단어 <b>${ids.length}</b></span><span>외운 단어 <b>${known}</b></span><span>다시 볼 단어 <b>${rev}</b></span></div>
+    <div class="go"><span class="small muted">${X_lvText(e)}</span><button class="btn" data-act="vocab" ${ids.length?"":"disabled"}>카드 보기</button></div></div></div>`;
+}
+const X_lvText=e=>{if(EXAMS[e].minLv)return "난이도 구분 없이 전체";const v=curLv(e),f=filters(e).find(x=>x[0]===v);return f?(EXAMS[e].minLv?"난이도 ":"급수 ")+f[1]:""};
+function vocabList(){
+  let ids=vocIds(cur);
+  if(vs.f==="new")ids=ids.filter(id=>store.vk[id]!==1);
+  if(vs.f==="rev")ids=ids.filter(id=>store.vk[id]===2);
+  return vs.mix?shuffle(ids):ids;
+}
+function openVocab(f){vs={f:f||(vs&&vs.f)||"new",mix:vs?vs.mix:false,i:0,flip:false,seen:0};vs.ids=vocabList();view="vocab";render();window.scrollTo(0,0)}
+function vocabMark(k){const id=vs.ids[vs.i];if(!id)return;store.vk[id]=k;save();vocabMove(1)}
+function vocabMove(d){vs.i=Math.max(0,Math.min(vs.ids.length,vs.i+d));vs.flip=false;render()}
+function vocabView(){
+  const X=EXAMS[cur],all=vocIds(cur),n=vs.ids.length;
+  const cnt={all:all.length,new:all.filter(id=>store.vk[id]!==1).length,rev:all.filter(id=>store.vk[id]===2).length};
+  const fb=(k,l)=>`<button data-act="vfilter" data-v="${k}" aria-pressed="${vs.f===k}">${l} ${cnt[k]}</button>`;
+  let h=`<div class="qhead"><button class="iconbtn" data-act="home" aria-label="단어장 닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <span class="title">${X.name} · 단어장</span>
+    ${X.rd?`<button class="rdbtn" data-act="rd" aria-pressed="${rdOn(cur)}">${X.rd}</button>`:""}
+    <span class="count">${Math.min(vs.i+1,n)}/${n}</span></div>
+  <div class="seg" role="group" aria-label="보기" style="margin-bottom:10px">${fb("new","안 외운")}${fb("rev","다시 볼")}${fb("all","전체")}</div>
+  <div class="row" style="justify-content:space-between;margin-bottom:12px"><span class="small muted">${esc(X_lvText(cur))}</span><button class="rdbtn" data-act="vmix" aria-pressed="${vs.mix}">순서 섞기</button></div>
+  <div class="progress"><i style="width:${n?vs.i/n*100:0}%"></i></div>`;
+  if(!n)return h+`<div class="empty">${vs.f==="rev"?"다시 볼 단어가 없어요. 카드에서 \"다시 볼래요\"를 누르면 여기에 모여요.":"이 급수의 단어를 모두 외웠어요."}<div style="margin-top:14px"><button class="btn plain" data-act="vfilter" data-v="all">전체 단어 보기</button></div></div>`;
+  if(vs.i>=n){const k=vs.ids.filter(id=>store.vk[id]===1).length,r=vs.ids.filter(id=>store.vk[id]===2).length;
+    return h+`<div class="panel stack" style="text-align:center"><h2>${n}개를 다 봤어요</h2><div class="muted">외웠어요 ${k} · 다시 볼래요 ${r}</div>
+      <div class="row" style="justify-content:center">${r?`<button class="btn" data-act="vfilter" data-v="rev">다시 볼 단어 ${r}개</button>`:""}<button class="btn plain" data-act="vrestart">처음부터</button><button class="btn plain" data-act="home">닫기</button></div></div>`}
+  const v=VOC[vs.ids[vs.i]],st=store.vk[v.id];
+  const tags=`<div class="tags" style="justify-content:center"><span class="tag tcat">${esc(v.pos)}</span><span class="tag">${esc(lvName(cur,v.lv))}</span>${st===1?`<span class="tag" style="color:var(--ok)">외웠어요</span>`:st===2?`<span class="tag tu">다시 볼래요</span>`:""}</div>`;
+  h+=`<button class="vcard${vs.flip?" flipped":""}" id="vcard" data-act="vflip" aria-label="${vs.flip?"앞면 보기":"뜻 보기"}">${tags}
+    <div class="vw">${esc(v.w)}</div><div class="vr">${v.rd&&(rdOn(cur)||vs.flip)?esc(v.rd):""}</div>
+    ${vs.flip?`<div class="vko">${esc(v.ko)}</div>`:""}
+    <div class="vex">${rb(v.ex)}${vs.flip?`<div class="vexko">${esc(v.exko)}</div>`:""}</div>
+    ${vs.flip?"":`<div class="vhint">눌러서 뜻 보기</div>`}</button>
+  <div class="vbtns"><button class="iconbtn" data-act="vprev" aria-label="이전 카드" ${vs.i?"":"disabled"}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button class="btn soft" data-act="vmark" data-v="2">다시 볼래요</button><button class="btn" data-act="vmark" data-v="1">외웠어요</button>
+    <button class="iconbtn" data-act="vnext" aria-label="다음 카드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
+  <p class="kbd" style="text-align:center;margin-top:10px">Space 뒤집기 · ← → 넘기기 · 1 다시 볼래요 · 2 외웠어요</p>`;
+  return h;
+}
+let tx=null;
+document.addEventListener("touchstart",e=>{if(view==="vocab"&&e.target.closest("#vcard"))tx=[e.touches[0].clientX,e.touches[0].clientY]},{passive:true});
+document.addEventListener("touchend",e=>{if(!tx)return;const dx=e.changedTouches[0].clientX-tx[0],dy=e.changedTouches[0].clientY-tx[1];tx=null;
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5){swiped=Date.now();vocabMove(dx<0?1:-1)}});
+let swiped=0;
 
 /* ---------- 이벤트 ---------- */
 document.addEventListener("click",e=>{
   const b=e.target.closest("[data-act]");if(!b)return;
   const a=b.dataset.act;
-  if(a==="home"||a==="quit"){view="home";confirmReset=false;render();window.scrollTo(0,0)}
+  if(a==="exams"){view="exams";render();window.scrollTo(0,0)}
+  else if(a==="exam")goExam(b.dataset.e);
+  else if(a==="study"){view=store.cur?"home":"exams";render();window.scrollTo(0,0)}
+  else if(a==="home"||a==="quit"){view="home";confirmReset=false;render();window.scrollTo(0,0)}
   else if(a==="wrong"){view="wrong";render();window.scrollTo(0,0)}
+  else if(a==="add"){view="add";confirmDel=null;render();window.scrollTo(0,0)}
   else if(a==="theme"){theme=theme==="dark"?"light":"dark";try{localStorage.setItem(THEME_KEY,theme)}catch(e){}applyTheme()}
-  else if(a==="start")start(b.dataset.m,b.dataset.k?{k:b.dataset.k,c:b.dataset.c}:null);
+  else if(a==="start")start(b.dataset.e||cur,b.dataset.m,b.dataset.k?{k:b.dataset.k,c:b.dataset.c}:null);
   else if(a==="size"){size[b.dataset.m]=+b.dataset.v;render()}
-  else if(a==="lv"){store.lv=+b.dataset.v;save();render()}
+  else if(a==="lv"){store.lv[cur]=b.dataset.v;save();render()}
+  else if(a==="rd"){store.rd[cur]=!rdOn(cur);save();render()}
   else if(a==="pick")choose(+b.dataset.k);
   else if(a==="next")next();
   else if(a==="reset"){confirmReset=true;render()}
   else if(a==="reset-no"){confirmReset=false;render()}
-  else if(a==="reset-yes"){store={h:{},s:[],lv:store.lv};save();confirmReset=false;render()}
+  else if(a==="reset-yes"){idsOf(cur).forEach(id=>delete store.h[id]);store.s=store.s.filter(r=>(r.e||"toeic")!==cur);save();confirmReset=false;render()}
+  else if(a==="vocab")openVocab("new");
+  else if(a==="vflip"){if(Date.now()-swiped<400)return;vs.flip=!vs.flip;render()}
+  else if(a==="vmark")vocabMark(+b.dataset.v);
+  else if(a==="vprev")vocabMove(-1);
+  else if(a==="vnext")vocabMove(1);
+  else if(a==="vfilter"){vs.f=b.dataset.v;openVocab(vs.f)}
+  else if(a==="vmix"){vs.mix=!vs.mix;openVocab()}
+  else if(a==="vrestart")openVocab();
+  else if(a==="tpl")downloadTemplate();
+  else if(a==="csv-add")commitCSV();
+  else if(a==="csv-cancel"){csv=null;render()}
+  else if(a==="set-del"){confirmDel=b.dataset.id;render()}
+  else if(a==="set-del-yes"){const id=b.dataset.id;custom.sets=custom.sets.filter(s=>s.id!==id);saveCustom();dropSet(id);confirmDel=null;render()}
 });
+document.addEventListener("change",e=>{if(e.target.id==="csvfile")handleFile(e.target.files[0])});
+document.addEventListener("dragover",e=>{const d=e.target.closest&&e.target.closest("#drop");if(d){e.preventDefault();d.classList.add("over")}});
+document.addEventListener("dragleave",e=>{const d=e.target.closest&&e.target.closest("#drop");if(d)d.classList.remove("over")});
+document.addEventListener("drop",e=>{const d=e.target.closest&&e.target.closest("#drop");if(d){e.preventDefault();handleFile(e.dataTransfer.files[0])}});
 document.addEventListener("keydown",e=>{
-  if(view!=="quiz"||e.metaKey||e.ctrlKey||e.altKey)return;
+  if(e.metaKey||e.ctrlKey||e.altKey)return;
+  if(view==="vocab"&&vs&&vs.i<vs.ids.length){
+    if(e.key===" "){e.preventDefault();vs.flip=!vs.flip;render()}
+    else if(e.key==="ArrowRight")vocabMove(1);else if(e.key==="ArrowLeft")vocabMove(-1);
+    else if(e.key==="1")vocabMark(2);else if(e.key==="2")vocabMark(1);
+    return;
+  }
+  if(view!=="quiz")return;
   const k=e.key.toUpperCase();
-  if(sess.picked===null){let i="1234".indexOf(k);if(i<0)i="ABCD".indexOf(k);if(i>=0&&k.length===1){e.preventDefault();choose(i)}}
+  if(sess.picked===null){let i="123456".indexOf(k);if(i<0)i=L.indexOf(k);if(i>=0&&k.length===1){e.preventDefault();choose(i)}}
   else if(e.key==="Enter"){e.preventDefault();next()}
 });
 applyTheme();render();

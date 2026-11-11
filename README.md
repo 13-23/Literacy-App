@@ -1,6 +1,10 @@
-# RC 완전정복
+# 어학 완전정복
 
-토익 RC 연습 앱: Part 5 문법 105·어휘 106문항, Part 6 장문 빈칸 12지문(48문항), Part 7 독해 30지문(90문항), 빈출 단어 퀴즈 308개.
+TOEIC RC · JLPT · HSK 시험 연습 앱. 첫 화면에서 시험을 고른다.
+
+- TOEIC RC: Part 5 문법 105·어휘 106문항, Part 6 장문 빈칸 12지문(48문항), Part 7 독해 30지문(90문항), 빈출 단어 310개
+- JLPT N3·N2, HSK 3·4급: 시험마다 단어 200·문장 120문항, 1문단 독해 30지문, 단어장 620개
+- 단어장 카드와 단어장 퀴즈, 오답노트, 약한 유형 집중, CSV로 문제 추가, 후리가나·병음 켜고 끄기
 하나의 코드로 웹, 안드로이드, iOS 앱을 만든다([Capacitor](https://capacitorjs.com) 8).
 
 ## 폴더 구조
@@ -8,7 +12,9 @@
 | 경로 | 내용 |
 | --- | --- |
 | `src/shell.html` | 화면과 동작(HTML, CSS, JS) |
-| `src/data.js` | 문제 은행. 문제를 고치거나 추가할 때는 이 파일만 수정 |
+| `src/data.js` | TOEIC 문제 은행(Part 5·6·7) |
+| `src/data/*.json` | JLPT·HSK 문제(words / sentences / passages, 보기 첫 번째가 정답, 루비는 `漢字{かんじ}`). 파일 이름 앞부분이 시험 |
+| `src/vocab/*.json` | 단어장(단어 카드 + 단어장 퀴즈). 파일 이름 앞부분이 시험 |
 | `public/` | 아이콘, 웹 매니페스트, 오프라인 캐시(`sw.js`), 개인정보처리방침 |
 | `tools/build.mjs` | `src` + `public`을 합쳐 `web/`(웹 배포본)과 `www/`(앱에 들어갈 파일)를 만든다 |
 | `android/`, `ios/` | 네이티브 프로젝트(Android Studio, Xcode로 연다) |

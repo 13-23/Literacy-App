@@ -5,7 +5,7 @@
 
 ## 0. 시작 전에 정할 것
 
-1. **앱 ID(패키지 이름)**: 지금은 `com.rcwanjeon.toeic`. 한 번 출시하면 바꿀 수 없다. 바꾸려면 `capacitor.config.json`의 `appId`, `android/app/build.gradle`의 `namespace`·`applicationId`, Xcode의 Bundle Identifier를 같은 값으로 고친다.
+1. **앱 ID(패키지 이름)**: 지금은 `com.eohakwanjeon.app`. 한 번 출시하면 바꿀 수 없다. 바꾸려면 `capacitor.config.json`의 `appId`, `android/app/build.gradle`의 `namespace`·`applicationId`, Xcode의 Bundle Identifier를 같은 값으로 고친다.
 2. **문의 이메일**: `public/privacy.html`의 `[문의 이메일을 여기에 적어 주세요]`를 실제 주소로 바꾼다. 두 스토어 모두 연락처를 요구한다.
 3. **개인정보처리방침 주소**: 두 스토어 모두 공개 URL이 필요하다. GitHub 저장소에 올리고 `Web deploy` 워크플로를 돌리면 `https://<아이디>.github.io/<저장소>/privacy.html`이 생긴다.
 
@@ -78,7 +78,7 @@ Xcode에서 App 타깃 → **Signing & Capabilities** → Team에 본인 개발�
 
 ### 3-2. App Store Connect 등록
 
-1. [App Store Connect](https://appstoreconnect.apple.com) → 앱 → 새로운 앱: 플랫폼 iOS, 이름 `RC 완전정복`, 기본 언어 한국어, 번들 ID 선택, SKU는 아무 값(예: `rc-wanjeon-001`).
+1. [App Store Connect](https://appstoreconnect.apple.com) → 앱 → 새로운 앱: 플랫폼 iOS, 이름 `어학 완전정복`, 기본 언어 한국어, 번들 ID 선택, SKU는 아무 값(예: `rc-wanjeon-001`).
 2. **앱 정보**: 카테고리 교육, 개인정보처리방침 URL.
 3. **앱 개인정보 보호**: "데이터를 수집하지 않음" 선택(앱이 외부로 보내는 데이터가 없다).
 4. **버전 정보**: 설명, 키워드, 프로모션 텍스트, 지원 URL은 `store/STORE_LISTING.md`.

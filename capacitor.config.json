@@ -1,6 +1,6 @@
 {
-  "appId": "com.rcwanjeon.toeic",
-  "appName": "RC 완전정복",
+  "appId": "com.eohakwanjeon.app",
+  "appName": "어학 완전정복",
   "webDir": "www",
   "backgroundColor": "#F3F4F8",
   "plugins": {

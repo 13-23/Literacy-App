@@ -1,0 +1,102 @@
+[
+ {
+  "id": "vt-1",
+  "lv": "3",
+  "w": "postpone",
+  "rd": "",
+  "pos": "동사",
+  "ko": "연기하다, 미루다",
+  "ex": "The board meeting has been postponed until next Thursday.",
+  "exko": "이사회 회의가 다음 주 목요일로 연기되었다."
+ },
+ {
+  "id": "vt-2",
+  "lv": "3",
+  "w": "reimburse",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(비용을) 돌려주다, 상환하다",
+  "ex": "Employees will be reimbursed for travel expenses within two weeks.",
+  "exko": "직원들은 2주 이내에 출장 경비를 돌려받는다."
+ },
+ {
+  "id": "vt-3",
+  "lv": "3",
+  "w": "itinerary",
+  "rd": "",
+  "pos": "명사",
+  "ko": "여행 일정표",
+  "ex": "Please review the attached itinerary before your trip.",
+  "exko": "출장 전에 첨부된 일정표를 검토해 주세요."
+ },
+ {
+  "id": "vt-4",
+  "lv": "3",
+  "w": "eligible",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "자격이 있는",
+  "ex": "Full-time staff are eligible for the annual bonus.",
+  "exko": "정규직 직원은 연간 상여금을 받을 자격이 있다."
+ },
+ {
+  "id": "vt-5",
+  "lv": "3",
+  "w": "tentatively",
+  "rd": "",
+  "pos": "부사",
+  "ko": "잠정적으로",
+  "ex": "The product launch is tentatively scheduled for May.",
+  "exko": "제품 출시는 5월로 잠정 예정되어 있다."
+ },
+ {
+  "id": "vt-6",
+  "lv": "3",
+  "w": "renovation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "개조, 보수 공사",
+  "ex": "The lobby will be closed during the renovation.",
+  "exko": "보수 공사 기간에는 로비가 폐쇄된다."
+ },
+ {
+  "id": "vt-7",
+  "lv": "3",
+  "w": "comply",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(규정 등을) 따르다, 준수하다",
+  "ex": "All suppliers must comply with our safety standards.",
+  "exko": "모든 공급업체는 당사의 안전 기준을 준수해야 한다."
+ },
+ {
+  "id": "vt-8",
+  "lv": "3",
+  "w": "inventory",
+  "rd": "",
+  "pos": "명사",
+  "ko": "재고, 재고 목록",
+  "ex": "We need to check the inventory before placing a new order.",
+  "exko": "새로 주문하기 전에 재고를 확인해야 한다."
+ },
+ {
+  "id": "vt-9",
+  "lv": "3",
+  "w": "prompt",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "신속한, 즉각적인",
+  "ex": "Thank you for your prompt reply.",
+  "exko": "빠른 답변 감사합니다."
+ },
+ {
+  "id": "vt-10",
+  "lv": "3",
+  "w": "attendance",
+  "rd": "",
+  "pos": "명사",
+  "ko": "참석, 출석",
+  "ex": "Attendance at the safety workshop is mandatory.",
+  "exko": "안전 워크숍 참석은 의무다."
+ }
+]

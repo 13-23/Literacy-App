@@ -1,11 +1,14 @@
 # 안드로이드 출시 파일(.aab)과 테스트용 .apk를 만든다.
-# Actions 탭에서 "Run workflow"를 누르거나 v1.0.1 같은 태그를 올리면 실행된다.
-# 필요한 저장소 Secrets: ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD
+# main에 앱 코드가 바뀌어 올라오거나, Actions 탭에서 "Run workflow"를 누르거나, v1.0.1 같은 태그를 올리면 실행된다.
+# 출시용 서명에 필요한 저장소 Secrets: ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD
+# (Secrets가 없으면 서명 안 된 .aab와 테스트용 .apk가 만들어진다)
 name: Android build
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     tags: ["v*"]
+    paths: ["src/**", "public/**", "android/**", "capacitor.config.json", "package*.json", ".github/workflows/android.yml"]
 jobs:
   build:
     runs-on: ubuntu-latest

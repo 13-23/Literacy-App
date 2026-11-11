@@ -321,12 +321,19 @@ function loadPack(exam,d){
 }
 PACKS.forEach(([exam,d])=>loadPack(exam,d));
 /* 단어장 퀴즈: 단어장의 단어마다 뜻 고르기 1문항. 오답 보기는 같은 시험·급수·품사의 다른 뜻에서 고정으로 고른다(다시 풀어도 같은 문제). */
+/* 뜻 비교: 괄호 설명과 흔한 어미를 빼고 두 글자씩 잘라, 하나라도 같으면 뜻이 겹친다고 본다 */
+const STOP=new Set(["하다","되다","이다","있다","없다","스럽","롭다","하게","해서","하는","적인","적이"]);
+const senses=ko=>{const b=new Set();String(ko).replace(/\([^)]*\)/g,"").split(/[,;]/).forEach(x=>{x=x.replace(/[^가-힣]/g,"");if(x.length===1)b.add(x);for(let i=0;i<x.length-1;i++){const t=x.slice(i,i+2);if(!STOP.has(t))b.add(t)}});return [...b]};
 (()=>{const grp={};VOCAB.forEach(([e,list])=>list.forEach(v=>{const k=e+"|"+v.lv+"|"+v.pos;(grp[k]=grp[k]||[]).push(v);(grp[e+"|"+v.lv]=grp[e+"|"+v.lv]||[]).push(v)}));
   VOCAB.forEach(([e,list])=>list.forEach(v=>{
     if(BANK[v.id])return;
-    let g=grp[e+"|"+v.lv+"|"+v.pos];if(g.length<6)g=grp[e+"|"+v.lv];
-    const i=g.indexOf(v),d=[];
-    for(const step of [7,19,37,53,71,89,3,11,5,13,29,41]){if(d.length===3)break;const o=g[(i+step)%g.length];if(o!==v&&o.ko!==v.ko&&!d.includes(o.ko))d.push(o.ko)}
+    const d=[],mine=new Set(senses(v.ko));
+    /* 뜻이 일부라도 겹치는 단어(예: 简单 '간단하다, 쉽다'와 '쉽다')는 오답 보기로 쓰지 않는다 */
+    const clash=ko=>senses(ko).some(x=>mine.has(x))||d.some(x=>senses(x).some(y=>senses(ko).includes(y)));
+    const tryFrom=g=>{const i=Math.max(0,g.indexOf(v)),n=g.length;
+      for(const step of [7,1])for(let k=1;k<=n&&d.length<3;k++){const o=g[(i+k*step)%n];if(o!==v&&o.w!==v.w&&!clash(o.ko))d.push(o.ko)}};
+    /* 같은 품사에서 먼저 고르고, 모자라면 같은 급수 전체에서 */
+    tryFrom(grp[e+"|"+v.lv+"|"+v.pos]);if(d.length<3)tryFrom(grp[e+"|"+v.lv]);
     if(d.length===3)putItem({id:v.id,exam:e,kind:"Q",cat:v.pos,lv:String(v.lv),q:v.w,rd:v.rd,c:[v.ko,...d],wex:v.ex,wko:v.exko});
   }))})();
 

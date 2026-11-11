@@ -1,4 +1,4 @@
-package com.rcwanjeon.toeic;
+package com.eohakwanjeon.app;
 
 import com.getcapacitor.BridgeActivity;
 

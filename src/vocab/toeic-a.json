@@ -1,0 +1,1002 @@
+[
+ {
+  "id": "vt-a1",
+  "lv": "3",
+  "w": "available",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "이용 가능한, 시간이 있는",
+  "ex": "The conference room is available for booking every afternoon this week.",
+  "exko": "회의실은 이번 주 매일 오후에 예약할 수 있다."
+ },
+ {
+  "id": "vt-a2",
+  "lv": "3",
+  "w": "affordable",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "(가격이) 적당한, 감당할 수 있는",
+  "ex": "The new model offers premium features at an affordable price.",
+  "exko": "새 모델은 적당한 가격에 고급 기능을 제공한다."
+ },
+ {
+  "id": "vt-a3",
+  "lv": "3",
+  "w": "comprehensive",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "포괄적인, 종합적인",
+  "ex": "New employees receive comprehensive training during their first month.",
+  "exko": "신입 사원들은 첫 달 동안 종합적인 교육을 받는다."
+ },
+ {
+  "id": "vt-a4",
+  "lv": "3",
+  "w": "confidential",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "기밀의, 비밀의",
+  "ex": "Please keep all client information in these files strictly confidential.",
+  "exko": "이 파일들에 있는 모든 고객 정보는 철저히 기밀로 유지해 주세요."
+ },
+ {
+  "id": "vt-a5",
+  "lv": "3",
+  "w": "considerable",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "상당한, 많은",
+  "ex": "The project required a considerable amount of time and money.",
+  "exko": "그 프로젝트에는 상당한 시간과 비용이 들었다."
+ },
+ {
+  "id": "vt-a6",
+  "lv": "3",
+  "w": "convenient",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "편리한, (시간이) 편한",
+  "ex": "Please let us know a time that is convenient for you.",
+  "exko": "편하신 시간을 알려 주세요."
+ },
+ {
+  "id": "vt-a7",
+  "lv": "3",
+  "w": "competitive",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "경쟁력 있는, 경쟁적인",
+  "ex": "We offer new employees competitive salaries and excellent benefits.",
+  "exko": "저희는 신입 직원에게 경쟁력 있는 급여와 훌륭한 복리후생을 제공합니다."
+ },
+ {
+  "id": "vt-a8",
+  "lv": "3",
+  "w": "complimentary",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "무료의, 칭찬하는",
+  "ex": "All hotel guests receive a complimentary breakfast in the lobby restaurant.",
+  "exko": "모든 호텔 투숙객은 로비 식당에서 무료 조식을 받는다."
+ },
+ {
+  "id": "vt-a9",
+  "lv": "3",
+  "w": "defective",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "결함이 있는",
+  "ex": "Customers may return defective items within thirty days of purchase.",
+  "exko": "고객은 결함이 있는 제품을 구매 후 30일 이내에 반품할 수 있다."
+ },
+ {
+  "id": "vt-a10",
+  "lv": "3",
+  "w": "durable",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "내구성이 있는, 튼튼한",
+  "ex": "These work boots are made of durable, waterproof leather.",
+  "exko": "이 작업용 부츠는 튼튼한 방수 가죽으로 만들어졌다."
+ },
+ {
+  "id": "vt-a11",
+  "lv": "3",
+  "w": "efficient",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "효율적인, 유능한",
+  "ex": "The new software makes our ordering process much more efficient.",
+  "exko": "새 소프트웨어는 우리의 주문 절차를 훨씬 더 효율적으로 만들어 준다."
+ },
+ {
+  "id": "vt-a12",
+  "lv": "3",
+  "w": "extensive",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "광범위한, 폭넓은",
+  "ex": "The candidate has extensive experience in international marketing.",
+  "exko": "그 지원자는 국제 마케팅 분야에서 폭넓은 경험을 갖고 있다."
+ },
+ {
+  "id": "vt-a13",
+  "lv": "3",
+  "w": "exclusive",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "독점적인, 전용의",
+  "ex": "Members enjoy exclusive access to our online sales events.",
+  "exko": "회원들은 온라인 할인 행사에 독점적으로 참여할 수 있다."
+ },
+ {
+  "id": "vt-a14",
+  "lv": "3",
+  "w": "feasible",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "실현 가능한",
+  "ex": "The committee will decide whether the plan is financially feasible.",
+  "exko": "위원회는 그 계획이 재정적으로 실현 가능한지 결정할 것이다."
+ },
+ {
+  "id": "vt-a15",
+  "lv": "3",
+  "w": "flexible",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "유연한, 융통성 있는",
+  "ex": "The company offers flexible working hours to all staff.",
+  "exko": "회사는 전 직원에게 유연 근무 시간을 제공한다."
+ },
+ {
+  "id": "vt-a16",
+  "lv": "3",
+  "w": "mandatory",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "의무적인, 필수의",
+  "ex": "Attendance at the safety workshop is mandatory for all employees.",
+  "exko": "안전 워크숍 참석은 모든 직원에게 의무 사항이다."
+ },
+ {
+  "id": "vt-a17",
+  "lv": "3",
+  "w": "preliminary",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "예비의, 사전의",
+  "ex": "The preliminary results of the survey will be shared on Monday.",
+  "exko": "설문 조사의 예비 결과는 월요일에 공유될 것이다."
+ },
+ {
+  "id": "vt-a18",
+  "lv": "3",
+  "w": "reliable",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "믿을 수 있는, 신뢰할 만한",
+  "ex": "We are looking for a reliable supplier of office furniture.",
+  "exko": "저희는 믿을 수 있는 사무용 가구 공급업체를 찾고 있습니다."
+ },
+ {
+  "id": "vt-a19",
+  "lv": "3",
+  "w": "substantial",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "상당한, 많은",
+  "ex": "The company reported a substantial increase in profits this year.",
+  "exko": "회사는 올해 수익이 상당히 증가했다고 발표했다."
+ },
+ {
+  "id": "vt-a20",
+  "lv": "3",
+  "w": "temporary",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "임시의, 일시적인",
+  "ex": "We hired several temporary workers for the holiday season.",
+  "exko": "우리는 연휴 시즌을 위해 임시 직원을 여러 명 채용했다."
+ },
+ {
+  "id": "vt-a21",
+  "lv": "3",
+  "w": "upcoming",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "다가오는, 곧 있을",
+  "ex": "Details of the upcoming trade fair will be posted online.",
+  "exko": "곧 있을 무역 박람회의 세부 사항은 온라인에 게시될 것이다."
+ },
+ {
+  "id": "vt-a22",
+  "lv": "3",
+  "w": "valid",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "유효한, 타당한",
+  "ex": "This coupon is valid until the end of the month.",
+  "exko": "이 쿠폰은 이달 말까지 유효하다."
+ },
+ {
+  "id": "vt-a23",
+  "lv": "3",
+  "w": "vacant",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "비어 있는, 공석인",
+  "ex": "The office space on the third floor has been vacant since June.",
+  "exko": "3층 사무실 공간은 6월부터 비어 있다."
+ },
+ {
+  "id": "vt-a24",
+  "lv": "3",
+  "w": "versatile",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "다용도의, 다재다능한",
+  "ex": "This versatile printer can also scan and copy documents.",
+  "exko": "이 다용도 프린터는 문서 스캔과 복사도 할 수 있다."
+ },
+ {
+  "id": "vt-a25",
+  "lv": "3",
+  "w": "punctual",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "시간을 엄수하는",
+  "ex": "Ms. Lee is always punctual for her client meetings.",
+  "exko": "이 씨는 고객과의 회의 시간을 항상 잘 지킨다."
+ },
+ {
+  "id": "vt-a26",
+  "lv": "3",
+  "w": "qualified",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "자격을 갖춘, 적임의",
+  "ex": "Only qualified applicants will be contacted for an interview.",
+  "exko": "자격을 갖춘 지원자에게만 면접 연락이 갈 것이다."
+ },
+ {
+  "id": "vt-a27",
+  "lv": "3",
+  "w": "knowledgeable",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "아는 것이 많은, 박식한",
+  "ex": "Our sales staff are knowledgeable about all of our products.",
+  "exko": "저희 판매 직원들은 모든 제품에 대해 잘 알고 있습니다."
+ },
+ {
+  "id": "vt-a28",
+  "lv": "3",
+  "w": "outstanding",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "뛰어난, 미지불의",
+  "ex": "Mr. Park received an award for his outstanding performance.",
+  "exko": "박 씨는 뛰어난 성과로 상을 받았다."
+ },
+ {
+  "id": "vt-a29",
+  "lv": "3",
+  "w": "accessible",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "접근 가능한, 이용하기 쉬운",
+  "ex": "The museum is easily accessible by public transportation.",
+  "exko": "그 박물관은 대중교통으로 쉽게 갈 수 있다."
+ },
+ {
+  "id": "vt-a30",
+  "lv": "3",
+  "w": "adjacent",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "인접한, 바로 옆의",
+  "ex": "Visitors can park in the lot adjacent to the main building.",
+  "exko": "방문객은 본관 바로 옆 주차장에 주차할 수 있다."
+ },
+ {
+  "id": "vt-a31",
+  "lv": "3",
+  "w": "applicable",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "적용할 수 있는, 해당되는",
+  "ex": "Please complete all applicable sections of the form.",
+  "exko": "양식에서 해당되는 모든 항목을 작성해 주세요."
+ },
+ {
+  "id": "vt-a32",
+  "lv": "3",
+  "w": "appropriate",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "적절한, 알맞은",
+  "ex": "Please wear appropriate clothing when visiting the factory floor.",
+  "exko": "공장 작업 현장을 방문할 때는 적절한 복장을 착용해 주세요."
+ },
+ {
+  "id": "vt-a33",
+  "lv": "3",
+  "w": "beneficial",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "유익한, 이로운",
+  "ex": "The training program has been beneficial to both staff and managers.",
+  "exko": "그 교육 프로그램은 직원과 관리자 모두에게 유익했다."
+ },
+ {
+  "id": "vt-a34",
+  "lv": "3",
+  "w": "capable",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "유능한, ~할 수 있는",
+  "ex": "The new factory is capable of producing 5,000 units a day.",
+  "exko": "새 공장은 하루에 5,000개를 생산할 수 있다."
+ },
+ {
+  "id": "vt-a35",
+  "lv": "3",
+  "w": "consecutive",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "연속적인, 연이은",
+  "ex": "The company's sales have increased for three consecutive quarters.",
+  "exko": "회사의 매출이 3분기 연속 증가했다."
+ },
+ {
+  "id": "vt-a36",
+  "lv": "3",
+  "w": "courteous",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "예의 바른, 정중한",
+  "ex": "All customer service staff are expected to be courteous at all times.",
+  "exko": "모든 고객 서비스 직원은 항상 정중해야 한다."
+ },
+ {
+  "id": "vt-a37",
+  "lv": "3",
+  "w": "dedicated",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "헌신적인, 전용의",
+  "ex": "We thank our dedicated volunteers for their hard work.",
+  "exko": "헌신적인 자원봉사자 여러분의 노고에 감사드립니다."
+ },
+ {
+  "id": "vt-a38",
+  "lv": "3",
+  "w": "diverse",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "다양한",
+  "ex": "The firm serves a diverse range of clients around the world.",
+  "exko": "그 회사는 전 세계의 다양한 고객에게 서비스를 제공한다."
+ },
+ {
+  "id": "vt-a39",
+  "lv": "3",
+  "w": "enthusiastic",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "열정적인, 열렬한",
+  "ex": "The audience gave the speaker an enthusiastic response.",
+  "exko": "청중은 연사에게 열렬한 반응을 보였다."
+ },
+ {
+  "id": "vt-a40",
+  "lv": "3",
+  "w": "existing",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "기존의, 현재 있는",
+  "ex": "The discount applies to both new and existing customers.",
+  "exko": "그 할인은 신규 고객과 기존 고객 모두에게 적용된다."
+ },
+ {
+  "id": "vt-a41",
+  "lv": "3",
+  "w": "favorable",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "호의적인, 유리한",
+  "ex": "The new product has received favorable reviews from critics.",
+  "exko": "신제품은 비평가들로부터 호의적인 평가를 받았다."
+ },
+ {
+  "id": "vt-a42",
+  "lv": "3",
+  "w": "fragile",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "깨지기 쉬운",
+  "ex": "Please handle this package carefully because the contents are fragile.",
+  "exko": "내용물이 깨지기 쉬우니 이 소포를 조심히 다뤄 주세요."
+ },
+ {
+  "id": "vt-a43",
+  "lv": "3",
+  "w": "impressive",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "인상적인, 훌륭한",
+  "ex": "The company achieved impressive growth in its first year.",
+  "exko": "그 회사는 첫해에 인상적인 성장을 이루었다."
+ },
+ {
+  "id": "vt-a44",
+  "lv": "3",
+  "w": "informative",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "유익한, 정보를 주는",
+  "ex": "Thank you for the informative presentation on market trends.",
+  "exko": "시장 동향에 관한 유익한 발표에 감사드립니다."
+ },
+ {
+  "id": "vt-a45",
+  "lv": "3",
+  "w": "innovative",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "혁신적인",
+  "ex": "The design team is known for its innovative ideas.",
+  "exko": "디자인 팀은 혁신적인 아이디어로 유명하다."
+ },
+ {
+  "id": "vt-a46",
+  "lv": "3",
+  "w": "interim",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "임시의, 중간의",
+  "ex": "Ms. Garcia will serve as interim director until a replacement is found.",
+  "exko": "후임자가 정해질 때까지 가르시아 씨가 임시 이사직을 맡는다."
+ },
+ {
+  "id": "vt-a47",
+  "lv": "3",
+  "w": "lucrative",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "수익성이 좋은",
+  "ex": "The firm signed a lucrative contract with a major retailer.",
+  "exko": "그 회사는 대형 소매업체와 수익성 좋은 계약을 맺었다."
+ },
+ {
+  "id": "vt-a48",
+  "lv": "3",
+  "w": "mutual",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "상호의, 서로의",
+  "ex": "The partnership will be of mutual benefit to both companies.",
+  "exko": "그 제휴는 두 회사 모두에게 상호 이익이 될 것이다."
+ },
+ {
+  "id": "vt-a49",
+  "lv": "3",
+  "w": "numerous",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "수많은",
+  "ex": "The hotel has received numerous awards for its service.",
+  "exko": "그 호텔은 서비스로 수많은 상을 받았다."
+ },
+ {
+  "id": "vt-a50",
+  "lv": "3",
+  "w": "optional",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "선택적인, 선택 사항의",
+  "ex": "Attendance at the dinner after the conference is optional.",
+  "exko": "회의 후 저녁 만찬 참석은 선택 사항이다."
+ },
+ {
+  "id": "vt-a51",
+  "lv": "3",
+  "w": "overdue",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "기한이 지난, 연체된",
+  "ex": "A reminder was sent to customers with overdue payments.",
+  "exko": "대금이 연체된 고객들에게 독촉장이 발송되었다."
+ },
+ {
+  "id": "vt-a52",
+  "lv": "3",
+  "w": "persuasive",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "설득력 있는",
+  "ex": "She made a persuasive argument for expanding into Asia.",
+  "exko": "그녀는 아시아 진출에 대해 설득력 있는 주장을 펼쳤다."
+ },
+ {
+  "id": "vt-a53",
+  "lv": "3",
+  "w": "potential",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "잠재적인, 가능성 있는",
+  "ex": "The sales team met with several potential clients last week.",
+  "exko": "영업팀은 지난주 여러 잠재 고객을 만났다."
+ },
+ {
+  "id": "vt-a54",
+  "lv": "3",
+  "w": "profitable",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "수익성 있는, 이익이 되는",
+  "ex": "The new branch became profitable within its first year.",
+  "exko": "새 지점은 첫해 안에 수익을 내기 시작했다."
+ },
+ {
+  "id": "vt-a55",
+  "lv": "3",
+  "w": "prospective",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "장래의, 예상되는",
+  "ex": "Prospective employees must submit two letters of reference.",
+  "exko": "입사 지원자는 추천서 두 통을 제출해야 한다."
+ },
+ {
+  "id": "vt-a56",
+  "lv": "3",
+  "w": "rigorous",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "엄격한, 철저한",
+  "ex": "All products go through rigorous testing before they are shipped.",
+  "exko": "모든 제품은 출하 전에 엄격한 검사를 거친다."
+ },
+ {
+  "id": "vt-a57",
+  "lv": "3",
+  "w": "satisfactory",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "만족스러운, 충분한",
+  "ex": "The inspector found the safety conditions at the factory satisfactory.",
+  "exko": "점검관은 공장의 안전 상태가 만족스럽다고 판단했다."
+ },
+ {
+  "id": "vt-a58",
+  "lv": "3",
+  "w": "sufficient",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "충분한",
+  "ex": "There is not sufficient funding to complete the project this year.",
+  "exko": "올해 그 프로젝트를 완료할 충분한 자금이 없다."
+ },
+ {
+  "id": "vt-a59",
+  "lv": "3",
+  "w": "renowned",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "유명한, 명성 있는",
+  "ex": "The restaurant is renowned for its fresh local seafood.",
+  "exko": "그 식당은 신선한 지역 해산물로 유명하다."
+ },
+ {
+  "id": "vt-a60",
+  "lv": "3",
+  "w": "subsequent",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "그 다음의, 이후의",
+  "ex": "The first meeting went well, and subsequent meetings were even more productive.",
+  "exko": "첫 회의는 순조로웠고, 이후의 회의들은 훨씬 더 생산적이었다."
+ },
+ {
+  "id": "vt-a61",
+  "lv": "3",
+  "w": "accurate",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "정확한",
+  "ex": "Please make sure that all figures in the report are accurate.",
+  "exko": "보고서의 모든 수치가 정확한지 확인해 주세요."
+ },
+ {
+  "id": "vt-a62",
+  "lv": "3",
+  "w": "previous",
+  "rd": "",
+  "pos": "형용사",
+  "ko": "이전의, 앞의",
+  "ex": "Sales this quarter were higher than in the previous quarter.",
+  "exko": "이번 분기 매출은 이전 분기보다 높았다."
+ },
+ {
+  "id": "vt-a63",
+  "lv": "3",
+  "w": "approximately",
+  "rd": "",
+  "pos": "부사",
+  "ko": "대략, 약",
+  "ex": "The flight to Singapore takes approximately six hours.",
+  "exko": "싱가포르까지 비행은 약 6시간이 걸린다."
+ },
+ {
+  "id": "vt-a64",
+  "lv": "3",
+  "w": "immediately",
+  "rd": "",
+  "pos": "부사",
+  "ko": "즉시, 곧바로",
+  "ex": "Please report any equipment problems to your supervisor immediately.",
+  "exko": "장비 문제가 있으면 즉시 상사에게 보고해 주세요."
+ },
+ {
+  "id": "vt-a65",
+  "lv": "3",
+  "w": "promptly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "즉시, 정각에",
+  "ex": "The meeting will begin promptly at 9 A.M.",
+  "exko": "회의는 오전 9시 정각에 시작한다."
+ },
+ {
+  "id": "vt-a66",
+  "lv": "3",
+  "w": "temporarily",
+  "rd": "",
+  "pos": "부사",
+  "ko": "일시적으로, 임시로",
+  "ex": "The east entrance is temporarily closed for repairs.",
+  "exko": "동쪽 출입구는 수리를 위해 일시적으로 폐쇄되었다."
+ },
+ {
+  "id": "vt-a67",
+  "lv": "3",
+  "w": "currently",
+  "rd": "",
+  "pos": "부사",
+  "ko": "현재",
+  "ex": "We are currently accepting applications for the position of sales manager.",
+  "exko": "저희는 현재 영업 관리자 직책의 지원서를 받고 있습니다."
+ },
+ {
+  "id": "vt-a68",
+  "lv": "3",
+  "w": "recently",
+  "rd": "",
+  "pos": "부사",
+  "ko": "최근에",
+  "ex": "The company recently opened a new office in Tokyo.",
+  "exko": "그 회사는 최근 도쿄에 새 사무소를 열었다."
+ },
+ {
+  "id": "vt-a69",
+  "lv": "3",
+  "w": "frequently",
+  "rd": "",
+  "pos": "부사",
+  "ko": "자주, 빈번히",
+  "ex": "Answers to frequently asked questions are available on our Web site.",
+  "exko": "자주 묻는 질문에 대한 답변은 저희 웹사이트에서 보실 수 있습니다."
+ },
+ {
+  "id": "vt-a70",
+  "lv": "3",
+  "w": "consistently",
+  "rd": "",
+  "pos": "부사",
+  "ko": "일관되게, 꾸준히",
+  "ex": "Our store has consistently received high ratings from customers.",
+  "exko": "저희 매장은 고객들로부터 꾸준히 높은 평가를 받아 왔다."
+ },
+ {
+  "id": "vt-a71",
+  "lv": "3",
+  "w": "significantly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "상당히, 크게",
+  "ex": "The new system has significantly reduced processing time.",
+  "exko": "새 시스템 덕분에 처리 시간이 크게 줄었다."
+ },
+ {
+  "id": "vt-a72",
+  "lv": "3",
+  "w": "accordingly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "그에 따라, 따라서",
+  "ex": "Prices have risen, so we have adjusted our budget accordingly.",
+  "exko": "가격이 올라서 그에 맞게 예산을 조정했다."
+ },
+ {
+  "id": "vt-a73",
+  "lv": "3",
+  "w": "alternatively",
+  "rd": "",
+  "pos": "부사",
+  "ko": "그 대신에, 또는",
+  "ex": "You can pay online. Alternatively, you may pay at the front desk.",
+  "exko": "온라인으로 결제할 수 있습니다. 또는 프런트에서 결제하셔도 됩니다."
+ },
+ {
+  "id": "vt-a74",
+  "lv": "3",
+  "w": "consequently",
+  "rd": "",
+  "pos": "부사",
+  "ko": "그 결과, 따라서",
+  "ex": "The shipment was delayed; consequently, the store ran out of stock.",
+  "exko": "배송이 지연되었고, 그 결과 매장의 재고가 바닥났다."
+ },
+ {
+  "id": "vt-a75",
+  "lv": "3",
+  "w": "primarily",
+  "rd": "",
+  "pos": "부사",
+  "ko": "주로",
+  "ex": "The magazine is aimed primarily at small business owners.",
+  "exko": "그 잡지는 주로 소상공인을 대상으로 한다."
+ },
+ {
+  "id": "vt-a76",
+  "lv": "3",
+  "w": "shortly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "곧, 얼마 안 되어",
+  "ex": "The train to Boston will depart shortly from platform 4.",
+  "exko": "보스턴행 열차가 곧 4번 승강장에서 출발합니다."
+ },
+ {
+  "id": "vt-a77",
+  "lv": "3",
+  "w": "regularly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "정기적으로, 규칙적으로",
+  "ex": "The machines are regularly inspected to ensure safety.",
+  "exko": "안전을 위해 기계들은 정기적으로 점검된다."
+ },
+ {
+  "id": "vt-a78",
+  "lv": "3",
+  "w": "gradually",
+  "rd": "",
+  "pos": "부사",
+  "ko": "점차, 서서히",
+  "ex": "Online sales have gradually increased over the past year.",
+  "exko": "지난 1년 동안 온라인 매출이 점차 증가했다."
+ },
+ {
+  "id": "vt-a79",
+  "lv": "3",
+  "w": "steadily",
+  "rd": "",
+  "pos": "부사",
+  "ko": "꾸준히, 착실히",
+  "ex": "The number of overseas visitors has grown steadily since 2020.",
+  "exko": "해외 방문객 수는 2020년 이후 꾸준히 증가해 왔다."
+ },
+ {
+  "id": "vt-a80",
+  "lv": "3",
+  "w": "slightly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "약간, 조금",
+  "ex": "The final cost was slightly higher than the original estimate.",
+  "exko": "최종 비용은 처음 견적보다 약간 높았다."
+ },
+ {
+  "id": "vt-a81",
+  "lv": "3",
+  "w": "dramatically",
+  "rd": "",
+  "pos": "부사",
+  "ko": "극적으로, 급격히",
+  "ex": "Demand for electric cars has risen dramatically in recent years.",
+  "exko": "최근 몇 년간 전기차 수요가 급격히 증가했다."
+ },
+ {
+  "id": "vt-a82",
+  "lv": "3",
+  "w": "sharply",
+  "rd": "",
+  "pos": "부사",
+  "ko": "급격히, 날카롭게",
+  "ex": "Fuel prices rose sharply last month, increasing delivery costs.",
+  "exko": "지난달 연료 가격이 급격히 올라 배송 비용이 늘었다."
+ },
+ {
+  "id": "vt-a83",
+  "lv": "3",
+  "w": "briefly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "간단히, 잠시",
+  "ex": "The manager briefly explained the new vacation policy.",
+  "exko": "관리자는 새 휴가 정책을 간단히 설명했다."
+ },
+ {
+  "id": "vt-a84",
+  "lv": "3",
+  "w": "thoroughly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "철저히, 완전히",
+  "ex": "Please read the contract thoroughly before signing it.",
+  "exko": "서명하기 전에 계약서를 꼼꼼히 읽어 주세요."
+ },
+ {
+  "id": "vt-a85",
+  "lv": "3",
+  "w": "closely",
+  "rd": "",
+  "pos": "부사",
+  "ko": "면밀히, 긴밀히",
+  "ex": "Our team works closely with the marketing department.",
+  "exko": "우리 팀은 마케팅 부서와 긴밀히 협력한다."
+ },
+ {
+  "id": "vt-a86",
+  "lv": "3",
+  "w": "directly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "직접, 곧바로",
+  "ex": "Please send your résumé directly to the human resources manager.",
+  "exko": "이력서를 인사 담당 관리자에게 직접 보내 주세요."
+ },
+ {
+  "id": "vt-a87",
+  "lv": "3",
+  "w": "separately",
+  "rd": "",
+  "pos": "부사",
+  "ko": "따로, 개별적으로",
+  "ex": "Shipping charges will be billed separately from the cost of the items.",
+  "exko": "배송비는 상품 가격과 별도로 청구될 것이다."
+ },
+ {
+  "id": "vt-a88",
+  "lv": "3",
+  "w": "simultaneously",
+  "rd": "",
+  "pos": "부사",
+  "ko": "동시에",
+  "ex": "The new product will be launched simultaneously in Europe and Asia.",
+  "exko": "신제품은 유럽과 아시아에서 동시에 출시될 것이다."
+ },
+ {
+  "id": "vt-a89",
+  "lv": "3",
+  "w": "unanimously",
+  "rd": "",
+  "pos": "부사",
+  "ko": "만장일치로",
+  "ex": "The board of directors unanimously approved the merger proposal yesterday.",
+  "exko": "이사회는 어제 합병 제안을 만장일치로 승인했다."
+ },
+ {
+  "id": "vt-a90",
+  "lv": "3",
+  "w": "readily",
+  "rd": "",
+  "pos": "부사",
+  "ko": "쉽게, 선뜻",
+  "ex": "Replacement parts are readily available at most hardware stores.",
+  "exko": "교체 부품은 대부분의 철물점에서 쉽게 구할 수 있다."
+ },
+ {
+  "id": "vt-a91",
+  "lv": "3",
+  "w": "increasingly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "점점 더",
+  "ex": "Remote work has become increasingly common in many industries.",
+  "exko": "재택근무는 많은 업계에서 점점 더 흔해졌다."
+ },
+ {
+  "id": "vt-a92",
+  "lv": "3",
+  "w": "formerly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "이전에, 예전에",
+  "ex": "The café is located in what was formerly a bank.",
+  "exko": "그 카페는 예전에 은행이었던 건물에 자리 잡고 있다."
+ },
+ {
+  "id": "vt-a93",
+  "lv": "3",
+  "w": "originally",
+  "rd": "",
+  "pos": "부사",
+  "ko": "원래, 처음에",
+  "ex": "The conference was originally scheduled for March but was moved to April.",
+  "exko": "그 회의는 원래 3월로 예정되어 있었으나 4월로 옮겨졌다."
+ },
+ {
+  "id": "vt-a94",
+  "lv": "3",
+  "w": "eventually",
+  "rd": "",
+  "pos": "부사",
+  "ko": "결국, 마침내",
+  "ex": "After months of negotiations, the two companies eventually reached an agreement.",
+  "exko": "몇 달간의 협상 끝에 두 회사는 마침내 합의에 이르렀다."
+ },
+ {
+  "id": "vt-a95",
+  "lv": "3",
+  "w": "annually",
+  "rd": "",
+  "pos": "부사",
+  "ko": "매년, 해마다",
+  "ex": "The awards ceremony is held annually in December.",
+  "exko": "시상식은 매년 12월에 열린다."
+ },
+ {
+  "id": "vt-a96",
+  "lv": "3",
+  "w": "periodically",
+  "rd": "",
+  "pos": "부사",
+  "ko": "주기적으로, 정기적으로",
+  "ex": "Passwords should be changed periodically for security reasons.",
+  "exko": "보안상 비밀번호는 주기적으로 변경해야 한다."
+ },
+ {
+  "id": "vt-a97",
+  "lv": "3",
+  "w": "virtually",
+  "rd": "",
+  "pos": "부사",
+  "ko": "사실상, 거의",
+  "ex": "The new printer is virtually silent when it operates.",
+  "exko": "새 프린터는 작동할 때 거의 소리가 나지 않는다."
+ },
+ {
+  "id": "vt-a98",
+  "lv": "3",
+  "w": "relatively",
+  "rd": "",
+  "pos": "부사",
+  "ko": "비교적, 상대적으로",
+  "ex": "The apartment is relatively inexpensive for this neighborhood.",
+  "exko": "그 아파트는 이 동네치고는 비교적 저렴하다."
+ },
+ {
+  "id": "vt-a99",
+  "lv": "3",
+  "w": "highly",
+  "rd": "",
+  "pos": "부사",
+  "ko": "매우, 높이",
+  "ex": "Dr. Kim is a highly respected expert in her field.",
+  "exko": "김 박사는 자신의 분야에서 매우 존경받는 전문가이다."
+ },
+ {
+  "id": "vt-a100",
+  "lv": "3",
+  "w": "respectively",
+  "rd": "",
+  "pos": "부사",
+  "ko": "각각",
+  "ex": "Mr. Hill and Ms. Ortiz were promoted to director and manager, respectively.",
+  "exko": "힐 씨와 오르티즈 씨는 각각 이사와 부장으로 승진했다."
+ }
+]

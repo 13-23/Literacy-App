@@ -1,0 +1,1002 @@
+[
+ {
+  "id": "vt-v1",
+  "lv": "3",
+  "w": "accommodate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "수용하다, (요구를) 들어주다",
+  "ex": "The conference hall can accommodate up to 500 guests.",
+  "exko": "그 회의장은 최대 500명의 손님을 수용할 수 있다."
+ },
+ {
+  "id": "vt-v2",
+  "lv": "3",
+  "w": "acquire",
+  "rd": "",
+  "pos": "동사",
+  "ko": "인수하다, 획득하다",
+  "ex": "The company plans to acquire a smaller rival next year.",
+  "exko": "그 회사는 내년에 소규모 경쟁사 한 곳을 인수할 계획이다."
+ },
+ {
+  "id": "vt-v3",
+  "lv": "3",
+  "w": "address",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(문제를) 다루다, 처리하다",
+  "ex": "The manager promised to address the customer's complaint immediately.",
+  "exko": "관리자는 고객의 불만을 즉시 처리하겠다고 약속했다."
+ },
+ {
+  "id": "vt-v4",
+  "lv": "3",
+  "w": "allocate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "할당하다, 배분하다",
+  "ex": "We need to allocate more funds to the marketing department.",
+  "exko": "우리는 마케팅 부서에 더 많은 자금을 할당해야 한다."
+ },
+ {
+  "id": "vt-v5",
+  "lv": "3",
+  "w": "anticipate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "예상하다, 기대하다",
+  "ex": "We anticipate a sharp increase in sales during the holidays.",
+  "exko": "우리는 연휴 기간에 매출이 급증할 것으로 예상한다."
+ },
+ {
+  "id": "vt-v6",
+  "lv": "3",
+  "w": "assess",
+  "rd": "",
+  "pos": "동사",
+  "ko": "평가하다, 산정하다",
+  "ex": "An expert was hired to assess the damage to the warehouse.",
+  "exko": "창고 피해를 평가하기 위해 전문가가 고용되었다."
+ },
+ {
+  "id": "vt-v7",
+  "lv": "3",
+  "w": "assign",
+  "rd": "",
+  "pos": "동사",
+  "ko": "배정하다, 맡기다",
+  "ex": "Each new employee will be assigned a mentor.",
+  "exko": "신입 직원마다 멘토가 배정될 것이다."
+ },
+ {
+  "id": "vt-v8",
+  "lv": "3",
+  "w": "attain",
+  "rd": "",
+  "pos": "동사",
+  "ko": "달성하다, 이루다",
+  "ex": "The team worked hard to attain its sales target.",
+  "exko": "그 팀은 판매 목표를 달성하기 위해 열심히 일했다."
+ },
+ {
+  "id": "vt-v9",
+  "lv": "3",
+  "w": "authorize",
+  "rd": "",
+  "pos": "동사",
+  "ko": "승인하다, 권한을 주다",
+  "ex": "Only the finance director can authorize payments over $10,000.",
+  "exko": "재무 이사만이 1만 달러가 넘는 지급을 승인할 수 있다."
+ },
+ {
+  "id": "vt-v10",
+  "lv": "3",
+  "w": "conduct",
+  "rd": "",
+  "pos": "동사",
+  "ko": "실시하다, 수행하다",
+  "ex": "The firm will conduct a customer survey next month.",
+  "exko": "그 회사는 다음 달에 고객 설문 조사를 실시할 것이다."
+ },
+ {
+  "id": "vt-v11",
+  "lv": "3",
+  "w": "consolidate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "통합하다, 강화하다",
+  "ex": "The company decided to consolidate its two branches into one office.",
+  "exko": "회사는 두 지점을 하나의 사무실로 통합하기로 결정했다."
+ },
+ {
+  "id": "vt-v12",
+  "lv": "3",
+  "w": "delegate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(권한·업무를) 위임하다",
+  "ex": "Good managers know how to delegate tasks to their staff.",
+  "exko": "훌륭한 관리자는 직원들에게 업무를 위임하는 법을 안다."
+ },
+ {
+  "id": "vt-v13",
+  "lv": "3",
+  "w": "designate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "지정하다, 지명하다",
+  "ex": "This area has been designated for visitor parking.",
+  "exko": "이 구역은 방문객 주차 구역으로 지정되었다."
+ },
+ {
+  "id": "vt-v14",
+  "lv": "3",
+  "w": "enhance",
+  "rd": "",
+  "pos": "동사",
+  "ko": "향상시키다, 높이다",
+  "ex": "The new software will enhance the efficiency of our team.",
+  "exko": "새 소프트웨어는 우리 팀의 효율성을 향상시킬 것이다."
+ },
+ {
+  "id": "vt-v15",
+  "lv": "3",
+  "w": "ensure",
+  "rd": "",
+  "pos": "동사",
+  "ko": "보장하다, 확실히 하다",
+  "ex": "Please ensure that all doors are locked before leaving.",
+  "exko": "나가시기 전에 모든 문이 잠겼는지 반드시 확인해 주세요."
+ },
+ {
+  "id": "vt-v16",
+  "lv": "3",
+  "w": "evaluate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "평가하다",
+  "ex": "Supervisors evaluate the performance of their team members twice a year.",
+  "exko": "관리자들은 1년에 두 번 팀원들의 업무 성과를 평가한다."
+ },
+ {
+  "id": "vt-v17",
+  "lv": "3",
+  "w": "expedite",
+  "rd": "",
+  "pos": "동사",
+  "ko": "신속히 처리하다, 촉진하다",
+  "ex": "For an extra fee, we can expedite the shipping of your order.",
+  "exko": "추가 요금을 내시면 주문품 배송을 신속히 처리해 드릴 수 있습니다."
+ },
+ {
+  "id": "vt-v18",
+  "lv": "3",
+  "w": "facilitate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "용이하게 하다, 촉진하다",
+  "ex": "The new system will facilitate communication between departments.",
+  "exko": "새 시스템은 부서 간 의사소통을 용이하게 할 것이다."
+ },
+ {
+  "id": "vt-v19",
+  "lv": "3",
+  "w": "implement",
+  "rd": "",
+  "pos": "동사",
+  "ko": "시행하다, 실행하다",
+  "ex": "The company will implement a new security policy in March.",
+  "exko": "회사는 3월에 새 보안 정책을 시행할 것이다."
+ },
+ {
+  "id": "vt-v20",
+  "lv": "3",
+  "w": "inquire",
+  "rd": "",
+  "pos": "동사",
+  "ko": "문의하다",
+  "ex": "Several customers called to inquire about the new product.",
+  "exko": "여러 고객이 신제품에 대해 문의하려고 전화했다."
+ },
+ {
+  "id": "vt-v21",
+  "lv": "3",
+  "w": "inspect",
+  "rd": "",
+  "pos": "동사",
+  "ko": "점검하다, 검사하다",
+  "ex": "Safety officials will inspect the factory on Friday.",
+  "exko": "안전 담당관들이 금요일에 공장을 점검할 것이다."
+ },
+ {
+  "id": "vt-v22",
+  "lv": "3",
+  "w": "launch",
+  "rd": "",
+  "pos": "동사",
+  "ko": "출시하다, 시작하다",
+  "ex": "The company will launch its new smartphone in the fall.",
+  "exko": "그 회사는 가을에 새 스마트폰을 출시할 것이다."
+ },
+ {
+  "id": "vt-v23",
+  "lv": "3",
+  "w": "merge",
+  "rd": "",
+  "pos": "동사",
+  "ko": "합병하다, 통합하다",
+  "ex": "The two banks agreed to merge early next year.",
+  "exko": "두 은행은 내년 초에 합병하기로 합의했다."
+ },
+ {
+  "id": "vt-v24",
+  "lv": "3",
+  "w": "negotiate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "협상하다",
+  "ex": "We are still negotiating the terms of the contract.",
+  "exko": "우리는 아직 계약 조건을 협상하고 있다."
+ },
+ {
+  "id": "vt-v25",
+  "lv": "3",
+  "w": "notify",
+  "rd": "",
+  "pos": "동사",
+  "ko": "통지하다, 알리다",
+  "ex": "Please notify the front desk if you plan to check out early.",
+  "exko": "일찍 체크아웃하실 계획이면 프런트에 알려 주세요."
+ },
+ {
+  "id": "vt-v26",
+  "lv": "3",
+  "w": "oversee",
+  "rd": "",
+  "pos": "동사",
+  "ko": "감독하다",
+  "ex": "Ms. Lee will oversee the construction of the new headquarters.",
+  "exko": "이 씨가 새 본사 건설을 감독할 것이다."
+ },
+ {
+  "id": "vt-v27",
+  "lv": "3",
+  "w": "procure",
+  "rd": "",
+  "pos": "동사",
+  "ko": "조달하다, 구하다",
+  "ex": "The purchasing team must procure office supplies at the lowest cost.",
+  "exko": "구매팀은 사무용품을 최저 비용으로 조달해야 한다."
+ },
+ {
+  "id": "vt-v28",
+  "lv": "3",
+  "w": "purchase",
+  "rd": "",
+  "pos": "동사",
+  "ko": "구매하다",
+  "ex": "Tickets can be purchased online or at the box office.",
+  "exko": "표는 온라인이나 매표소에서 구매할 수 있다."
+ },
+ {
+  "id": "vt-v29",
+  "lv": "3",
+  "w": "recruit",
+  "rd": "",
+  "pos": "동사",
+  "ko": "채용하다, 모집하다",
+  "ex": "The hotel is recruiting experienced staff for its new restaurant.",
+  "exko": "그 호텔은 새 레스토랑에서 일할 경력 직원을 채용하고 있다."
+ },
+ {
+  "id": "vt-v30",
+  "lv": "3",
+  "w": "renew",
+  "rd": "",
+  "pos": "동사",
+  "ko": "갱신하다",
+  "ex": "Don't forget to renew your membership before it expires.",
+  "exko": "만료되기 전에 회원 자격을 갱신하는 것을 잊지 마세요."
+ },
+ {
+  "id": "vt-v31",
+  "lv": "3",
+  "w": "resume",
+  "rd": "",
+  "pos": "동사",
+  "ko": "재개하다, 다시 시작하다",
+  "ex": "Train service will resume once the repairs are completed.",
+  "exko": "수리가 끝나면 열차 운행이 재개될 것이다."
+ },
+ {
+  "id": "vt-v32",
+  "lv": "3",
+  "w": "retain",
+  "rd": "",
+  "pos": "동사",
+  "ko": "유지하다, 보유하다",
+  "ex": "Offering flexible hours helps companies retain skilled workers.",
+  "exko": "유연 근무제를 제공하는 것은 회사가 숙련된 직원을 유지하는 데 도움이 된다."
+ },
+ {
+  "id": "vt-v33",
+  "lv": "3",
+  "w": "revise",
+  "rd": "",
+  "pos": "동사",
+  "ko": "수정하다, 개정하다",
+  "ex": "Please revise the report and send it back by Monday.",
+  "exko": "보고서를 수정해서 월요일까지 다시 보내 주세요."
+ },
+ {
+  "id": "vt-v34",
+  "lv": "3",
+  "w": "submit",
+  "rd": "",
+  "pos": "동사",
+  "ko": "제출하다",
+  "ex": "All applications must be submitted by the end of the month.",
+  "exko": "모든 지원서는 이달 말까지 제출되어야 한다."
+ },
+ {
+  "id": "vt-v35",
+  "lv": "3",
+  "w": "surpass",
+  "rd": "",
+  "pos": "동사",
+  "ko": "능가하다, 넘어서다",
+  "ex": "Our profits this year surpassed the expectations of most industry analysts.",
+  "exko": "올해 우리 수익은 대부분의 업계 분석가들의 예상을 뛰어넘었다."
+ },
+ {
+  "id": "vt-v36",
+  "lv": "3",
+  "w": "terminate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "종료하다, 해지하다",
+  "ex": "Either party may terminate the agreement with 30 days' notice.",
+  "exko": "어느 쪽이든 30일 전에 통지하면 계약을 해지할 수 있다."
+ },
+ {
+  "id": "vt-v37",
+  "lv": "3",
+  "w": "undergo",
+  "rd": "",
+  "pos": "동사",
+  "ko": "겪다, (수술·검사 등을) 받다",
+  "ex": "The building will undergo major renovations this summer.",
+  "exko": "그 건물은 이번 여름에 대대적인 보수 공사를 받을 것이다."
+ },
+ {
+  "id": "vt-v38",
+  "lv": "3",
+  "w": "verify",
+  "rd": "",
+  "pos": "동사",
+  "ko": "확인하다, 검증하다",
+  "ex": "Please verify your identity before accessing the account.",
+  "exko": "계정에 접속하기 전에 본인 확인을 해 주세요."
+ },
+ {
+  "id": "vt-v39",
+  "lv": "3",
+  "w": "waive",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(권리·요금을) 면제하다, 포기하다",
+  "ex": "The bank agreed to waive the annual fee for new customers.",
+  "exko": "은행은 신규 고객에게 연회비를 면제해 주기로 했다."
+ },
+ {
+  "id": "vt-v40",
+  "lv": "3",
+  "w": "withdraw",
+  "rd": "",
+  "pos": "동사",
+  "ko": "인출하다, 철회하다",
+  "ex": "You can withdraw cash from any of our ATMs free of charge.",
+  "exko": "저희 은행의 어느 ATM에서든 무료로 현금을 인출할 수 있습니다."
+ },
+ {
+  "id": "vt-v41",
+  "lv": "3",
+  "w": "adhere",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(규칙 등을) 준수하다, 고수하다",
+  "ex": "All employees must adhere to the company's dress code.",
+  "exko": "모든 직원은 회사의 복장 규정을 준수해야 한다."
+ },
+ {
+  "id": "vt-v42",
+  "lv": "3",
+  "w": "approve",
+  "rd": "",
+  "pos": "동사",
+  "ko": "승인하다",
+  "ex": "The budget proposal was approved by the board yesterday.",
+  "exko": "예산안은 어제 이사회에서 승인되었다."
+ },
+ {
+  "id": "vt-v43",
+  "lv": "3",
+  "w": "attribute",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(~의) 덕분으로 돌리다, 탓으로 보다",
+  "ex": "The CEO attributed the company's success to its loyal customers.",
+  "exko": "CEO는 회사의 성공을 충성 고객들 덕분으로 돌렸다."
+ },
+ {
+  "id": "vt-v44",
+  "lv": "3",
+  "w": "collaborate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "협력하다, 공동으로 작업하다",
+  "ex": "Our designers collaborated with engineers on the new model.",
+  "exko": "우리 디자이너들은 신모델 작업에서 엔지니어들과 협력했다."
+ },
+ {
+  "id": "vt-v45",
+  "lv": "3",
+  "w": "commence",
+  "rd": "",
+  "pos": "동사",
+  "ko": "시작하다, 개시하다",
+  "ex": "Construction of the new bridge will commence in April.",
+  "exko": "새 다리 건설은 4월에 시작될 것이다."
+ },
+ {
+  "id": "vt-v46",
+  "lv": "3",
+  "w": "compensate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "보상하다",
+  "ex": "The airline will compensate passengers for the delayed flight.",
+  "exko": "항공사는 지연된 항공편에 대해 승객들에게 보상할 것이다."
+ },
+ {
+  "id": "vt-v47",
+  "lv": "3",
+  "w": "confirm",
+  "rd": "",
+  "pos": "동사",
+  "ko": "확인하다, 확정하다",
+  "ex": "Please call us at least one day in advance to confirm your reservation.",
+  "exko": "최소 하루 전에 저희에게 전화하셔서 예약을 확정해 주세요."
+ },
+ {
+  "id": "vt-v48",
+  "lv": "3",
+  "w": "consult",
+  "rd": "",
+  "pos": "동사",
+  "ko": "상담하다, 참고하다",
+  "ex": "Please consult the user manual before calling technical support.",
+  "exko": "기술 지원팀에 전화하기 전에 사용 설명서를 참고해 주세요."
+ },
+ {
+  "id": "vt-v49",
+  "lv": "3",
+  "w": "coordinate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "조정하다, 조율하다",
+  "ex": "Mr. Kim will coordinate the schedules for the training sessions.",
+  "exko": "김 씨가 교육 일정을 조율할 것이다."
+ },
+ {
+  "id": "vt-v50",
+  "lv": "3",
+  "w": "dispatch",
+  "rd": "",
+  "pos": "동사",
+  "ko": "발송하다, 파견하다",
+  "ex": "Your order will be dispatched within 24 hours.",
+  "exko": "주문하신 상품은 24시간 이내에 발송될 것입니다."
+ },
+ {
+  "id": "vt-v51",
+  "lv": "3",
+  "w": "distribute",
+  "rd": "",
+  "pos": "동사",
+  "ko": "배포하다, 유통시키다",
+  "ex": "The handouts will be distributed at the start of the seminar.",
+  "exko": "유인물은 세미나 시작 때 배포될 것이다."
+ },
+ {
+  "id": "vt-v52",
+  "lv": "3",
+  "w": "endorse",
+  "rd": "",
+  "pos": "동사",
+  "ko": "지지하다, (상품을) 홍보하다",
+  "ex": "A famous athlete was hired to endorse the new sports drink.",
+  "exko": "새 스포츠 음료를 홍보하기 위해 유명 운동선수가 고용되었다."
+ },
+ {
+  "id": "vt-v53",
+  "lv": "3",
+  "w": "enroll",
+  "rd": "",
+  "pos": "동사",
+  "ko": "등록하다",
+  "ex": "Over fifty employees enrolled in the leadership course.",
+  "exko": "50명이 넘는 직원이 리더십 과정에 등록했다."
+ },
+ {
+  "id": "vt-v54",
+  "lv": "3",
+  "w": "exceed",
+  "rd": "",
+  "pos": "동사",
+  "ko": "초과하다, 넘다",
+  "ex": "The weight of carry-on bags must not exceed seven kilograms.",
+  "exko": "기내 휴대 가방의 무게는 7킬로그램을 넘으면 안 된다."
+ },
+ {
+  "id": "vt-v55",
+  "lv": "3",
+  "w": "forward",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(우편물·이메일을) 전달하다",
+  "ex": "I will forward the client's email to you right away.",
+  "exko": "고객의 이메일을 바로 당신에게 전달하겠습니다."
+ },
+ {
+  "id": "vt-v56",
+  "lv": "3",
+  "w": "fulfill",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(주문·요구를) 이행하다, 충족시키다",
+  "ex": "We hired more workers to fulfill the large number of orders.",
+  "exko": "우리는 대량의 주문을 처리하기 위해 직원을 더 고용했다."
+ },
+ {
+  "id": "vt-v57",
+  "lv": "3",
+  "w": "generate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "창출하다, 발생시키다",
+  "ex": "The new advertising campaign generated a lot of interest.",
+  "exko": "새 광고 캠페인은 많은 관심을 불러일으켰다."
+ },
+ {
+  "id": "vt-v58",
+  "lv": "3",
+  "w": "install",
+  "rd": "",
+  "pos": "동사",
+  "ko": "설치하다",
+  "ex": "Technicians will install the new printers on Tuesday.",
+  "exko": "기술자들이 화요일에 새 프린터를 설치할 것이다."
+ },
+ {
+  "id": "vt-v59",
+  "lv": "3",
+  "w": "outline",
+  "rd": "",
+  "pos": "동사",
+  "ko": "개요를 설명하다, 요약하다",
+  "ex": "The director outlined the company's plans for the next year.",
+  "exko": "이사는 회사의 내년 계획을 개략적으로 설명했다."
+ },
+ {
+  "id": "vt-v60",
+  "lv": "3",
+  "w": "refund",
+  "rd": "",
+  "pos": "동사",
+  "ko": "환불하다",
+  "ex": "If you are not satisfied, we will refund the full price.",
+  "exko": "만족하지 않으시면 전액 환불해 드리겠습니다."
+ },
+ {
+  "id": "vt-v61",
+  "lv": "3",
+  "w": "relocate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "이전하다, 옮기다",
+  "ex": "The company will relocate its headquarters to Busan next year.",
+  "exko": "그 회사는 내년에 본사를 부산으로 이전할 것이다."
+ },
+ {
+  "id": "vt-v62",
+  "lv": "3",
+  "w": "remit",
+  "rd": "",
+  "pos": "동사",
+  "ko": "송금하다",
+  "ex": "Please remit payment within 30 days of receiving the invoice.",
+  "exko": "청구서를 받은 후 30일 이내에 대금을 송금해 주세요."
+ },
+ {
+  "id": "vt-v63",
+  "lv": "3",
+  "w": "reserve",
+  "rd": "",
+  "pos": "동사",
+  "ko": "예약하다, 따로 남겨 두다",
+  "ex": "I'd like to reserve a table for four at seven o'clock.",
+  "exko": "7시에 4명 자리를 예약하고 싶습니다."
+ },
+ {
+  "id": "vt-v64",
+  "lv": "3",
+  "w": "restore",
+  "rd": "",
+  "pos": "동사",
+  "ko": "복구하다, 복원하다",
+  "ex": "Power was restored to the building after two hours.",
+  "exko": "2시간 후에 건물에 전기가 복구되었다."
+ },
+ {
+  "id": "vt-v65",
+  "lv": "3",
+  "w": "streamline",
+  "rd": "",
+  "pos": "동사",
+  "ko": "간소화하다, 효율화하다",
+  "ex": "The new software helped us streamline the ordering process.",
+  "exko": "새 소프트웨어는 우리가 주문 절차를 간소화하는 데 도움이 되었다."
+ },
+ {
+  "id": "vt-v66",
+  "lv": "3",
+  "w": "subscribe",
+  "rd": "",
+  "pos": "동사",
+  "ko": "구독하다, 가입하다",
+  "ex": "You can subscribe to our newsletter on our website.",
+  "exko": "저희 웹사이트에서 소식지를 구독하실 수 있습니다."
+ },
+ {
+  "id": "vt-v67",
+  "lv": "3",
+  "w": "supervise",
+  "rd": "",
+  "pos": "동사",
+  "ko": "감독하다, 관리하다",
+  "ex": "Ms. Park supervises a team of twelve sales representatives.",
+  "exko": "박 씨는 12명의 영업 사원으로 구성된 팀을 관리한다."
+ },
+ {
+  "id": "vt-v68",
+  "lv": "3",
+  "w": "transfer",
+  "rd": "",
+  "pos": "동사",
+  "ko": "전근시키다, 이체하다",
+  "ex": "Mr. Chen was transferred to the Tokyo office last month.",
+  "exko": "첸 씨는 지난달 도쿄 사무소로 전근했다."
+ },
+ {
+  "id": "vt-v69",
+  "lv": "3",
+  "w": "upgrade",
+  "rd": "",
+  "pos": "동사",
+  "ko": "개선하다, 업그레이드하다",
+  "ex": "We plan to upgrade all the computers in the office this year.",
+  "exko": "우리는 올해 사무실의 모든 컴퓨터를 업그레이드할 계획이다."
+ },
+ {
+  "id": "vt-v70",
+  "lv": "3",
+  "w": "accompany",
+  "rd": "",
+  "pos": "동사",
+  "ko": "동반하다, 수반하다",
+  "ex": "Children under 12 must be accompanied by an adult.",
+  "exko": "12세 미만 어린이는 반드시 성인을 동반해야 한다."
+ },
+ {
+  "id": "vt-v71",
+  "lv": "3",
+  "w": "acknowledge",
+  "rd": "",
+  "pos": "동사",
+  "ko": "인정하다, (수령을) 알리다",
+  "ex": "Please acknowledge receipt of this letter by email.",
+  "exko": "이 편지를 받으셨다는 것을 이메일로 알려 주세요."
+ },
+ {
+  "id": "vt-v72",
+  "lv": "3",
+  "w": "announce",
+  "rd": "",
+  "pos": "동사",
+  "ko": "발표하다, 알리다",
+  "ex": "The company announced the opening of a new branch in Seoul.",
+  "exko": "그 회사는 서울에 새 지점을 연다고 발표했다."
+ },
+ {
+  "id": "vt-v73",
+  "lv": "3",
+  "w": "apologize",
+  "rd": "",
+  "pos": "동사",
+  "ko": "사과하다",
+  "ex": "We apologize for any inconvenience caused by the delay.",
+  "exko": "지연으로 인해 불편을 끼쳐 드린 점 사과드립니다."
+ },
+ {
+  "id": "vt-v74",
+  "lv": "3",
+  "w": "attract",
+  "rd": "",
+  "pos": "동사",
+  "ko": "끌어들이다, 유치하다",
+  "ex": "The festival attracts thousands of tourists every summer.",
+  "exko": "그 축제는 매년 여름 수천 명의 관광객을 끌어들인다."
+ },
+ {
+  "id": "vt-v75",
+  "lv": "3",
+  "w": "cancel",
+  "rd": "",
+  "pos": "동사",
+  "ko": "취소하다",
+  "ex": "The outdoor concert was canceled because of heavy rain.",
+  "exko": "야외 콘서트는 폭우 때문에 취소되었다."
+ },
+ {
+  "id": "vt-v76",
+  "lv": "3",
+  "w": "clarify",
+  "rd": "",
+  "pos": "동사",
+  "ko": "명확하게 하다, 해명하다",
+  "ex": "Could you clarify a few points in your proposal?",
+  "exko": "제안서의 몇 가지 사항을 명확히 설명해 주시겠어요?"
+ },
+ {
+  "id": "vt-v77",
+  "lv": "3",
+  "w": "compile",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(자료를) 모으다, (목록 등을) 작성하다",
+  "ex": "The assistant compiled a list of potential clients.",
+  "exko": "비서는 잠재 고객 명단을 작성했다."
+ },
+ {
+  "id": "vt-v78",
+  "lv": "3",
+  "w": "deliver",
+  "rd": "",
+  "pos": "동사",
+  "ko": "배달하다, (연설 등을) 하다",
+  "ex": "The furniture will be delivered to your home on Saturday.",
+  "exko": "가구는 토요일에 댁으로 배달될 것입니다."
+ },
+ {
+  "id": "vt-v79",
+  "lv": "3",
+  "w": "demonstrate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "시연하다, 입증하다",
+  "ex": "The sales representative demonstrated how to use the new machine.",
+  "exko": "영업 사원은 새 기계의 사용법을 시연했다."
+ },
+ {
+  "id": "vt-v80",
+  "lv": "3",
+  "w": "deteriorate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "악화되다, 나빠지다",
+  "ex": "Market conditions began to deteriorate in the second quarter.",
+  "exko": "2분기에 시장 상황이 악화되기 시작했다."
+ },
+ {
+  "id": "vt-v81",
+  "lv": "3",
+  "w": "diversify",
+  "rd": "",
+  "pos": "동사",
+  "ko": "다각화하다, 다양화하다",
+  "ex": "The firm hopes to diversify its products to reach new customers.",
+  "exko": "그 회사는 새로운 고객층에 다가가기 위해 제품을 다각화하기를 바란다."
+ },
+ {
+  "id": "vt-v82",
+  "lv": "3",
+  "w": "encourage",
+  "rd": "",
+  "pos": "동사",
+  "ko": "권장하다, 장려하다",
+  "ex": "Employees are encouraged to take part in the volunteer program.",
+  "exko": "직원들은 자원봉사 프로그램에 참여하도록 권장된다."
+ },
+ {
+  "id": "vt-v83",
+  "lv": "3",
+  "w": "enclose",
+  "rd": "",
+  "pos": "동사",
+  "ko": "동봉하다",
+  "ex": "I have enclosed a copy of my résumé with this letter.",
+  "exko": "이 편지에 제 이력서 사본을 동봉했습니다."
+ },
+ {
+  "id": "vt-v84",
+  "lv": "3",
+  "w": "estimate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "추정하다, 견적을 내다",
+  "ex": "The contractor estimated that the repairs would take three weeks.",
+  "exko": "시공업자는 수리에 3주가 걸릴 것으로 추정했다."
+ },
+ {
+  "id": "vt-v85",
+  "lv": "3",
+  "w": "exhibit",
+  "rd": "",
+  "pos": "동사",
+  "ko": "전시하다, (특성을) 보이다",
+  "ex": "The museum will exhibit works by local artists this month.",
+  "exko": "그 박물관은 이번 달 지역 예술가들의 작품을 전시할 것이다."
+ },
+ {
+  "id": "vt-v86",
+  "lv": "3",
+  "w": "extend",
+  "rd": "",
+  "pos": "동사",
+  "ko": "연장하다, (초대·감사를) 전하다",
+  "ex": "The store has extended its opening hours for the holiday season.",
+  "exko": "그 상점은 연휴 시즌을 맞아 영업시간을 연장했다."
+ },
+ {
+  "id": "vt-v87",
+  "lv": "3",
+  "w": "finalize",
+  "rd": "",
+  "pos": "동사",
+  "ko": "마무리하다, 확정하다",
+  "ex": "We hope to finalize the contract by the end of the week.",
+  "exko": "우리는 이번 주말까지 계약을 마무리하기를 바란다."
+ },
+ {
+  "id": "vt-v88",
+  "lv": "3",
+  "w": "hire",
+  "rd": "",
+  "pos": "동사",
+  "ko": "고용하다",
+  "ex": "The restaurant plans to hire three new chefs.",
+  "exko": "그 식당은 새 요리사 세 명을 고용할 계획이다."
+ },
+ {
+  "id": "vt-v89",
+  "lv": "3",
+  "w": "maximize",
+  "rd": "",
+  "pos": "동사",
+  "ko": "극대화하다",
+  "ex": "The new layout is designed to maximize the use of space.",
+  "exko": "새 배치는 공간 활용을 극대화하도록 설계되었다."
+ },
+ {
+  "id": "vt-v90",
+  "lv": "3",
+  "w": "modify",
+  "rd": "",
+  "pos": "동사",
+  "ko": "수정하다, 변경하다",
+  "ex": "You can modify your order until it is shipped.",
+  "exko": "상품이 발송되기 전까지는 주문을 변경할 수 있다."
+ },
+ {
+  "id": "vt-v91",
+  "lv": "3",
+  "w": "obtain",
+  "rd": "",
+  "pos": "동사",
+  "ko": "얻다, 획득하다",
+  "ex": "Visitors must obtain a pass at the security desk.",
+  "exko": "방문객은 보안 데스크에서 출입증을 받아야 한다."
+ },
+ {
+  "id": "vt-v92",
+  "lv": "3",
+  "w": "outsource",
+  "rd": "",
+  "pos": "동사",
+  "ko": "외부에 위탁하다, 외주를 주다",
+  "ex": "Many firms outsource their customer service to other companies.",
+  "exko": "많은 회사가 고객 서비스를 다른 회사에 외주로 맡긴다."
+ },
+ {
+  "id": "vt-v93",
+  "lv": "3",
+  "w": "participate",
+  "rd": "",
+  "pos": "동사",
+  "ko": "참가하다, 참여하다",
+  "ex": "All staff members are expected to participate in the fire drill.",
+  "exko": "모든 직원은 소방 훈련에 참가해야 한다."
+ },
+ {
+  "id": "vt-v94",
+  "lv": "3",
+  "w": "prioritize",
+  "rd": "",
+  "pos": "동사",
+  "ko": "우선순위를 매기다, 우선시하다",
+  "ex": "You should prioritize the tasks that are due this week.",
+  "exko": "이번 주가 마감인 업무를 우선적으로 처리해야 한다."
+ },
+ {
+  "id": "vt-v95",
+  "lv": "3",
+  "w": "promote",
+  "rd": "",
+  "pos": "동사",
+  "ko": "승진시키다, 홍보하다",
+  "ex": "Ms. Tanaka was promoted to sales manager last month.",
+  "exko": "다나카 씨는 지난달 영업 부장으로 승진했다."
+ },
+ {
+  "id": "vt-v96",
+  "lv": "3",
+  "w": "recognize",
+  "rd": "",
+  "pos": "동사",
+  "ko": "(공로를) 인정하다, 알아보다",
+  "ex": "The award recognizes employees who show outstanding leadership.",
+  "exko": "그 상은 뛰어난 리더십을 보여 준 직원들의 공로를 인정한다."
+ },
+ {
+  "id": "vt-v97",
+  "lv": "3",
+  "w": "recommend",
+  "rd": "",
+  "pos": "동사",
+  "ko": "추천하다, 권하다",
+  "ex": "I highly recommend this hotel to anyone visiting the city.",
+  "exko": "이 도시를 방문하는 누구에게나 이 호텔을 적극 추천합니다."
+ },
+ {
+  "id": "vt-v98",
+  "lv": "3",
+  "w": "register",
+  "rd": "",
+  "pos": "동사",
+  "ko": "등록하다, 신고하다",
+  "ex": "Participants must register for the workshop by Friday.",
+  "exko": "참가자들은 금요일까지 워크숍에 등록해야 한다."
+ },
+ {
+  "id": "vt-v99",
+  "lv": "3",
+  "w": "replace",
+  "rd": "",
+  "pos": "동사",
+  "ko": "교체하다, 대신하다",
+  "ex": "The old copier will be replaced with a faster model.",
+  "exko": "오래된 복사기는 더 빠른 모델로 교체될 것이다."
+ },
+ {
+  "id": "vt-v100",
+  "lv": "3",
+  "w": "reschedule",
+  "rd": "",
+  "pos": "동사",
+  "ko": "일정을 다시 잡다, 변경하다",
+  "ex": "Can we reschedule our meeting for Wednesday afternoon?",
+  "exko": "회의를 수요일 오후로 다시 잡을 수 있을까요?"
+ }
+]

@@ -1,0 +1,1002 @@
+[
+ {
+  "id": "vt-n1",
+  "lv": "3",
+  "w": "invoice",
+  "rd": "",
+  "pos": "명사",
+  "ko": "송장, 청구서",
+  "ex": "Please send the invoice to our accounting department by Friday.",
+  "exko": "금요일까지 청구서를 저희 회계 부서로 보내 주세요."
+ },
+ {
+  "id": "vt-n2",
+  "lv": "3",
+  "w": "receipt",
+  "rd": "",
+  "pos": "명사",
+  "ko": "영수증, 수령",
+  "ex": "Keep your receipt in case you need to return the item.",
+  "exko": "물건을 반품해야 할 경우를 대비해 영수증을 보관하세요."
+ },
+ {
+  "id": "vt-n3",
+  "lv": "3",
+  "w": "estimate",
+  "rd": "",
+  "pos": "명사",
+  "ko": "견적(서), 추정",
+  "ex": "The contractor gave us an estimate for the repair work.",
+  "exko": "시공업자가 수리 작업에 대한 견적을 주었다."
+ },
+ {
+  "id": "vt-n4",
+  "lv": "3",
+  "w": "quote",
+  "rd": "",
+  "pos": "명사",
+  "ko": "견적(가), 인용",
+  "ex": "We requested a quote from three different suppliers.",
+  "exko": "우리는 세 곳의 공급업체에 견적을 요청했다."
+ },
+ {
+  "id": "vt-n5",
+  "lv": "3",
+  "w": "supplier",
+  "rd": "",
+  "pos": "명사",
+  "ko": "공급업체, 납품업체",
+  "ex": "The company switched to a new supplier to reduce costs.",
+  "exko": "그 회사는 비용을 줄이기 위해 새 공급업체로 바꿨다."
+ },
+ {
+  "id": "vt-n6",
+  "lv": "3",
+  "w": "vendor",
+  "rd": "",
+  "pos": "명사",
+  "ko": "판매업체, 노점상",
+  "ex": "All vendors must register before the trade fair begins.",
+  "exko": "모든 판매업체는 무역 박람회가 시작되기 전에 등록해야 한다."
+ },
+ {
+  "id": "vt-n7",
+  "lv": "3",
+  "w": "shipment",
+  "rd": "",
+  "pos": "명사",
+  "ko": "배송(품), 선적",
+  "ex": "The shipment is expected to arrive on Monday morning.",
+  "exko": "배송품은 월요일 아침에 도착할 예정이다."
+ },
+ {
+  "id": "vt-n8",
+  "lv": "3",
+  "w": "merchandise",
+  "rd": "",
+  "pos": "명사",
+  "ko": "상품, 제품",
+  "ex": "Damaged merchandise can be exchanged within thirty days.",
+  "exko": "손상된 상품은 30일 이내에 교환할 수 있다."
+ },
+ {
+  "id": "vt-n9",
+  "lv": "3",
+  "w": "warranty",
+  "rd": "",
+  "pos": "명사",
+  "ko": "품질 보증(서)",
+  "ex": "This laptop comes with a two-year warranty on all parts.",
+  "exko": "이 노트북에는 모든 부품에 대한 2년 품질 보증이 제공된다."
+ },
+ {
+  "id": "vt-n10",
+  "lv": "3",
+  "w": "refund",
+  "rd": "",
+  "pos": "명사",
+  "ko": "환불(금)",
+  "ex": "Customers may request a full refund within fourteen days of purchase.",
+  "exko": "고객은 구매 후 14일 이내에 전액 환불을 요청할 수 있다."
+ },
+ {
+  "id": "vt-n11",
+  "lv": "3",
+  "w": "discount",
+  "rd": "",
+  "pos": "명사",
+  "ko": "할인",
+  "ex": "Members receive a ten percent discount on all purchases.",
+  "exko": "회원은 모든 구매에 대해 10퍼센트 할인을 받는다."
+ },
+ {
+  "id": "vt-n12",
+  "lv": "3",
+  "w": "subscription",
+  "rd": "",
+  "pos": "명사",
+  "ko": "구독, 정기 구독료",
+  "ex": "You can cancel your subscription at any time online.",
+  "exko": "온라인으로 언제든지 구독을 취소할 수 있다."
+ },
+ {
+  "id": "vt-n13",
+  "lv": "3",
+  "w": "expense",
+  "rd": "",
+  "pos": "명사",
+  "ko": "비용, 경비",
+  "ex": "Travel expenses must be approved by your manager.",
+  "exko": "출장 경비는 관리자의 승인을 받아야 한다."
+ },
+ {
+  "id": "vt-n14",
+  "lv": "3",
+  "w": "budget",
+  "rd": "",
+  "pos": "명사",
+  "ko": "예산",
+  "ex": "The marketing department has exceeded its budget this quarter.",
+  "exko": "마케팅 부서는 이번 분기에 예산을 초과했다."
+ },
+ {
+  "id": "vt-n15",
+  "lv": "3",
+  "w": "revenue",
+  "rd": "",
+  "pos": "명사",
+  "ko": "수익, 매출",
+  "ex": "Annual revenue increased by fifteen percent last year.",
+  "exko": "작년에 연간 매출이 15퍼센트 증가했다."
+ },
+ {
+  "id": "vt-n16",
+  "lv": "3",
+  "w": "profit",
+  "rd": "",
+  "pos": "명사",
+  "ko": "이익, 수익",
+  "ex": "The company reported a record profit in the third quarter.",
+  "exko": "그 회사는 3분기에 사상 최대 이익을 발표했다."
+ },
+ {
+  "id": "vt-n17",
+  "lv": "3",
+  "w": "deficit",
+  "rd": "",
+  "pos": "명사",
+  "ko": "적자, 부족액",
+  "ex": "The city is trying to reduce its budget deficit.",
+  "exko": "시는 예산 적자를 줄이려고 노력하고 있다."
+ },
+ {
+  "id": "vt-n18",
+  "lv": "3",
+  "w": "asset",
+  "rd": "",
+  "pos": "명사",
+  "ko": "자산",
+  "ex": "Our employees are the company's most valuable asset.",
+  "exko": "직원들은 회사의 가장 소중한 자산이다."
+ },
+ {
+  "id": "vt-n19",
+  "lv": "3",
+  "w": "fund",
+  "rd": "",
+  "pos": "명사",
+  "ko": "자금, 기금",
+  "ex": "The project was canceled due to a lack of funds.",
+  "exko": "그 프로젝트는 자금 부족으로 취소되었다."
+ },
+ {
+  "id": "vt-n20",
+  "lv": "3",
+  "w": "investment",
+  "rd": "",
+  "pos": "명사",
+  "ko": "투자(금)",
+  "ex": "The new factory represents a major investment for the firm.",
+  "exko": "새 공장은 그 회사로서는 대규모 투자이다."
+ },
+ {
+  "id": "vt-n21",
+  "lv": "3",
+  "w": "acquisition",
+  "rd": "",
+  "pos": "명사",
+  "ko": "인수, 획득",
+  "ex": "The acquisition of the smaller rival was completed in March.",
+  "exko": "더 작은 경쟁사의 인수는 3월에 완료되었다."
+ },
+ {
+  "id": "vt-n22",
+  "lv": "3",
+  "w": "merger",
+  "rd": "",
+  "pos": "명사",
+  "ko": "합병",
+  "ex": "The merger of the two banks created the country's largest lender.",
+  "exko": "두 은행의 합병으로 국내 최대 금융기관이 탄생했다."
+ },
+ {
+  "id": "vt-n23",
+  "lv": "3",
+  "w": "subsidiary",
+  "rd": "",
+  "pos": "명사",
+  "ko": "자회사",
+  "ex": "The firm opened a subsidiary in Singapore last year.",
+  "exko": "그 회사는 작년에 싱가포르에 자회사를 설립했다."
+ },
+ {
+  "id": "vt-n24",
+  "lv": "3",
+  "w": "headquarters",
+  "rd": "",
+  "pos": "명사",
+  "ko": "본사, 본부",
+  "ex": "Our headquarters will relocate to Chicago next spring.",
+  "exko": "우리 본사는 내년 봄에 시카고로 이전할 것이다."
+ },
+ {
+  "id": "vt-n25",
+  "lv": "3",
+  "w": "branch",
+  "rd": "",
+  "pos": "명사",
+  "ko": "지점, 지사",
+  "ex": "The bank plans to open a new branch downtown.",
+  "exko": "그 은행은 시내에 새 지점을 열 계획이다."
+ },
+ {
+  "id": "vt-n26",
+  "lv": "3",
+  "w": "competitor",
+  "rd": "",
+  "pos": "명사",
+  "ko": "경쟁자, 경쟁사",
+  "ex": "Our prices are lower than those of our main competitor.",
+  "exko": "우리 가격은 주요 경쟁사의 가격보다 낮다."
+ },
+ {
+  "id": "vt-n27",
+  "lv": "3",
+  "w": "client",
+  "rd": "",
+  "pos": "명사",
+  "ko": "고객, 의뢰인",
+  "ex": "She is meeting an important client this afternoon.",
+  "exko": "그녀는 오늘 오후 중요한 고객을 만난다."
+ },
+ {
+  "id": "vt-n28",
+  "lv": "3",
+  "w": "customer",
+  "rd": "",
+  "pos": "명사",
+  "ko": "고객, 손님",
+  "ex": "The store values feedback from every customer who visits.",
+  "exko": "그 매장은 방문하는 모든 고객의 의견을 소중히 여긴다."
+ },
+ {
+  "id": "vt-n29",
+  "lv": "3",
+  "w": "patron",
+  "rd": "",
+  "pos": "명사",
+  "ko": "(가게·시설) 이용객, 고객",
+  "ex": "Library patrons may borrow up to ten books at a time.",
+  "exko": "도서관 이용객은 한 번에 최대 10권까지 대출할 수 있다."
+ },
+ {
+  "id": "vt-n30",
+  "lv": "3",
+  "w": "contract",
+  "rd": "",
+  "pos": "명사",
+  "ko": "계약(서)",
+  "ex": "Both parties signed the contract at the meeting yesterday afternoon.",
+  "exko": "양측은 어제 오후 회의에서 계약서에 서명했다."
+ },
+ {
+  "id": "vt-n31",
+  "lv": "3",
+  "w": "agreement",
+  "rd": "",
+  "pos": "명사",
+  "ko": "합의, 협정",
+  "ex": "The two companies reached an agreement on the price.",
+  "exko": "두 회사는 가격에 대해 합의에 이르렀다."
+ },
+ {
+  "id": "vt-n32",
+  "lv": "3",
+  "w": "negotiation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "협상, 교섭",
+  "ex": "Negotiations with the labor union are still in progress.",
+  "exko": "노동조합과의 협상이 아직 진행 중이다."
+ },
+ {
+  "id": "vt-n33",
+  "lv": "3",
+  "w": "proposal",
+  "rd": "",
+  "pos": "명사",
+  "ko": "제안(서)",
+  "ex": "The committee will review your proposal next week.",
+  "exko": "위원회는 다음 주에 귀하의 제안서를 검토할 것이다."
+ },
+ {
+  "id": "vt-n34",
+  "lv": "3",
+  "w": "bid",
+  "rd": "",
+  "pos": "명사",
+  "ko": "입찰, 응찰",
+  "ex": "Our firm submitted the lowest bid for the construction project.",
+  "exko": "우리 회사가 건설 프로젝트에 최저가로 입찰했다."
+ },
+ {
+  "id": "vt-n35",
+  "lv": "3",
+  "w": "deadline",
+  "rd": "",
+  "pos": "명사",
+  "ko": "마감일, 기한",
+  "ex": "The deadline for submitting applications is May thirty-first.",
+  "exko": "지원 마감일은 5월 31일이다."
+ },
+ {
+  "id": "vt-n36",
+  "lv": "3",
+  "w": "agenda",
+  "rd": "",
+  "pos": "명사",
+  "ko": "안건, 의제",
+  "ex": "The first item on the agenda is the new budget.",
+  "exko": "첫 번째 안건은 새 예산이다."
+ },
+ {
+  "id": "vt-n37",
+  "lv": "3",
+  "w": "conference",
+  "rd": "",
+  "pos": "명사",
+  "ko": "회의, 학회",
+  "ex": "More than five hundred people attended the annual conference.",
+  "exko": "500명 이상이 연례 회의에 참석했다."
+ },
+ {
+  "id": "vt-n38",
+  "lv": "3",
+  "w": "seminar",
+  "rd": "",
+  "pos": "명사",
+  "ko": "세미나, 연수회",
+  "ex": "The seminar on customer service starts at nine o'clock.",
+  "exko": "고객 서비스 세미나는 9시에 시작한다."
+ },
+ {
+  "id": "vt-n39",
+  "lv": "3",
+  "w": "workshop",
+  "rd": "",
+  "pos": "명사",
+  "ko": "워크숍, 연수회",
+  "ex": "All new staff must attend a safety workshop.",
+  "exko": "모든 신입 직원은 안전 워크숍에 참석해야 한다."
+ },
+ {
+  "id": "vt-n40",
+  "lv": "3",
+  "w": "presentation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "발표, 프레젠테이션",
+  "ex": "Mr. Kim will give a presentation on sales results.",
+  "exko": "김 씨가 판매 실적에 관해 발표할 것이다."
+ },
+ {
+  "id": "vt-n41",
+  "lv": "3",
+  "w": "venue",
+  "rd": "",
+  "pos": "명사",
+  "ko": "장소, 개최지",
+  "ex": "The hotel ballroom is the venue for this year's awards dinner.",
+  "exko": "호텔 연회장이 올해 시상식 만찬 장소이다."
+ },
+ {
+  "id": "vt-n42",
+  "lv": "3",
+  "w": "reservation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "예약",
+  "ex": "I'd like to make a reservation for four people tonight.",
+  "exko": "오늘 저녁 4명 예약을 하고 싶습니다."
+ },
+ {
+  "id": "vt-n43",
+  "lv": "3",
+  "w": "accommodation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "숙박 시설, 숙소",
+  "ex": "Accommodation for two nights is included in the conference fee.",
+  "exko": "2박 숙박은 회의 참가비에 포함되어 있다."
+ },
+ {
+  "id": "vt-n44",
+  "lv": "3",
+  "w": "registration",
+  "rd": "",
+  "pos": "명사",
+  "ko": "등록, 신고",
+  "ex": "Online registration for the event closes at midnight on Friday.",
+  "exko": "행사 온라인 등록은 금요일 자정에 마감된다."
+ },
+ {
+  "id": "vt-n45",
+  "lv": "3",
+  "w": "admission",
+  "rd": "",
+  "pos": "명사",
+  "ko": "입장(료), 입학",
+  "ex": "Admission to the museum is free on Sundays.",
+  "exko": "일요일에는 박물관 입장이 무료이다."
+ },
+ {
+  "id": "vt-n46",
+  "lv": "3",
+  "w": "applicant",
+  "rd": "",
+  "pos": "명사",
+  "ko": "지원자, 신청자",
+  "ex": "Each applicant must submit two letters of reference.",
+  "exko": "각 지원자는 추천서 두 통을 제출해야 한다."
+ },
+ {
+  "id": "vt-n47",
+  "lv": "3",
+  "w": "candidate",
+  "rd": "",
+  "pos": "명사",
+  "ko": "후보자, 지원자",
+  "ex": "We interviewed five candidates for the manager position.",
+  "exko": "우리는 관리자 직책 후보자 다섯 명을 면접했다."
+ },
+ {
+  "id": "vt-n48",
+  "lv": "3",
+  "w": "résumé",
+  "rd": "",
+  "pos": "명사",
+  "ko": "이력서",
+  "ex": "Please attach your résumé to the application form.",
+  "exko": "지원서에 이력서를 첨부해 주세요."
+ },
+ {
+  "id": "vt-n49",
+  "lv": "3",
+  "w": "qualification",
+  "rd": "",
+  "pos": "명사",
+  "ko": "자격(요건), 자격증",
+  "ex": "Fluency in Spanish is a required qualification for this job.",
+  "exko": "스페인어 능통은 이 직무의 필수 자격 요건이다."
+ },
+ {
+  "id": "vt-n50",
+  "lv": "3",
+  "w": "credential",
+  "rd": "",
+  "pos": "명사",
+  "ko": "자격 증명, 자격증",
+  "ex": "Please bring your professional credentials to the interview.",
+  "exko": "면접에 전문 자격 증명서를 지참해 주세요."
+ },
+ {
+  "id": "vt-n51",
+  "lv": "3",
+  "w": "position",
+  "rd": "",
+  "pos": "명사",
+  "ko": "직책, 일자리",
+  "ex": "She accepted a position as a senior accountant.",
+  "exko": "그녀는 선임 회계사 직책을 수락했다."
+ },
+ {
+  "id": "vt-n52",
+  "lv": "3",
+  "w": "vacancy",
+  "rd": "",
+  "pos": "명사",
+  "ko": "공석, 빈방",
+  "ex": "There is a vacancy in the accounting department.",
+  "exko": "회계 부서에 공석이 하나 있다."
+ },
+ {
+  "id": "vt-n53",
+  "lv": "3",
+  "w": "recruitment",
+  "rd": "",
+  "pos": "명사",
+  "ko": "채용, 모집",
+  "ex": "The recruitment of new engineers will begin next month.",
+  "exko": "신규 엔지니어 채용은 다음 달에 시작된다."
+ },
+ {
+  "id": "vt-n54",
+  "lv": "3",
+  "w": "personnel",
+  "rd": "",
+  "pos": "명사",
+  "ko": "(전체) 직원, 인사과",
+  "ex": "Only authorized personnel may enter this area of the building.",
+  "exko": "허가받은 직원만 건물의 이 구역에 들어갈 수 있다."
+ },
+ {
+  "id": "vt-n55",
+  "lv": "3",
+  "w": "employee",
+  "rd": "",
+  "pos": "명사",
+  "ko": "직원, 종업원",
+  "ex": "Every employee received a copy of the new policy.",
+  "exko": "모든 직원이 새 정책 사본을 받았다."
+ },
+ {
+  "id": "vt-n56",
+  "lv": "3",
+  "w": "supervisor",
+  "rd": "",
+  "pos": "명사",
+  "ko": "관리자, 감독자",
+  "ex": "Please report any accidents to your supervisor immediately.",
+  "exko": "모든 사고는 즉시 관리자에게 보고하세요."
+ },
+ {
+  "id": "vt-n57",
+  "lv": "3",
+  "w": "colleague",
+  "rd": "",
+  "pos": "명사",
+  "ko": "동료",
+  "ex": "I discussed the issue with a colleague over lunch.",
+  "exko": "나는 점심을 먹으며 동료와 그 문제를 논의했다."
+ },
+ {
+  "id": "vt-n58",
+  "lv": "3",
+  "w": "executive",
+  "rd": "",
+  "pos": "명사",
+  "ko": "임원, 경영진",
+  "ex": "Several executives will attend the board meeting next week.",
+  "exko": "몇몇 임원이 다음 주 이사회 회의에 참석할 것이다."
+ },
+ {
+  "id": "vt-n59",
+  "lv": "3",
+  "w": "promotion",
+  "rd": "",
+  "pos": "명사",
+  "ko": "승진, 판촉",
+  "ex": "She received a promotion after only two years.",
+  "exko": "그녀는 불과 2년 만에 승진했다."
+ },
+ {
+  "id": "vt-n60",
+  "lv": "3",
+  "w": "salary",
+  "rd": "",
+  "pos": "명사",
+  "ko": "급여, 봉급",
+  "ex": "The starting salary for this position is competitive.",
+  "exko": "이 직책의 초봉은 경쟁력이 있다."
+ },
+ {
+  "id": "vt-n61",
+  "lv": "3",
+  "w": "compensation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "보수, 보상(금)",
+  "ex": "The company offers generous compensation and benefits to its employees.",
+  "exko": "그 회사는 직원들에게 넉넉한 보수와 복리후생을 제공한다."
+ },
+ {
+  "id": "vt-n62",
+  "lv": "3",
+  "w": "benefit",
+  "rd": "",
+  "pos": "명사",
+  "ko": "혜택, 복리후생",
+  "ex": "Health insurance is one of the benefits we offer.",
+  "exko": "건강 보험은 우리가 제공하는 혜택 중 하나이다."
+ },
+ {
+  "id": "vt-n63",
+  "lv": "3",
+  "w": "incentive",
+  "rd": "",
+  "pos": "명사",
+  "ko": "장려책, 인센티브",
+  "ex": "Sales staff receive an incentive for exceeding their targets.",
+  "exko": "영업 직원은 목표를 초과 달성하면 인센티브를 받는다."
+ },
+ {
+  "id": "vt-n64",
+  "lv": "3",
+  "w": "pension",
+  "rd": "",
+  "pos": "명사",
+  "ko": "연금",
+  "ex": "Employees can join the company pension plan after one year.",
+  "exko": "직원은 1년 후 회사 연금 제도에 가입할 수 있다."
+ },
+ {
+  "id": "vt-n65",
+  "lv": "3",
+  "w": "retirement",
+  "rd": "",
+  "pos": "명사",
+  "ko": "은퇴, 퇴직",
+  "ex": "A party was held to celebrate Ms. Lee's retirement.",
+  "exko": "이 씨의 은퇴를 축하하는 파티가 열렸다."
+ },
+ {
+  "id": "vt-n66",
+  "lv": "3",
+  "w": "resignation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "사직(서), 사임",
+  "ex": "He submitted his resignation to the director on Monday.",
+  "exko": "그는 월요일에 이사에게 사직서를 제출했다."
+ },
+ {
+  "id": "vt-n67",
+  "lv": "3",
+  "w": "evaluation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "평가",
+  "ex": "Performance evaluations are conducted twice a year for all staff.",
+  "exko": "모든 직원을 대상으로 인사 평가가 1년에 두 번 실시된다."
+ },
+ {
+  "id": "vt-n68",
+  "lv": "3",
+  "w": "feedback",
+  "rd": "",
+  "pos": "명사",
+  "ko": "의견, 피드백",
+  "ex": "We appreciate your feedback on our new service.",
+  "exko": "저희 새 서비스에 대한 의견에 감사드립니다."
+ },
+ {
+  "id": "vt-n69",
+  "lv": "3",
+  "w": "survey",
+  "rd": "",
+  "pos": "명사",
+  "ko": "설문 조사, 측량",
+  "ex": "According to a recent survey, most customers are satisfied.",
+  "exko": "최근 설문 조사에 따르면 대부분의 고객이 만족하고 있다."
+ },
+ {
+  "id": "vt-n70",
+  "lv": "3",
+  "w": "complaint",
+  "rd": "",
+  "pos": "명사",
+  "ko": "불만, 항의",
+  "ex": "The manager responded quickly to the customer's complaint.",
+  "exko": "관리자는 고객의 불만에 신속히 대응했다."
+ },
+ {
+  "id": "vt-n71",
+  "lv": "3",
+  "w": "inquiry",
+  "rd": "",
+  "pos": "명사",
+  "ko": "문의, 조사",
+  "ex": "Thank you for your inquiry about our services.",
+  "exko": "저희 서비스에 대해 문의해 주셔서 감사합니다."
+ },
+ {
+  "id": "vt-n72",
+  "lv": "3",
+  "w": "request",
+  "rd": "",
+  "pos": "명사",
+  "ko": "요청, 요구",
+  "ex": "Your request for additional leave has been approved.",
+  "exko": "추가 휴가 요청이 승인되었습니다."
+ },
+ {
+  "id": "vt-n73",
+  "lv": "3",
+  "w": "approval",
+  "rd": "",
+  "pos": "명사",
+  "ko": "승인, 찬성",
+  "ex": "The plan requires approval from the board of directors.",
+  "exko": "그 계획은 이사회의 승인이 필요하다."
+ },
+ {
+  "id": "vt-n74",
+  "lv": "3",
+  "w": "authorization",
+  "rd": "",
+  "pos": "명사",
+  "ko": "허가, 승인",
+  "ex": "You need written authorization to access these files.",
+  "exko": "이 파일에 접근하려면 서면 허가가 필요하다."
+ },
+ {
+  "id": "vt-n75",
+  "lv": "3",
+  "w": "permit",
+  "rd": "",
+  "pos": "명사",
+  "ko": "허가증",
+  "ex": "A parking permit is required for this lot.",
+  "exko": "이 주차장에는 주차 허가증이 필요하다."
+ },
+ {
+  "id": "vt-n76",
+  "lv": "3",
+  "w": "regulation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "규정, 규제",
+  "ex": "All factories must follow strict government safety regulations.",
+  "exko": "모든 공장은 엄격한 정부 안전 규정을 따라야 한다."
+ },
+ {
+  "id": "vt-n77",
+  "lv": "3",
+  "w": "policy",
+  "rd": "",
+  "pos": "명사",
+  "ko": "정책, 방침",
+  "ex": "Our return policy allows exchanges within thirty days.",
+  "exko": "저희 반품 정책상 30일 이내에 교환이 가능합니다."
+ },
+ {
+  "id": "vt-n78",
+  "lv": "3",
+  "w": "procedure",
+  "rd": "",
+  "pos": "명사",
+  "ko": "절차, 순서",
+  "ex": "Please follow the correct procedure when reporting an absence.",
+  "exko": "결근을 알릴 때는 올바른 절차를 따라 주세요."
+ },
+ {
+  "id": "vt-n79",
+  "lv": "3",
+  "w": "guideline",
+  "rd": "",
+  "pos": "명사",
+  "ko": "지침, 가이드라인",
+  "ex": "The new guidelines explain how to handle customer data.",
+  "exko": "새 지침은 고객 데이터를 처리하는 방법을 설명한다."
+ },
+ {
+  "id": "vt-n80",
+  "lv": "3",
+  "w": "requirement",
+  "rd": "",
+  "pos": "명사",
+  "ko": "요건, 필요 조건",
+  "ex": "A college degree is a minimum requirement for this job.",
+  "exko": "대학 학위는 이 직무의 최소 요건이다."
+ },
+ {
+  "id": "vt-n81",
+  "lv": "3",
+  "w": "compliance",
+  "rd": "",
+  "pos": "명사",
+  "ko": "(규정) 준수",
+  "ex": "The inspection confirmed the factory's compliance with safety rules.",
+  "exko": "점검을 통해 공장이 안전 규칙을 준수하고 있음이 확인되었다."
+ },
+ {
+  "id": "vt-n82",
+  "lv": "3",
+  "w": "inspection",
+  "rd": "",
+  "pos": "명사",
+  "ko": "점검, 검사",
+  "ex": "The building will undergo a fire safety inspection tomorrow.",
+  "exko": "그 건물은 내일 소방 안전 점검을 받는다."
+ },
+ {
+  "id": "vt-n83",
+  "lv": "3",
+  "w": "maintenance",
+  "rd": "",
+  "pos": "명사",
+  "ko": "유지 보수, 관리",
+  "ex": "The elevator is out of service for routine maintenance.",
+  "exko": "엘리베이터가 정기 유지 보수로 운행이 중단되었다."
+ },
+ {
+  "id": "vt-n84",
+  "lv": "3",
+  "w": "facility",
+  "rd": "",
+  "pos": "명사",
+  "ko": "시설, 설비",
+  "ex": "The new facility will produce over ten thousand units a day.",
+  "exko": "새 시설은 하루에 만 개 이상을 생산할 것이다."
+ },
+ {
+  "id": "vt-n85",
+  "lv": "3",
+  "w": "equipment",
+  "rd": "",
+  "pos": "명사",
+  "ko": "장비, 설비",
+  "ex": "All equipment must be returned after the training session.",
+  "exko": "모든 장비는 교육이 끝난 후 반납해야 한다."
+ },
+ {
+  "id": "vt-n86",
+  "lv": "3",
+  "w": "supplies",
+  "rd": "",
+  "pos": "명사",
+  "ko": "용품, 비품",
+  "ex": "Office supplies are stored in the cabinet near the printer.",
+  "exko": "사무용품은 프린터 근처 캐비닛에 보관되어 있다."
+ },
+ {
+  "id": "vt-n87",
+  "lv": "3",
+  "w": "component",
+  "rd": "",
+  "pos": "명사",
+  "ko": "부품, 구성 요소",
+  "ex": "The factory imports most of its electronic components.",
+  "exko": "그 공장은 전자 부품 대부분을 수입한다."
+ },
+ {
+  "id": "vt-n88",
+  "lv": "3",
+  "w": "manufacturer",
+  "rd": "",
+  "pos": "명사",
+  "ko": "제조업체, 제조사",
+  "ex": "Contact the manufacturer if the product is defective.",
+  "exko": "제품에 결함이 있으면 제조사에 연락하세요."
+ },
+ {
+  "id": "vt-n89",
+  "lv": "3",
+  "w": "productivity",
+  "rd": "",
+  "pos": "명사",
+  "ko": "생산성",
+  "ex": "The new software has greatly improved our productivity.",
+  "exko": "새 소프트웨어 덕분에 생산성이 크게 향상되었다."
+ },
+ {
+  "id": "vt-n90",
+  "lv": "3",
+  "w": "efficiency",
+  "rd": "",
+  "pos": "명사",
+  "ko": "효율(성), 능률",
+  "ex": "The goal of the project is to increase energy efficiency.",
+  "exko": "그 프로젝트의 목표는 에너지 효율을 높이는 것이다."
+ },
+ {
+  "id": "vt-n91",
+  "lv": "3",
+  "w": "expansion",
+  "rd": "",
+  "pos": "명사",
+  "ko": "확장, 확대",
+  "ex": "The company announced plans for an overseas expansion.",
+  "exko": "그 회사는 해외 확장 계획을 발표했다."
+ },
+ {
+  "id": "vt-n92",
+  "lv": "3",
+  "w": "relocation",
+  "rd": "",
+  "pos": "명사",
+  "ko": "이전, 재배치",
+  "ex": "The relocation of our office will take about two weeks.",
+  "exko": "사무실 이전에는 약 2주가 걸릴 것이다."
+ },
+ {
+  "id": "vt-n93",
+  "lv": "3",
+  "w": "tenant",
+  "rd": "",
+  "pos": "명사",
+  "ko": "세입자, 입주자",
+  "ex": "Tenants must give sixty days' notice before moving out.",
+  "exko": "세입자는 이사 나가기 60일 전에 통보해야 한다."
+ },
+ {
+  "id": "vt-n94",
+  "lv": "3",
+  "w": "commute",
+  "rd": "",
+  "pos": "명사",
+  "ko": "통근(길)",
+  "ex": "My daily commute takes about forty minutes by train.",
+  "exko": "나는 매일 기차로 통근하는 데 약 40분이 걸린다."
+ },
+ {
+  "id": "vt-n95",
+  "lv": "3",
+  "w": "delay",
+  "rd": "",
+  "pos": "명사",
+  "ko": "지연, 연기",
+  "ex": "We apologize for the delay in processing your order.",
+  "exko": "주문 처리가 지연되어 죄송합니다."
+ },
+ {
+  "id": "vt-n96",
+  "lv": "3",
+  "w": "advertisement",
+  "rd": "",
+  "pos": "명사",
+  "ko": "광고",
+  "ex": "The advertisement will appear in several national newspapers.",
+  "exko": "그 광고는 여러 전국 신문에 실릴 것이다."
+ },
+ {
+  "id": "vt-n97",
+  "lv": "3",
+  "w": "brochure",
+  "rd": "",
+  "pos": "명사",
+  "ko": "안내 책자, 팸플릿",
+  "ex": "You can find more details in our travel brochure.",
+  "exko": "자세한 내용은 여행 안내 책자에서 확인할 수 있다."
+ },
+ {
+  "id": "vt-n98",
+  "lv": "3",
+  "w": "questionnaire",
+  "rd": "",
+  "pos": "명사",
+  "ko": "설문지",
+  "ex": "Please complete the short questionnaire after the event.",
+  "exko": "행사 후에 짧은 설문지를 작성해 주세요."
+ },
+ {
+  "id": "vt-n99",
+  "lv": "3",
+  "w": "shortage",
+  "rd": "",
+  "pos": "명사",
+  "ko": "부족, 결핍",
+  "ex": "A shortage of skilled workers has slowed down production.",
+  "exko": "숙련 노동자 부족으로 생산 속도가 느려졌다."
+ },
+ {
+  "id": "vt-n100",
+  "lv": "3",
+  "w": "outage",
+  "rd": "",
+  "pos": "명사",
+  "ko": "정전, (서비스) 중단",
+  "ex": "A power outage interrupted production for three hours.",
+  "exko": "정전으로 생산이 세 시간 동안 중단되었다."
+ }
+]

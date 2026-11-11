@@ -78,7 +78,7 @@ Xcode에서 App 타깃 → **Signing & Capabilities** → Team에 본인 개발�
 
 ### 3-2. App Store Connect 등록
 
-1. [App Store Connect](https://appstoreconnect.apple.com) → 앱 → 새로운 앱: 플랫폼 iOS, 이름 `RC 완전정복`, 기본 언어 한국어, 번들 ID 선택, SKU는 아무 값(예: `rc-wanjeon-001`).
+1. [App Store Connect](https://appstoreconnect.apple.com) → 앱 → 새로운 앱: 플랫폼 iOS, 이름 `어학 완전정복`, 기본 언어 한국어, 번들 ID 선택, SKU는 아무 값(예: `rc-wanjeon-001`).
 2. **앱 정보**: 카테고리 교육, 개인정보처리방침 URL.
 3. **앱 개인정보 보호**: "데이터를 수집하지 않음" 선택(앱이 외부로 보내는 데이터가 없다).
 4. **버전 정보**: 설명, 키워드, 프로모션 텍스트, 지원 URL은 `store/STORE_LISTING.md`.

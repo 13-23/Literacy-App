@@ -1,8 +1,8 @@
 {
   "name": "rc-wanjeonjeongbok",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "토익 RC Part 5·6·7 연습과 빈출 단어 퀴즈 앱",
+  "description": "토익 RC·JLPT·HSK 단어, 문장, 독해 퀴즈와 단어장 앱",
   "scripts": {
     "build": "node tools/build.mjs && npx cap sync",
     "assets": "npx capacitor-assets generate --iconBackgroundColor '#C42F5C' --iconBackgroundColorDark '#C42F5C' --splashBackgroundColor '#F3F4F8' --splashBackgroundColorDark '#0F121A'",

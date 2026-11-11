@@ -1,7 +1,7 @@
 {
-  "name": "RC 완전정복 - 토익 RC 연습",
-  "short_name": "RC 완전정복",
-  "description": "토익 Part 5 문법·어휘와 1문단 독해 고난도 연습",
+  "name": "어학 완전정복 - TOEIC·JLPT·HSK",
+  "short_name": "어학 완전정복",
+  "description": "토익 RC, JLPT 일본어, HSK 중국어 단어·문장·독해 퀴즈와 단어장",
   "lang": "ko",
   "start_url": "./",
   "scope": "./",

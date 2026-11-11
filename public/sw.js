@@ -1,5 +1,5 @@
 // 오프라인에서도 열리도록 앱 파일을 캐시한다. 앱을 고치면 VERSION을 올린다.
-const VERSION = "eohak-v5";
+const VERSION = "eohak-v6";
 const CORE = ["./", "index.html", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));
@@ -10,9 +10,9 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   const url = new URL(e.request.url);
-  // 앱 페이지는 네트워크 우선(새 버전 반영), 실패하면 캐시
+  // 앱 페이지는 네트워크 우선(새 버전 반영), 실패하면 캐시. 브라우저 HTTP 캐시(Pages는 10분)도 건너뛰고 서버에 확인한다
   if (e.request.mode === "navigate") {
-    e.respondWith(fetch(e.request).then(r => { const copy = r.clone(); caches.open(VERSION).then(c => c.put("index.html", copy)); return r; }).catch(() => caches.match("index.html")));
+    e.respondWith(fetch(e.request, { cache: "no-cache" }).then(r => { const copy = r.clone(); caches.open(VERSION).then(c => c.put("index.html", copy)); return r; }).catch(() => caches.match("index.html")));
     return;
   }
   // 나머지(아이콘, 글꼴)는 캐시 우선

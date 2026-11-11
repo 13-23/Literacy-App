@@ -90,6 +90,14 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 .b-v{background:var(--teal-soft);color:var(--teal)}
 .b-r{background:var(--indigo-soft);color:var(--indigo)}
 .b-m{background:var(--amber-soft);color:var(--amber)}
+.b-6{background:var(--indigo-soft);color:var(--brand)}
+.b-w{background:var(--teal-soft);color:var(--indigo)}
+.gap.num{min-width:3.2em;text-align:center;font-family:var(--f-num);font-size:12px;font-weight:600;line-height:1.1em;color:var(--muted)}
+.gap.num.on{color:var(--brand)}
+.passage .ptext{white-space:pre-line}
+.stem p.word,.word{font-family:var(--f-item);font-size:30px;font-weight:600;line-height:1.2;margin:0}
+.ex{font-family:var(--f-item);font-size:16px}
+.weak{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
 .mode .desc{font-size:13.5px;color:var(--muted);min-width:0}
 .mode .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
 .mode .meta b{font-family:var(--f-num);color:var(--ink);font-weight:600}
@@ -206,14 +214,21 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 </script>
 <script>
 const KIND_LABEL={main:"주제 확인",fact:"사실 확인",blank:"빈칸 추론"};
+const KIND_NAME={G:"Part 5 문법",V:"Part 5 어휘",P6:"Part 6 장문 빈칸",R:"Part 7 독해",W:"단어 퀴즈"};
 const LV_LABEL={2:"중상",3:"상",4:"최상"};
-const MODE_LABEL={G:"Part 5 문법",V:"Part 5 어휘",R:"1문단 독해",MIX:"실전 믹스",WRONG:"오답 다시 풀기"};
+const MODE_LABEL={G:"Part 5 문법",V:"Part 5 어휘",P6:"Part 6 장문 빈칸",R:"Part 7 독해",W:"단어 퀴즈",MIX:"실전 믹스",WRONG:"오답 다시 풀기",CAT:"약한 유형 집중"};
 
 /* 정답은 데이터에서 항상 첫 번째 선택지이고, 출제할 때 섞는다. */
 const BANK={};
 G.forEach(r=>BANK[r[0]]={id:r[0],kind:"G",cat:r[1],lv:r[2],q:r[3],c:r[4],ko:r[5],ex:r[6]});
 V.forEach(r=>BANK[r[0]]={id:r[0],kind:"V",cat:r[1],lv:r[2],q:r[3],c:r[4],ko:r[5],ex:r[6]});
 R.forEach(p=>p.qs.forEach((r,i)=>BANK[p.id+"-"+i]={id:p.id+"-"+i,kind:"R",cat:KIND_LABEL[r[0]],qk:r[0],lv:p.lv,q:r[1],c:r[2],ex:r[3],p}));
+P6.forEach(p=>p.qs.forEach((r,i)=>BANK[p.id+"-"+i]={id:p.id+"-"+i,kind:"P6",cat:r[0],lv:p.lv,q:"빈칸 ("+(i+1)+")",bi:i+1,c:r[1],ex:r[2],p}));
+/* 단어 퀴즈 오답 선택지: 같은 품사의 다른 뜻 3개를 고정으로 고른다(다시 풀 때도 같은 문제). */
+(()=>{const by={};W.forEach(r=>(by[r[1]]=by[r[1]]||[]).push(r));
+  W.forEach(r=>{const g=by[r[1]].length>=4?by[r[1]]:W,i=g.indexOf(r),d=[];
+    for(const step of [7,19,37,53,71,89,3,11]){if(d.length===3)break;const o=g[((i<0?0:i)+step)%g.length];if(o!==r&&o[3]!==r[3]&&!d.includes(o[3]))d.push(o[3])}
+    BANK[r[0]]={id:r[0],kind:"W",cat:r[1],lv:3,q:r[2],c:[r[3],...d],wex:r[4],wko:r[5]}});})();
 const ALL=Object.keys(BANK);
 
 /* ---------- 저장 (이 브라우저에만) ---------- */
@@ -244,21 +259,27 @@ const tries=id=>(store.h[id]?store.h[id].n:0);
 const poolG=()=>G.filter(r=>r[2]>=store.lv).map(r=>r[0]);
 const poolV=()=>V.filter(r=>r[2]>=store.lv).map(r=>r[0]);
 const poolR=()=>R.filter(p=>p.lv>=store.lv);
+const poolP6=()=>P6.filter(p=>p.lv>=store.lv);
+const poolW=()=>W.map(r=>r[0]);
 const pIds=p=>p.qs.map((_,i)=>p.id+"-"+i);
+const isSet=k=>k==="R"||k==="P6";
 function pickLeast(ids,n){return ids.map(id=>[id,tries(id)+Math.random()*.9]).sort((a,b)=>a[1]-b[1]).slice(0,n).map(x=>x[0])}
-function pickPassages(n){return poolR().map(p=>[p,pIds(p).reduce((s,id)=>s+tries(id),0)/3+Math.random()*.9]).sort((a,b)=>a[1]-b[1]).slice(0,n).map(x=>x[0])}
-const size={G:10,V:10,R:2};
+function pickPassages(n,pool=poolR()){return pool.map(p=>[p,pIds(p).reduce((s,id)=>s+tries(id),0)/p.qs.length+Math.random()*.9]).sort((a,b)=>a[1]-b[1]).slice(0,n).map(x=>x[0])}
+const size={G:10,V:10,P6:1,R:2,W:10};
 
-function build(mode){
+function build(mode,opt){
   let ids=[];
+  if(mode==="CAT"){const pool=opt.k==="G"?poolG():opt.k==="V"?poolV():poolW();ids=pickLeast(pool.filter(id=>BANK[id].cat===opt.c),10)}
+  if(mode==="P6")pickPassages(size.P6,poolP6()).forEach(p=>ids.push(...pIds(p)));
+  if(mode==="W")ids=pickLeast(poolW(),size.W);
   if(mode==="G")ids=pickLeast(poolG(),size.G);
   if(mode==="V")ids=pickLeast(poolV(),size.V);
   if(mode==="R")pickPassages(size.R).forEach(p=>ids.push(...pIds(p)));
-  if(mode==="MIX"){ids=shuffle([...pickLeast(poolG(),5),...pickLeast(poolV(),5)]);const p=pickPassages(1)[0];if(p)ids.push(...pIds(p))}
+  if(mode==="MIX"){ids=shuffle([...pickLeast(poolG(),4),...pickLeast(poolV(),4)]);const q=pickPassages(1,poolP6())[0];if(q)ids.push(...pIds(q));const p=pickPassages(1)[0];if(p)ids.push(...pIds(p))}
   if(mode==="WRONG"){
     const w=wrongIds();
-    ids=shuffle(w.filter(id=>BANK[id].kind!=="R"));
-    [...new Set(w.filter(id=>BANK[id].kind==="R").map(id=>BANK[id].p.id))].forEach(pid=>ids.push(...w.filter(id=>id.startsWith(pid+"-")).sort()));
+    ids=shuffle(w.filter(id=>!isSet(BANK[id].kind)));
+    [...new Set(w.filter(id=>isSet(BANK[id].kind)).map(id=>BANK[id].p.id))].forEach(pid=>ids.push(...w.filter(id=>BANK[id].p&&BANK[id].p.id===pid).sort()));
   }
   return ids.map(id=>({id,order:shuffle([0,1,2,3])}));
 }
@@ -271,9 +292,10 @@ const blankify=(s,on)=>esc(s).replace("-------",`<span class="gap${on?" on":""}"
 const L="ABCD";
 const lvTag=lv=>`<span class="tag lv${lv}">${LV_LABEL[lv]}</span>`;
 
-function start(mode){
-  const items=build(mode);if(!items.length)return;
-  sess={mode,items,i:0,res:[],picked:null,t0:Date.now()};
+function start(mode,opt){
+  const items=build(mode,opt);if(!items.length)return;
+  const label=mode==="CAT"?opt.c+" 집중":MODE_LABEL[mode];
+  sess={mode,opt,label,items,i:0,res:[],picked:null,t0:Date.now()};
   view="quiz";render();window.scrollTo(0,0);
 }
 function choose(k){
@@ -296,7 +318,7 @@ function next(){
     else{const st=document.getElementById("stem");if(st)st.scrollIntoView({block:"start"})}
   }else{
     const ok=sess.res.filter(r=>r.ok).length;
-    store.s.unshift({m:sess.mode,ok,n:sess.res.length,d:Date.now()});store.s=store.s.slice(0,30);save();
+    store.s.unshift({m:sess.mode,lab:sess.label,ok,n:sess.res.length,d:Date.now()});store.s=store.s.slice(0,30);save();
     view="result";render();window.scrollTo(0,0);
   }
 }
@@ -316,21 +338,21 @@ function render(){
   const w=wrongIds().length,dot=document.getElementById("wrong-dot");dot.hidden=!w;dot.textContent=w;
   if(view!=="quiz")stopTimer();
   if(view==="home")app.innerHTML=homeView();
-  if(view==="quiz"){app.innerHTML=quizView();if(sess.picked===null)startTimer(BANK[sess.items[sess.i].id].kind==="R"?60:20)}
+  if(view==="quiz"){app.innerHTML=quizView();if(sess.picked===null)startTimer({R:60,P6:30,W:10}[BANK[sess.items[sess.i].id].kind]||20)}
   if(view==="result")app.innerHTML=resultView();
   if(view==="wrong")app.innerHTML=wrongView();
 }
 function chips(m,opts){return `<div class="chips" role="group" aria-label="문항 수">${opts.map(([v,l])=>`<button data-act="size" data-m="${m}" data-v="${v}" aria-pressed="${size[m]===v}">${l}</button>`).join("")}</div>`}
 function meta(ids){const s=stat(ids);return `<div class="meta"><span>푼 문항 <b>${s.seen}/${s.total}</b></span><span>정답률 <b>${s.acc===null?"–":s.acc+"%"}</b></span></div>`}
 function homeView(){
-  const g=poolG(),v=poolV(),rp=poolR(),rIds=rp.flatMap(pIds);
+  const g=poolG(),v=poolV(),rp=poolR(),rIds=rp.flatMap(pIds),sp=poolP6(),sIds=sp.flatMap(pIds),wd=poolW();
   const all=stat(ALL),w=wrongIds().length,recent=store.s.slice(0,5);
   const lvBtn=(lv,l)=>`<button data-act="lv" data-v="${lv}" aria-pressed="${store.lv===lv}">${l}</button>`;
   return `
   <div class="hero">
-    <span class="eyebrow">TOEIC Reading · Part 5 &amp; 7</span>
+    <span class="eyebrow">TOEIC Reading · Part 5 · 6 · 7</span>
     <h1>오늘 풀 세트를 고르세요</h1>
-    <p class="muted" style="margin:0">문법·어휘는 문항당 20초, 독해는 60초가 목표예요. 안 푼 문제부터 나와요.</p>
+    <p class="muted" style="margin:0">Part 5는 문항당 20초, Part 6은 30초, 독해는 60초가 목표예요. 안 푼 문제부터 나와요.</p>
   </div>
   <div class="stats">
     <div class="stat"><b>${all.seen}<small>/${all.total}</small></b><span>푼 문항</span></div>
@@ -349,40 +371,50 @@ function homeView(){
     <div class="mode"><div class="badge b-v">P5<br>어휘</div><h2>Part 5 어휘</h2>
       <div class="desc">콜로케이션, 전치사로 고르는 어휘, 철자가 비슷한 혼동 어휘</div>${meta(v)}
       <div class="go">${chips("V",[[10,"10"],[20,"20"],[999,"전체"]])}<button class="btn" data-act="start" data-m="V" ${v.length?"":"disabled"}>시작하기</button></div></div>
-    <div class="mode"><div class="badge b-r">P7<br>독해</div><h2>1문단 독해</h2>
-      <div class="desc">지문마다 주제 확인, 사실 확인, 빈칸 추론 3문항</div>${meta(rIds)}
+    <div class="mode"><div class="badge b-6">P6<br>장문</div><h2>Part 6 장문 빈칸</h2>
+      <div class="desc">이메일·공지·기사 속 빈칸 4개: 문맥 시제, 연결어, 어휘, 문장 넣기</div>${meta(sIds)}
+      <div class="go">${chips("P6",[[1,"1지문"],[2,"2지문"],[999,"전체"]])}<button class="btn" data-act="start" data-m="P6" ${sp.length?"":"disabled"}>시작하기</button></div></div>
+    <div class="mode"><div class="badge b-r">P7<br>독해</div><h2>Part 7 독해</h2>
+      <div class="desc">1문단 지문마다 주제 확인, 사실 확인, 빈칸 추론 3문항</div>${meta(rIds)}
       <div class="go">${chips("R",[[1,"1지문"],[2,"2지문"],[999,"전체"]])}<button class="btn" data-act="start" data-m="R" ${rp.length?"":"disabled"}>시작하기</button></div></div>
+    <div class="mode"><div class="badge b-w">단어</div><h2>빈출 단어 퀴즈</h2>
+      <div class="desc">토익 빈출 동사·명사·형용사·부사 ${wd.length}개. 뜻을 고르고 예문으로 확인</div>${meta(wd)}
+      <div class="go">${chips("W",[[10,"10"],[20,"20"],[30,"30"]])}<button class="btn" data-act="start" data-m="W">시작하기</button></div></div>
     <div class="mode"><div class="badge b-m">MIX</div><h2>실전 믹스</h2>
-      <div class="desc">문법 5 + 어휘 5 + 지문 1개(3문항)를 섞어서 실제 시험처럼</div>
-      <div class="go"><span class="small muted">13문항 · 약 6분</span><button class="btn soft" data-act="start" data-m="MIX">시작하기</button></div></div>
+      <div class="desc">문법 4 + 어휘 4 + Part 6 지문 1개 + Part 7 지문 1개를 실제 시험 순서로</div>
+      <div class="go"><span class="small muted">15문항 · 약 7분</span><button class="btn soft" data-act="start" data-m="MIX">시작하기</button></div></div>
   </div>
   <div class="section">
     <div class="section-head"><h2>최근 기록</h2>${w?`<button class="btn plain" data-act="start" data-m="WRONG" style="min-height:36px;padding:6px 12px;font-size:13px">오답 ${w}개 다시 풀기</button>`:""}</div>
-    ${recent.length?`<div class="panel" style="padding:4px 16px"><ul class="recent">${recent.map(r=>`<li><span>${MODE_LABEL[r.m]}</span><span class="small muted num">${new Date(r.d).toLocaleDateString("ko-KR",{month:"numeric",day:"numeric"})}</span><span class="pct">${r.ok}/${r.n}</span></li>`).join("")}</ul></div>`
+    ${recent.length?`<div class="panel" style="padding:4px 16px"><ul class="recent">${recent.map(r=>`<li><span>${esc(r.lab||MODE_LABEL[r.m])}</span><span class="small muted num">${new Date(r.d).toLocaleDateString("ko-KR",{month:"numeric",day:"numeric"})}</span><span class="pct">${r.ok}/${r.n}</span></li>`).join("")}</ul></div>`
       :`<div class="empty">아직 푼 세트가 없어요. 위에서 하나를 골라 시작해 보세요.<br>기록은 이 기기의 브라우저에 저장돼요.</div>`}
     ${store.s.length||Object.keys(store.h).length?`<div>${confirmReset?`<span class="confirm">기록을 모두 지울까요? <button class="btn plain" data-act="reset-yes">지우기</button><button class="btn plain" data-act="reset-no">취소</button></span>`:`<button class="btn plain" data-act="reset" style="min-height:36px;padding:6px 12px;font-size:13px">기록 초기화</button>`}</div>`:""}
   </div>
-  ${document.querySelector('link[rel="manifest"]')?`<p class="small muted" style="margin-top:28px;text-align:center"><a href="privacy.html" style="color:inherit">개인정보처리방침</a> · 버전 1.0</p>`:""}`;
+  ${document.querySelector('link[rel="manifest"]')?`<p class="small muted" style="margin-top:28px;text-align:center"><a href="privacy.html" style="color:inherit">개인정보처리방침</a> · 버전 1.1</p>`:""}`;
 }
 function quizView(){
   const it=sess.items[sess.i],q=BANK[it.id],done=sess.picked!==null,r=done?sess.res[sess.res.length-1]:null,n=sess.items.length;
-  const isR=q.kind==="R",qnum=(isR?147:101)+sess.i,qi=isR?+it.id.slice(-1):0;
+  const isR=q.kind==="R",isP6=q.kind==="P6",isW=q.kind==="W",qi=q.p?+it.id.slice(-1):0;
+  const qnum=isP6?131+sess.items.slice(0,sess.i).filter(x=>BANK[x.id].kind==="P6").length:isR?147+sess.items.slice(0,sess.i).filter(x=>BANK[x.id].kind==="R").length:101+sess.i;
   let h=`<div class="qhead"><button class="iconbtn" data-act="quit" aria-label="그만두고 홈으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    <span class="title">${MODE_LABEL[sess.mode]}</span><span class="spacer"></span>
+    <span class="title">${esc(sess.label)}</span><span class="spacer"></span>
     <span id="timer" class="timer">${done?Math.round(r.ms/1000)+"s":""}</span><span class="count">${sess.i+1}/${n}</span></div>
   <div class="progress"><i style="width:${(sess.i+(done?1:0))/n*100}%"></i></div>`;
   if(isR)h+=`<article class="passage"><div class="ptype"><span>${esc(q.p.type)}</span><span>Questions ${qnum-qi}–${qnum-qi+2}</span></div><h3>${esc(q.p.title)}</h3><p>${blankify(q.p.text,q.qk==="blank")}</p></article>`;
-  h+=`<div id="stem" class="tags"><span class="tag tcat">${esc(q.cat)}</span>${lvTag(q.lv)}</div>
-  <div class="stem"><span class="qn">${qnum}.</span><p>${isR?esc(q.q):blankify(q.q,false)}</p></div>
+  if(isP6){const base=qnum-qi;h+=`<article class="passage"><div class="ptype"><span>${esc(q.p.type)}</span><span>Questions ${base}–${base+3}</span></div><h3>${esc(q.p.title)}</h3><p class="ptext">${esc(q.p.text).replace(/\{(\d)\}/g,(m,d)=>`<span class="gap num${+d===q.bi?" on":""}" aria-label="빈칸 ${base+ +d-1}">${base+ +d-1}</span>`)}</p></article>`}
+  h+=`<div id="stem" class="tags"><span class="tag tcat">${esc(q.cat)}</span>${isW?"":lvTag(q.lv)}</div>
+  ${isW?`<div class="stem" style="flex-direction:column;gap:4px"><p class="word" lang="en">${esc(q.q)}</p><p class="muted small" style="margin:0">알맞은 뜻을 고르세요</p></div>`
+   :`<div class="stem"><span class="qn">${qnum}.</span><p>${isR?esc(q.q):isP6?`빈칸 ${qnum}에 들어갈 가장 알맞은 ${q.cat==="문장 삽입"?"문장":"말"}을 고르세요.`:blankify(q.q,false)}</p></div>`}
   <div class="choices">${it.order.map((real,k)=>{
     let cls="";if(done){cls=real===0?"right":k===sess.picked?"wrong":"dim"}
-    return `<button class="choice ${cls}" data-act="pick" data-k="${k}" ${done?"disabled":""}><span class="bub">${L[k]}</span><span>${esc(q.c[real])}</span></button>`}).join("")}</div>`;
+    return `<button class="choice ${cls}" data-act="pick" data-k="${k}" ${done?"disabled":""}><span class="bub">${L[k]}</span><span${isW?' style="font-family:var(--f-ui);font-size:16px"':""}>${esc(q.c[real])}</span></button>`}).join("")}</div>`;
   if(done){
     const right=L[it.order.indexOf(0)];
     h+=`<div class="fb" id="fb"><div class="verdict ${r.ok?"ok":"no"}">${r.ok?"정답이에요":"오답이에요 · 정답 ("+right+")"}</div><dl>
       ${q.ko?`<div><dt>해석</dt><dd>${esc(q.ko)}</dd></div>`:""}
-      ${isR&&qi===0?`<div><dt>지문 요지</dt><dd>${esc(q.p.ko)}</dd></div>`:""}
-      <div><dt>해설</dt><dd>${esc(q.ex)}</dd></div></dl></div>
+      ${q.p&&qi===0?`<div><dt>지문 요지</dt><dd>${esc(q.p.ko)}</dd></div>`:""}
+      ${isW?`<div><dt>예문</dt><dd><span class="ex" lang="en">${esc(q.wex)}</span><br><span class="muted">${esc(q.wko)}</span></dd></div>`:""}
+      ${q.ex?`<div><dt>해설</dt><dd>${esc(q.ex)}</dd></div>`:""}</dl></div>
     <div class="actionbar"><div class="inner"><span class="kbd">Enter 다음</span><span class="spacer"></span><button class="btn" data-act="next">${sess.i<n-1?"다음 문제":"결과 보기"}</button></div></div>`;
   }else h+=`<p class="kbd" style="margin-top:14px">키보드 1–4 또는 A–D로도 고를 수 있어요</p>`;
   return h;
@@ -394,31 +426,35 @@ function catBreakdown(res){
 }
 function reviewList(list){
   return `<ul class="review">${list.map(({id,ok,pick})=>{const q=BANK[id];
-    return `<li><details><summary><span class="mark ${ok?"ok":"no"}">${ok?"O":"X"}</span><span class="s">${q.kind==="R"?`${esc(q.p.title)} <span class="muted small">· ${q.cat}</span>`:blankify(q.q,false)}</span></summary>
-    <div class="body"><div class="tags"><span class="tag tcat">${esc(q.cat)}</span>${lvTag(q.lv)}</div>${q.kind==="R"?`<div class="muted">${esc(q.q)}</div>`:""}<div>정답: <b>${esc(q.c[0])}</b>${!ok&&pick!=null?` <span class="muted">· 고른 답: ${esc(q.c[pick])}</span>`:""}</div>${q.ko?`<div class="muted">${esc(q.ko)}</div>`:""}<div>${esc(q.ex)}</div></div></details></li>`}).join("")}</ul>`;
+    return `<li><details><summary><span class="mark ${ok?"ok":"no"}">${ok?"O":"X"}</span><span class="s">${q.p?`${esc(q.p.title)} <span class="muted small">· ${q.kind==="P6"?"빈칸 "+q.bi+" · ":""}${esc(q.cat)}</span>`:q.kind==="W"?`<b lang="en">${esc(q.q)}</b> <span class="muted small">· ${esc(q.cat)}</span>`:blankify(q.q,false)}</span></summary>
+    <div class="body"><div class="tags"><span class="tag tcat">${esc(q.cat)}</span>${q.kind==="W"?"":lvTag(q.lv)}</div>${q.kind==="R"?`<div class="muted">${esc(q.q)}</div>`:""}${q.kind==="P6"?`<div class="muted">${esc(q.p.text.split(/(\{\d\})/).map(t=>t==="{"+q.bi+"}"?"[ ? ]":/^\{\d\}$/.test(t)?"___":t).join("").split(/(?<=[.!?])\s+/).find(x=>x.includes("[ ? ]"))||"")}</div>`:""}<div>정답: <b>${esc(q.c[0])}</b>${!ok&&pick!=null?` <span class="muted">· 고른 답: ${esc(q.c[pick])}</span>`:""}</div>${q.ko?`<div class="muted">${esc(q.ko)}</div>`:""}${q.wex?`<div><span class="ex" lang="en">${esc(q.wex)}</span><br><span class="muted">${esc(q.wko)}</span></div>`:""}${q.ex?`<div>${esc(q.ex)}</div>`:""}</div></details></li>`}).join("")}</ul>`;
 }
 function resultView(){
   const res=sess.res,ok=res.filter(r=>r.ok).length,n=res.length,pct=Math.round(ok/n*100);
   const avg=Math.round(res.reduce((s,r)=>s+r.ms,0)/n/1000),hasWrong=res.some(r=>!r.ok);
   const msg=pct>=90?"이 난이도는 거의 완성됐어요.":pct>=70?"좋아요. 틀린 유형만 다시 보면 돼요.":"해설을 읽고 오답을 한 번 더 풀어 보세요.";
-  return `<span class="eyebrow">${MODE_LABEL[sess.mode]} 결과</span>
+  /* 이번 세트에서 가장 약한 Part 5 문법·어휘 유형(정답률 80% 미만)을 골라 바로 집중 연습 */
+  const cm={};res.forEach(r=>{const q=BANK[r.id];if(q.kind!=="G"&&q.kind!=="V")return;const k=q.kind+"|"+q.cat;(cm[k]=cm[k]||{n:0,c:0}).n++;if(r.ok)cm[k].c++});
+  const weak=Object.entries(cm).filter(([k,v])=>v.c/v.n<.8).sort((a,b)=>a[1].c/a[1].n-b[1].c/b[1].n)[0];
+  const wk=weak&&weak[0].split("|"),wn=wk?(wk[0]==="G"?poolG():poolV()).filter(id=>BANK[id].cat===wk[1]).length:0;
+  return `<span class="eyebrow">${esc(sess.label)} 결과</span>
   <div class="panel" style="margin-top:10px"><div class="scorecard">${ring(pct)}<div><div class="num" style="font-size:28px;font-weight:600">${ok} / ${n}</div><div class="muted small">문항당 평균 ${avg}초</div><div style="margin-top:6px">${msg}</div></div></div></div>
   <div class="row" style="margin-top:14px">
-    <button class="btn" data-act="start" data-m="${sess.mode}">${sess.mode==="WRONG"?"남은 오답 다시 풀기":"새 세트 풀기"}</button>
+    <button class="btn" data-act="start" data-m="${sess.mode}"${sess.opt?` data-k="${sess.opt.k}" data-c="${esc(sess.opt.c)}"`:""}>${sess.mode==="WRONG"?"남은 오답 다시 풀기":"새 세트 풀기"}</button>
     ${hasWrong&&sess.mode!=="WRONG"?`<button class="btn soft" data-act="start" data-m="WRONG">오답만 다시 풀기</button>`:""}
     <button class="btn plain" data-act="home">홈으로</button>
   </div>
-  <div class="section"><h2>유형별 정답</h2><div class="panel cats">${catBreakdown(res)}</div></div>
+  <div class="section"><h2>유형별 정답</h2><div class="panel cats">${catBreakdown(res)}${wk&&wn>1?`<div class="weak"><span class="small">가장 약한 유형: <b>${esc(wk[1])}</b> <span class="muted">(${KIND_NAME[wk[0]]} ${wn}문항)</span></span><button class="btn soft" data-act="start" data-m="CAT" data-k="${wk[0]}" data-c="${esc(wk[1])}" style="min-height:38px;padding:6px 14px;font-size:13.5px">이 유형만 풀기</button></div>`:""}</div></div>
   <div class="section"><h2>문항 다시 보기</h2><div class="panel" style="padding:4px 16px">${reviewList(res)}</div></div>`;
 }
 function wrongView(){
   const w=wrongIds();
   if(!w.length)return `<div class="hero"><span class="eyebrow">오답노트</span><h1>틀린 문제가 없어요</h1></div><div class="empty">세트를 풀다가 틀린 문제는 여기에 모여요.<br>다시 풀어서 맞히면 자동으로 빠져요.<div style="margin-top:14px"><button class="btn" data-act="home">세트 고르러 가기</button></div></div>`;
-  const gr={G:[],V:[],R:[]};w.forEach(id=>gr[BANK[id].kind].push(id));
+  const gr={G:[],V:[],P6:[],R:[],W:[]};w.forEach(id=>gr[BANK[id].kind].push(id));
   const block=(k,t)=>gr[k].length?`<div class="section"><div class="section-head"><h2>${t}</h2><span class="num muted small">${gr[k].length}</span></div><div class="panel" style="padding:4px 16px">${reviewList(gr[k].map(id=>({id,ok:false,pick:null})))}</div></div>`:"";
   return `<div class="hero"><span class="eyebrow">오답노트</span><h1>다시 볼 문제 ${w.length}개</h1><p class="muted" style="margin:0">마지막으로 풀었을 때 틀린 문제예요. 눌러서 정답과 해설을 확인하세요.</p></div>
   <button class="btn" data-act="start" data-m="WRONG">오답 다시 풀기</button>
-  ${block("G","Part 5 문법")}${block("V","Part 5 어휘")}${block("R","1문단 독해")}`;
+  ${Object.keys(gr).map(k=>block(k,KIND_NAME[k])).join("")}`;
 }
 
 /* ---------- 이벤트 ---------- */
@@ -428,7 +464,7 @@ document.addEventListener("click",e=>{
   if(a==="home"||a==="quit"){view="home";confirmReset=false;render();window.scrollTo(0,0)}
   else if(a==="wrong"){view="wrong";render();window.scrollTo(0,0)}
   else if(a==="theme"){theme=theme==="dark"?"light":"dark";try{localStorage.setItem(THEME_KEY,theme)}catch(e){}applyTheme()}
-  else if(a==="start")start(b.dataset.m);
+  else if(a==="start")start(b.dataset.m,b.dataset.k?{k:b.dataset.k,c:b.dataset.c}:null);
   else if(a==="size"){size[b.dataset.m]=+b.dataset.v;render()}
   else if(a==="lv"){store.lv=+b.dataset.v;save();render()}
   else if(a==="pick")choose(+b.dataset.k);

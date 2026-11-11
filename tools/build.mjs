@@ -11,7 +11,7 @@ let [head, body] = page.split(/<\/style>\n([\s\S]*)/);
 head = head.replace('<meta name="claude:viewport-fit-sides" content="cover">\n', "");
 const meta = `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="토익 Part 5 문법·어휘와 1문단 독해 고난도 연습. 즉시 채점, 한국어 해설, 오답노트.">
+<meta name="description" content="토익 RC Part 5·6·7 고난도 연습과 빈출 단어 퀴즈. 즉시 채점, 한국어 해설, 오답노트.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">

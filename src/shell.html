@@ -421,7 +421,7 @@ const RUBY=/\[([^\]{}]+)\]\{([^}]+)\}|([㐀-䶿一-鿿豈-﫿々〆ヶ]+)\{([^}]
 const rb=s=>esc(s).replace(RUBY,(m,a,b,c,d)=>`<ruby>${a||c}<rt>${b||d}</rt></ruby>`);
 const plain=s=>String(s==null?"":s).replace(RUBY,(m,a,b,c)=>a||c);
 const BLANK="-------";
-const blankify=(s,on)=>rb(s).replace(BLANK,`<span class="gap${on?" on":""}" aria-label="빈칸"></span>`);
+const blankify=(s,on)=>rb(s).split(BLANK).join(`<span class="gap${on?" on":""}" aria-label="빈칸"></span>`); /* 虽然……但是처럼 빈칸이 둘인 문장도 */
 const isWordCard=q=>q.kind==="Q"||q.kind==="W"&&!String(q.q).includes(BLANK);
 /* Part 6 지문: {1}~{4} 자리에 문항 번호를 넣은 빈칸 */
 const p6text=(p,base,on)=>esc(p.text).replace(/\{(\d)\}/g,(m,d)=>`<span class="gap num${+d===on?" on":""}" aria-label="빈칸 ${base+ +d-1}">${base+ +d-1}</span>`);

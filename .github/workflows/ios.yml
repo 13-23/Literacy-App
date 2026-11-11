@@ -1,0 +1,22 @@
+# iOS 프로젝트가 정상적으로 빌드되는지 확인한다(서명 없이 시뮬레이터용).
+# 스토어 업로드는 Mac의 Xcode에서 Archive → Distribute App 으로 한다(RELEASE.md 참고).
+name: iOS build check
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["src/**", "ios/**", "capacitor.config.json", "package*.json"]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run build
+      - name: Build for simulator
+        run: |
+          xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug \
+            -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO build | tail -20

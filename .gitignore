@@ -1,0 +1,7 @@
+node_modules/
+web/
+www/
+.DS_Store
+*.keystore
+*.jks
+keystore.properties

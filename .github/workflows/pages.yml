@@ -1,0 +1,25 @@
+# 웹 버전과 개인정보처리방침을 GitHub Pages에 올린다(스토어에 넣을 개인정보처리방침 주소로 쓴다).
+# 저장소 Settings → Pages → Source 를 "GitHub Actions"로 한 번 바꿔 두어야 한다.
+name: Web deploy
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["src/**", "public/**", "tools/**"]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node tools/build.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: web }
+      - id: d
+        uses: actions/deploy-pages@v4

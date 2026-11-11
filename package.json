@@ -1,0 +1,22 @@
+{
+  "name": "rc-wanjeonjeongbok",
+  "version": "1.0.0",
+  "private": true,
+  "description": "토익 Part 5 문법·어휘와 1문단 독해 고난도 연습 앱",
+  "scripts": {
+    "build": "node tools/build.mjs && npx cap sync",
+    "assets": "npx capacitor-assets generate --iconBackgroundColor '#C42F5C' --iconBackgroundColorDark '#C42F5C' --splashBackgroundColor '#F3F4F8' --splashBackgroundColorDark '#0F121A'",
+    "android": "npx cap open android",
+    "ios": "npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.4.3",
+    "@capacitor/core": "^8.4.3",
+    "@capacitor/ios": "^8.4.3",
+    "@capacitor/splash-screen": "^8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.4.3"
+  }
+}

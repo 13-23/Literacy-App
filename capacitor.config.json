@@ -1,0 +1,18 @@
+{
+  "appId": "com.rcwanjeon.toeic",
+  "appName": "RC 완전정복",
+  "webDir": "www",
+  "backgroundColor": "#F3F4F8",
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "css",
+      "style": "LIGHT"
+    },
+    "SplashScreen": {
+      "launchShowDuration": 600,
+      "launchAutoHide": true,
+      "backgroundColor": "#F3F4F8",
+      "showSpinner": false
+    }
+  }
+}

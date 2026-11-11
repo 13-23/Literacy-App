@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">RC 완전정복</string>
+    <string name="title_activity_main">RC 완전정복</string>
+    <string name="package_name">com.rcwanjeon.toeic</string>
+    <string name="custom_url_scheme">com.rcwanjeon.toeic</string>
+</resources>

@@ -137,6 +137,7 @@ h2{font-size:17px;line-height:1.35;margin:0;letter-spacing:-.01em;text-wrap:bala
 .passage{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px 18px 20px;margin-bottom:22px}
 .ptype{display:flex;justify-content:space-between;gap:10px;font-family:var(--f-num);font-size:11.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
 .passage h3{font-family:var(--f-item);font-size:19px;line-height:1.5;margin:0 0 10px;font-weight:600}
+.passage.pdoc{margin-bottom:12px}.ptype.mset{margin:0 2px 8px}
 .passage p{font-family:var(--f-item);font-size:16.5px;line-height:1.78;margin:0;white-space:pre-line}
 #app[lang="ja"] .passage p,#app[lang="zh-CN"] .passage p{line-height:2.1}
 ruby rt{font-family:var(--f-ui);font-size:.55em;color:var(--muted);font-weight:400}
@@ -271,7 +272,7 @@ body.rd-off ruby rt{display:none}
 </script>
 <script>
 /* ---------- 시험 설정 ---------- */
-const KIND_LABEL={main:"주제·목적",fact:"사실 확인",blank:"빈칸 추론",detail:"세부 사항",infer:"추론",syn:"동의어",insert:"문장 위치",intent:"의도 파악"};
+const KIND_LABEL={main:"주제·목적",fact:"사실 확인",blank:"빈칸 추론",detail:"세부 사항",infer:"추론",syn:"동의어",insert:"문장 위치",intent:"의도 파악",link:"연계 추론"};
 const EXAMS={
   toeic:{name:"TOEIC",full:"TOEIC RC",lang:"en",eyebrow:"TOEIC Reading · Part 5 · 6 · 7",badge:"TOE<br>IC",bc:"b-g",
     levels:["2","3","4"],lvName:{2:"중상",3:"상",4:"최상"},minLv:true,
@@ -279,7 +280,7 @@ const EXAMS={
     modes:{W:["Part 5 어휘","P5<br>어휘","콜로케이션, 전치사로 고르는 어휘, 철자가 비슷한 혼동 어휘"],
            S:["Part 5 문법","P5<br>문법","도치, 가정법, 수 일치, 관계사, 준동사, 접속사와 전치사"],
            P6:["Part 6 장문 빈칸","P6<br>장문","이메일·공지·기사 속 빈칸 4개: 문맥 시제, 연결어, 어휘, 문장 넣기"],
-           P:["Part 7 독해","P7<br>독해","1문단 지문마다 주제 확인, 사실 확인, 빈칸 추론 3문항"],
+           P:["Part 7 독해","P7<br>독해","단일 지문과 이중·삼중 지문: 주제, 사실 확인, 추론, 연계 추론, 문장 위치"],
            Q:["빈출 단어 퀴즈","단어","토익 빈출 동사·명사·형용사·부사. 뜻을 고르고 예문으로 확인"]},
     time:{W:20,S:20,P6:30,P:60,Q:10},pko:"지문 요지",desc:"Part 5 문법·어휘, Part 6 장문 빈칸, Part 7 독해, 빈출 단어"},
   jlpt:{name:"JLPT",full:"JLPT 일본어",lang:"ja",eyebrow:"日本語能力試験",badge:"日本<br>語",bc:"b-v",
@@ -559,7 +560,10 @@ function quizView(){
     ${X.rd?`<button class="rdbtn" data-act="rd" aria-pressed="${rdOn(q.exam)}">${X.rd}</button>`:""}
     <span id="timer" class="timer">${done?Math.round(r.ms/1000)+"s":""}</span><span class="count">${sess.i+1}/${n}</span></div>
   <div class="progress"><i style="width:${(sess.i+(done?1:0))/n*100}%"></i></div>`;
-  if(isP){const s=sess.i+1-qi;h+=`<article class="passage"><div class="ptype"><span>${esc(q.p.type||"")}</span><span>문항 ${s}–${s+q.p.qs.length-1}</span></div>${q.p.title?`<h3>${rb(q.p.title)}</h3>`:""}<p>${blankify(q.p.text,q.qk==="blank")}</p></article>`}
+  if(isP){const s=sess.i+1-qi,rng=`<span>문항 ${s}–${s+q.p.qs.length-1}</span>`;
+    /* 이중·삼중 지문: p.docs = [{type,title,text}] 를 차례로 보여 준다 */
+    if(q.p.docs){const n=q.p.docs.length;h+=`<div class="ptype mset"><span>${n===2?"이중":"삼중"} 지문 · ${esc(q.p.type||"")}</span>${rng}</div>`+q.p.docs.map((d,k)=>`<article class="passage pdoc"><div class="ptype"><span>지문 ${k+1} · ${esc(d.type||"")}</span></div>${d.title?`<h3>${rb(d.title)}</h3>`:""}<p>${rb(d.text)}</p></article>`).join("")}
+    else h+=`<article class="passage"><div class="ptype"><span>${esc(q.p.type||"")}</span>${rng}</div>${q.p.title?`<h3>${rb(q.p.title)}</h3>`:""}<p>${blankify(q.p.text,q.qk==="blank")}</p></article>`}
   if(isP6){const base=sess.i+1-qi;h+=`<article class="passage"><div class="ptype"><span>${esc(q.p.type||"")}</span><span>문항 ${base}–${base+q.p.qs.length-1}</span></div><h3>${esc(q.p.title)}</h3><p>${p6text(q.p,base,q.bi)}</p></article>`}
   h+=`<div id="stem" class="tags"><span class="tag tcat">${esc(q.cat)}</span>${lvTag(q)}${q.u?`<span class="tag tu">추가한 문제</span>`:""}</div>`;
   if(card){
